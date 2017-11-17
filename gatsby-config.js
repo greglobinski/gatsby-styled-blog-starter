@@ -42,7 +42,18 @@ module.exports = {
         pathToConfigModule: `src/utils/typography.js`
       }
     },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        //trackingId: `ADD YOUR TRACKING ID HERE`,
+      }
+    },
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-catch-links`,
     `gatsby-plugin-offline`
   ]
 };
+
+// gatsby-plugin-manifest
+// gatsby-plugin-netlify
+// what-input

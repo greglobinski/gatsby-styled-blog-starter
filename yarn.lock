@@ -3621,6 +3621,18 @@ gatsby-module-loader@^1.0.8:
     babel-runtime "^6.26.0"
     loader-utils "^0.2.16"
 
+gatsby-plugin-catch-links@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-catch-links/-/gatsby-plugin-catch-links-1.0.9.tgz#454b19904e7fa891a2075ea56f9d5ff486324623"
+  dependencies:
+    babel-runtime "^6.26.0"
+
+gatsby-plugin-google-analytics@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-1.0.12.tgz#41b63ec9c7cdf9d237a0471bca9070cf2d886b15"
+  dependencies:
+    babel-runtime "^6.26.0"
+
 gatsby-plugin-offline@^1.0.10:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-offline/-/gatsby-plugin-offline-1.0.10.tgz#940891790c9b304020108cc4b93162073e1ae42d"
