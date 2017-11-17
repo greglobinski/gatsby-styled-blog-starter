@@ -3,8 +3,6 @@ import Helmet from "react-helmet";
 import get from "lodash/get";
 import styled from "styled-components";
 
-import Bio from "../components/Bio";
-
 const Wrapper = styled.main`
   padding: 1.5rem 1.5rem 2.5rem;
   background: ${props => props.theme.bgColors.white};

@@ -10,12 +10,7 @@ import styles from "../styles/base";
 
 const Container = styled.div`
   ${styles.baseStyles};
-  background: red;
   min-height: 100vh;
-
-  h1 {
-    font-weight: 700;
-  }
 `;
 
 class Template extends React.Component {
