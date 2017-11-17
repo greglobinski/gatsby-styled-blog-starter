@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "gatsby-link";
 import styled, { ThemeProvider } from "styled-components";
-// import PostsNavigatorContainer from "../components/Navigator/PostsNavigatorContainer";
+import PostsNavigatorContainer from "../components/Navigator/PostsNavigatorContainer";
 import WelcomeScreenContainer from "../components/Welcome/WelcomeScreenContainer";
 
 import globals from "../styles/global";
@@ -80,7 +80,19 @@ class Template extends React.Component {
           />
           <div>
             <p>This is layout</p>
-            {children({ ...this.props })}
+            {children({
+              ...this.props,
+              updatePostsData,
+              updateNavigatorIsAside
+            })}
+            {!!this.state.posts.length && (
+              <PostsNavigatorContainer
+                posts={this.state.posts}
+                linkOnClick={this.navigatorLinkOnClik}
+                isAside={this.state.navigatorIsAside}
+                inTransition={this.state.navigatorInTransition}
+              />
+            )}
           </div>
         </Container>
       </ThemeProvider>

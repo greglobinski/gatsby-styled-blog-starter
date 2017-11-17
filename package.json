@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "gatsby": "^1.9.110",
+    "gatsby-image": "^1.0.24",
     "gatsby-link": "^1.6.27",
     "gatsby-plugin-offline": "^1.0.10",
     "gatsby-plugin-react-helmet": "^1.0.8",

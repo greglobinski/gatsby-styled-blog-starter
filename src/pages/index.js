@@ -40,6 +40,15 @@ export const pageQuery = graphql`
             date(formatString: "DD MMMM, YYYY")
             title
             subTitle
+            cover {
+              children {
+                ... on ImageSharp {
+                  sizes(maxWidth: 300, rotate: 0) {
+                    ...GatsbyImageSharpSizes
+                  }
+                }
+              }
+            }
           }
         }
       }
