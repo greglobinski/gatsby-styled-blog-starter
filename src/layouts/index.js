@@ -21,9 +21,9 @@ const Container = styled.div`
 class Template extends React.Component {
   constructor(props) {
     super(props);
-    // this.updatePostsData = this.updatePostsData.bind(this);
-    // this.navigatorLinkOnClik = this.navigatorLinkOnClik.bind(this);
-    // this.updateNavigatorIsAside = this.updateNavigatorIsAside.bind(this);
+    this.updatePostsData = this.updatePostsData.bind(this);
+    this.navigatorLinkOnClik = this.navigatorLinkOnClik.bind(this);
+    this.updateNavigatorIsAside = this.updateNavigatorIsAside.bind(this);
     this.state = {
       posts: [],
       navigatorIsAside: false,
@@ -34,48 +34,48 @@ class Template extends React.Component {
   componentDidUpdate() {}
 
   updatePostsData(posts, top) {
-    // this.setState(() => ({
-    //   posts: posts
-    // }));
+    this.setState(() => ({
+      posts: posts
+    }));
   }
 
   updateNavigatorIsAside(val) {
-    // console.log("updateNavigatorIsAside");
-    // this.setState(() => ({
-    //   navigatorIsAside: val,
-    //   navigatorInTransition: true
-    // }));
-    // this.endNavigatorTransition();
+    console.log("updateNavigatorIsAside");
+    this.setState(() => ({
+      navigatorIsAside: val,
+      navigatorInTransition: true
+    }));
+    this.endNavigatorTransition();
   }
 
   navigatorLinkOnClik(e) {
-    // if (!this.state.navigatorIsAside) {
-    //   this.setState(() => ({
-    //     navigatorIsAside: true,
-    //     navigatorInTransition: true
-    //   }));
-    //   this.endNavigatorTransition();
-    // }
+    if (!this.state.navigatorIsAside) {
+      this.setState(() => ({
+        navigatorIsAside: true,
+        navigatorInTransition: true
+      }));
+      this.endNavigatorTransition();
+    }
   }
 
   endNavigatorTransition() {
-    // let isWideScreen =
-    //   typeof window !== "undefined"
-    //     ? document.documentElement.clientWidth > 776
-    //     : false;
-    // console.log(isWideScreen);
-    // setTimeout(() => {
-    //   this.setState(() => ({
-    //     navigatorInTransition: false
-    //   }));
-    // }, isWideScreen ? 300 : 0);
+    let isWideScreen =
+      typeof window !== "undefined"
+        ? document.documentElement.clientWidth > 776
+        : false;
+    console.log(isWideScreen);
+    setTimeout(() => {
+      this.setState(() => ({
+        navigatorInTransition: false
+      }));
+    }, isWideScreen ? 300 : 0);
   }
 
   render() {
     const { location, children } = this.props;
-    // const updatePostsData = this.updatePostsData;
-    // const updateNavigatorIsAside = this.updateNavigatorIsAside;
-    // const updatNavigatorInTransition = this.updatNavigatorInTransition;
+    const updatePostsData = this.updatePostsData;
+    const updateNavigatorIsAside = this.updateNavigatorIsAside;
+    const updatNavigatorInTransition = this.updatNavigatorInTransition;
 
     return (
       <ThemeProvider theme={theme}>
