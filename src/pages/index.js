@@ -1,38 +1,47 @@
 import React from "react";
+import Link from "gatsby-link";
+import get from "lodash/get";
+import Helmet from "react-helmet";
+import styled from "styled-components";
 
-export default ({ data }) => {
-  console.log(data);
-  return (
-    <div>
-      <h1>About {data.site.siteMetadata.title}</h1>
+class BlogIndex extends React.Component {
+  componentWillMount() {
+    const posts = get(this, "props.data.allMarkdownRemark.edges");
+    this.props.updatePostsData(posts);
+    this.props.updateNavigatorIsAside(false);
+  }
+
+  render() {
+    const siteTitle = get(this, "props.data.site.siteMetadata.title");
+
+    return (
       <div>
-        <p>
-          From Richard Hamming’s classic and must-read talk, “<a href="http://www.cs.virginia.edu/~robins/YouAndYourResearch.html">
-            You and Your Research
-          </a>”.
-        </p>
-        <blockquote>
-          <p>
-            There is indeed an element of luck, and no, there isn’t. The
-            prepared mind sooner or later finds something important and does it.
-            So yes, it is luck.{" "}
-            <em>
-              The particular thing you do is luck, but that you do something is
-              not.
-            </em>
-          </p>
-        </blockquote>
+        <Helmet title={siteTitle} />
       </div>
-      <p>Posted April 09, 2011</p>
-    </div>
-  );
-};
+    );
+  }
+}
 
-export const query = graphql`
+export default BlogIndex;
+
+export const pageQuery = graphql`
   query IndexQuery {
     site {
       siteMetadata {
         title
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          frontmatter {
+            path
+            date(formatString: "DD MMMM, YYYY")
+            title
+            subTitle
+          }
+        }
       }
     }
   }
