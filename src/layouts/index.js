@@ -1,17 +1,18 @@
 import React from "react";
 import Link from "gatsby-link";
-// import styled, { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 // import PostsNavigatorContainer from "../components/Navigator/PostsNavigatorContainer";
 // import WelcomeScreenContainer from "../components/Welcome/WelcomeScreenContainer";
 
-// import globals from "../styles/global";
-// import theme from "../styles/theme";
-// import styles from "../styles/base";
+import globals from "../styles/global";
+import theme from "../styles/theme";
+import styles from "../styles/base";
 
-// const Container = styled.div`
-//   ${styles.baseStyles};
-//   min-height: 100vh;
-// `;
+const Container = styled.div`
+  ${styles.baseStyles};
+  background: red;
+  min-height: 100vh;
+`;
 
 class Template extends React.Component {
   constructor(props) {
@@ -73,10 +74,14 @@ class Template extends React.Component {
     // const updatNavigatorInTransition = this.updatNavigatorInTransition;
 
     return (
-      <div>
-        <p>This is layout</p>
-        {children({ ...this.props })}
-      </div>
+      <ThemeProvider theme={theme}>
+        <Container>
+          <div>
+            <p>This is layout</p>
+            {children({ ...this.props })}
+          </div>
+        </Container>
+      </ThemeProvider>
     );
   }
 }
