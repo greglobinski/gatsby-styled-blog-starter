@@ -2,7 +2,7 @@ import React from "react";
 import Link from "gatsby-link";
 import styled, { ThemeProvider } from "styled-components";
 // import PostsNavigatorContainer from "../components/Navigator/PostsNavigatorContainer";
-// import WelcomeScreenContainer from "../components/Welcome/WelcomeScreenContainer";
+import WelcomeScreenContainer from "../components/Welcome/WelcomeScreenContainer";
 
 import globals from "../styles/global";
 import theme from "../styles/theme";
@@ -12,6 +12,10 @@ const Container = styled.div`
   ${styles.baseStyles};
   background: red;
   min-height: 100vh;
+
+  h1 {
+    font-weight: 700;
+  }
 `;
 
 class Template extends React.Component {
@@ -20,11 +24,11 @@ class Template extends React.Component {
     // this.updatePostsData = this.updatePostsData.bind(this);
     // this.navigatorLinkOnClik = this.navigatorLinkOnClik.bind(this);
     // this.updateNavigatorIsAside = this.updateNavigatorIsAside.bind(this);
-    // this.state = {
-    //   posts: [],
-    //   navigatorIsAside: false,
-    //   navigatorInTransition: false
-    // };
+    this.state = {
+      posts: [],
+      navigatorIsAside: false,
+      navigatorInTransition: false
+    };
   }
 
   componentDidUpdate() {}
@@ -76,6 +80,9 @@ class Template extends React.Component {
     return (
       <ThemeProvider theme={theme}>
         <Container>
+          <WelcomeScreenContainer
+            navigatorIsAside={this.state.navigatorIsAside}
+          />
           <div>
             <p>This is layout</p>
             {children({ ...this.props })}
