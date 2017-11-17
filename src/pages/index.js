@@ -1,10 +1,10 @@
 import React from "react";
 
-export default props => {
-  console.log(props);
+export default ({ data }) => {
+  console.log(data);
   return (
     <div>
-      <h1>About </h1>
+      <h1>About {data.site.siteMetadata.title}</h1>
       <div>
         <p>
           From Richard Hamming’s classic and must-read talk, “<a href="http://www.cs.virginia.edu/~robins/YouAndYourResearch.html">
