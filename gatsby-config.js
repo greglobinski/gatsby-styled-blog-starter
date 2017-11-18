@@ -50,10 +50,32 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-catch-links`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "GatsbyJS",
+        short_name: "GatsbyJS",
+        start_url: "/",
+        background_color: "#f7f0eb",
+        theme_color: "#a2466c",
+        display: "minimal-ui",
+        icons: [
+          {
+            src: "/logos/logo-192x192.png",
+            sizes: "192x192",
+            type: "image/png"
+          },
+          {
+            src: "/logos/logo-512x512.png",
+            sizes: "512x512",
+            type: "image/png"
+          }
+        ]
+      }
+    },
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-offline`
   ]
 };
 
-// gatsby-plugin-manifest
-// gatsby-plugin-netlify
 // what-input
