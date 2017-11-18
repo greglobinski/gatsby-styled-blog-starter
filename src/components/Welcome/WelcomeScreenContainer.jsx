@@ -7,7 +7,7 @@ class WelcomeScreenContainer extends React.Component {
     this.toggleScreen = this.toggleScreen.bind(this);
     this.updateSreenInTransition = this.updateSreenInTransition.bind(this);
     this.state = {
-      screenRolledUp: true,
+      screenRolledUp: false,
       screenInTransition: false
     };
   }
