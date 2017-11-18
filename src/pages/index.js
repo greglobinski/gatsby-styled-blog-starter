@@ -14,11 +14,7 @@ class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, "props.data.site.siteMetadata.title");
 
-    return (
-      <div>
-        <Helmet title={siteTitle} />
-      </div>
-    );
+    return <Helmet title={siteTitle} />;
   }
 }
 

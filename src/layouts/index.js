@@ -78,22 +78,19 @@ class Template extends React.Component {
           <WelcomeScreenContainer
             navigatorIsAside={this.state.navigatorIsAside}
           />
-          <div>
-            <p>This is layout</p>
-            {children({
-              ...this.props,
-              updatePostsData,
-              updateNavigatorIsAside
-            })}
-            {!!this.state.posts.length && (
-              <PostsNavigatorContainer
-                posts={this.state.posts}
-                linkOnClick={this.navigatorLinkOnClik}
-                isAside={this.state.navigatorIsAside}
-                inTransition={this.state.navigatorInTransition}
-              />
-            )}
-          </div>
+          {children({
+            ...this.props,
+            updatePostsData,
+            updateNavigatorIsAside
+          })}
+          {!!this.state.posts.length && (
+            <PostsNavigatorContainer
+              posts={this.state.posts}
+              linkOnClick={this.navigatorLinkOnClik}
+              isAside={this.state.navigatorIsAside}
+              inTransition={this.state.navigatorInTransition}
+            />
+          )}
         </Container>
       </ThemeProvider>
     );

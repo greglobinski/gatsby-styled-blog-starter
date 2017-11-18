@@ -14,7 +14,12 @@ const typography = new Typography({
       name: "Open Sans",
       styles: ["400"]
     }
-  ]
+  ],
+  overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
+    html: {
+      overflow: "auto"
+    }
+  })
 });
 
 export default typography;
