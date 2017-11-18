@@ -13,8 +13,7 @@ const Header = styled.header`
   display: flex;
   flex-direction: ${props => (props.isRolledUp ? "row" : "column")};
   justify-content: ${props => (props.isRolledUp ? "space-between" : "center")};
-  min-height: ${props => (props.appInitialState ? "100vh" : "none")};
-
+  min-height: ${props => (props.appInitialState ? "100vh" : "0")};
   padding: ${props => (props.isRolledUp ? ".1rem .5rem .0 1rem" : "2rem")};
   transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
   z-index: 100;

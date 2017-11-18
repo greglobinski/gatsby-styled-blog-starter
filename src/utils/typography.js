@@ -31,7 +31,7 @@ const typography = new Typography({
   ],
   overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
     html: {
-      overflow: "auto"
+      overflowY: "auto"
     }
   })
 });

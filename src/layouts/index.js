@@ -27,7 +27,8 @@ class Template extends React.Component {
       navigatorIsAside: false,
       navigatorInTransition: false,
       welcomeIsRolledUp: false,
-      welcomeInTransition: false
+      welcomeInTransition: false,
+      windowHeight: 0
     };
   }
 
@@ -74,9 +75,12 @@ class Template extends React.Component {
     console.log("Template.toggleWelcomeScreen()");
     this.setState(prevState => ({
       welcomeIsRolledUp: !prevState.welcomeIsRolledUp,
-      appInitialState: prevState.appInitialState && false
+      appInitialState: prevState.appInitialState && false,
+      windowHeight: document.body.offsetHeight
       //welcomeInTransition: true
     }));
+
+    //document.body.offsetHeight = 1000;
   }
 
   render() {

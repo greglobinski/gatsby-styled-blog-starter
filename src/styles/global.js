@@ -4,7 +4,9 @@ injectGlobal`
 
   * {
     box-sizing: border-box;
-    -webkit-overflow-scrolling: touch;
+  }
+  body {
+    background: #7F5D80;
   }
   *::-webkit-scrollbar {
     width: 6px;

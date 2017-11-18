@@ -6,7 +6,6 @@ import styled, { keyframes } from "styled-components";
 
 const Wrapper = styled.div`
   background: ${props => props.theme.bgColors.first};
-  min-height: ${props => (!props.isAside ? "100vh" : "")};
   overflow: auto;
   position: relative;
   transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
@@ -223,7 +222,10 @@ class PostsNavigator extends React.Component {
 
   render() {
     return (
-      <Wrapper isAside={this.props.isAside}>
+      <Wrapper
+        isAside={this.props.isAside}
+        welcomeIsRolledUp={this.props.welcomeIsRolledUp}
+      >
         <List isAside={this.props.isAside}>
           {this.props.posts &&
             this.props.posts.map(post => {
