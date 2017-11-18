@@ -5,7 +5,8 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "devhost": "gatsby develop --host 192.168.0.112"
   },
   "dependencies": {
     "gatsby": "^1.9.110",

@@ -4,7 +4,6 @@ injectGlobal`
 
   * {
     box-sizing: border-box;
-    font-family: "Open Sans", sans-serif;
     -webkit-overflow-scrolling: touch;
   }
   *::-webkit-scrollbar {
