@@ -167,7 +167,7 @@ class WelcomeScreen extends React.Component {
                 <b>U</b>ser E<b>x</b>perience Notes
               </Link>
             </Logo>
-            <OpenBtn onClick={this.props.btnOnClick}>
+            <OpenBtn onClick={this.props.btnOnClick} aria-label="Unfold">
               <span>
                 <Icon icon={ICONS.INFO} />
               </span>
@@ -184,7 +184,7 @@ class WelcomeScreen extends React.Component {
               f user experience really matters, some things should work better.f
               user experience really matters, some things should work better.f
             </Message>
-            <CLoseBtn onClick={this.props.btnOnClick}>
+            <CLoseBtn onClick={this.props.btnOnClick} aria-label="Roll up">
               <span>
                 <Icon icon={ICONS.SIGN_IN} />
               </span>
