@@ -68,7 +68,7 @@ const EnterBtn = styled.button`
 const Head = styled.h2`
   animation: ${contentEntry} 1s;
   animation-fill-mode: forwards;
-  color: ${props => props.theme.fgColors.first};
+  color: ${props => props.theme.fgColors.white};
   font-weight: 700;
   letter-spacing: -0.04em;
   max-width: 40rem;
@@ -77,7 +77,7 @@ const Head = styled.h2`
 const Message = styled.p`
   animation: ${contentEntry} 1s;
   animation-fill-mode: forwards;
-  color: ${props => props.theme.fgColors.first};
+  color: ${props => props.theme.fgColors.white};
   line-height: 1.5em;
   margin: 1em 0;
   max-width: 40rem;
@@ -163,6 +163,7 @@ class WelcomeScreen extends React.Component {
             inTransition={this.props.inTransition}
           >
             <span>
+              OK
               {/*} <Icon icon={this.props.rolledUp ? ICONS.INFO : ICONS.SIGN_IN} /> */}
             </span>
           </EnterBtn>

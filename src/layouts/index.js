@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "gatsby-link";
 import styled, { ThemeProvider } from "styled-components";
+import Helmet from "react-helmet";
 import PostsNavigatorContainer from "../components/Navigator/PostsNavigatorContainer";
 import WelcomeScreenContainer from "../components/Welcome/WelcomeScreenContainer";
 
@@ -75,6 +76,9 @@ class Template extends React.Component {
     return (
       <ThemeProvider theme={theme}>
         <Container>
+          <Helmet>
+            <html lang="en" />
+          </Helmet>
           <WelcomeScreenContainer
             navigatorIsAside={this.state.navigatorIsAside}
           />

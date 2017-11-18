@@ -53,12 +53,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "GatsbyJS",
-        short_name: "GatsbyJS",
+        name: "User Experience Notes",
+        short_name: "UXnotes",
         start_url: "/",
         background_color: "#f7f0eb",
         theme_color: "#a2466c",
-        display: "minimal-ui",
+        display: "standalone",
         icons: [
           {
             src: "/logos/logo-192x192.png",
