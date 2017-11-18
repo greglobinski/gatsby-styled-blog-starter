@@ -14,16 +14,13 @@ const theme = {
   },
   bgColors: {
     first: "#7F5D80",
-    firstDark: "#5F4660",
+    firstDark: "#563E57",
     firstLight: "#AF95B0",
-    second: "#9FC910",
+    second: "#97BE10", //"#9FC910",
     white: "#fff",
     grayLight: "#eee",
     dark: "#999",
     black: "#333"
-  },
-  fonts: {
-    primary: "Open Sans, sans-serif;"
   },
   mediaQueryTresholds: {
     XL: "65rem",

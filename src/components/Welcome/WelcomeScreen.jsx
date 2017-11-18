@@ -1,21 +1,19 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import Link from "gatsby-link";
-//import Icon from "../Objects/Icon.jsx";
-//import { ICONS } from "../../constants";
+import Icon from "../Objects/Icon.jsx";
+import { ICONS } from "../../constants";
 
-const Header = styled.header`
-  align-items: center;
+const Wrapper = styled.div`
   background: ${props =>
     props.isRolledUp
       ? props => props.theme.bgColors.white
-      : props => props.theme.bgColors.second};
+      : props => props.theme.bgColors.firstDark};
   display: flex;
-  flex-direction: ${props => (props.isRolledUp ? "row" : "column")};
-  justify-content: ${props => (props.isRolledUp ? "space-between" : "center")};
+  flex-direction: column;
+  justify-content: center;
   min-height: ${props => (props.appInitialState ? "100vh" : "0")};
-  padding: ${props => (props.isRolledUp ? ".1rem .5rem .0 1rem" : "2rem")};
-  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1), background 0s;
   z-index: 100;
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
@@ -34,24 +32,23 @@ const Header = styled.header`
   }
 `;
 
-const EnterBtn = styled.button`
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  fill: currentColor;
-  padding: 10px;
-  transition: all 1s;
-
-  > span {
-    background: ${props => props.theme.fgColors.first};
-
-    border-radius: 100%;
-    display: block;
-    height: ${props => (props.isRolledUp ? "30" : "60")}px;
-    width: ${props => (props.isRolledUp ? "30" : "60")}px;
-    padding: ${props => (props.isRolledUp ? "5" : "10")}px;
+const welcomeEntry = keyframes`
+  from {
+    opacity: 0;
+    max-height: 0;
   }
+  to {
+    opacity: 1;
+    max-height: 1000px;
+  }
+`;
+
+const Welcome = styled.div`
+  animation: ${welcomeEntry} 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  padding: 2em;
+  transition: all 1s;
 `;
 
 const Head = styled.h2`
@@ -69,11 +66,39 @@ const Message = styled.p`
   transition: all 1s;
 `;
 
+const CLoseBtn = styled.button`
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  fill: currentColor;
+  padding: 10px;
+  transition: all 1s;
+
+  > span {
+    background: ${props => props.theme.fgColors.first};
+    border-radius: 100%;
+    display: block;
+    height: ${props => (props.isRolledUp ? "30" : "60")}px;
+    width: ${props => (props.isRolledUp ? "30" : "60")}px;
+    padding: ${props => (props.isRolledUp ? "5" : "10")}px;
+  }
+`;
+
+const Header = styled.header`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+`;
+
 const Logo = styled.span`
+  display: block;
   font-size: 1em;
   font-weight: 300;
   line-height: 1;
-  margin: 1em 0;
   text-transform: uppercase;
 
   & > a {
@@ -101,6 +126,25 @@ const Logo = styled.span`
   }
 `;
 
+const OpenBtn = styled.button`
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  fill: currentColor;
+  padding: 10px;
+  transition: all 1s;
+
+  > span {
+    background: ${props => props.theme.fgColors.first};
+    border-radius: 100%;
+    display: block;
+    height: 24px;
+    width: 24px;
+    padding: 3px;
+  }
+`;
+
 class WelcomeScreen extends React.Component {
   constructor(props) {
     super(props);
@@ -108,7 +152,7 @@ class WelcomeScreen extends React.Component {
 
   render() {
     return (
-      <Header
+      <Wrapper
         isRolledUp={this.props.isRolledUp}
         innerRef={header => {
           this.screenHeader = header;
@@ -116,37 +160,38 @@ class WelcomeScreen extends React.Component {
         navigatorIsAside={this.props.navigatorIsAside}
         appInitialState={this.props.appInitialState}
       >
-        <Logo isRolledUp={this.props.isRolledUp}>
-          <Link to="/">
-            <b>U</b>ser E<b>x</b>perience Notes
-          </Link>
-        </Logo>
-        {!this.props.isRolledUp &&
-          !this.props.inTransition && (
+        {this.props.isRolledUp && (
+          <Header>
+            <Logo>
+              <Link to="/">
+                <b>U</b>ser E<b>x</b>perience Notes
+              </Link>
+            </Logo>
+            <OpenBtn onClick={this.props.btnOnClick}>
+              <span>
+                <Icon icon={ICONS.INFO} />
+              </span>
+            </OpenBtn>
+          </Header>
+        )}
+
+        {!this.props.isRolledUp && (
+          <Welcome>
             <Head>
               If user experience really matters, some things should work better.
             </Head>
-          )}
-        {!this.props.isRolledUp &&
-          !this.props.inTransition && (
             <Message>
               f user experience really matters, some things should work better.f
               user experience really matters, some things should work better.f
             </Message>
-          )}
-        {!this.props.inTransition && (
-          <EnterBtn
-            onClick={this.props.btnOnClick}
-            isRolledUp={this.props.isRolledUp}
-            inTransition={this.props.inTransition}
-          >
-            <span>
-              OK
-              {/*} <Icon icon={this.props.isRolledUp ? ICONS.INFO : ICONS.SIGN_IN} /> */}
-            </span>
-          </EnterBtn>
+            <CLoseBtn onClick={this.props.btnOnClick}>
+              <span>
+                <Icon icon={ICONS.SIGN_IN} />
+              </span>
+            </CLoseBtn>
+          </Welcome>
         )}
-      </Header>
+      </Wrapper>
     );
   }
 }

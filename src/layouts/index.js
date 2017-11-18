@@ -68,7 +68,7 @@ class Template extends React.Component {
       this.setState(() => ({
         navigatorInTransition: false
       }));
-    }, isWideScreen ? 300 : 0);
+    }, isWideScreen ? 300 : 10);
   }
 
   toggleWelcomeScreen(e) {
@@ -76,11 +76,15 @@ class Template extends React.Component {
     this.setState(prevState => ({
       welcomeIsRolledUp: !prevState.welcomeIsRolledUp,
       appInitialState: prevState.appInitialState && false,
-      windowHeight: document.body.offsetHeight
-      //welcomeInTransition: true
+      windowHeight: document.body.offsetHeight,
+      welcomeInTransition: true
     }));
 
-    //document.body.offsetHeight = 1000;
+    setTimeout(() => {
+      this.setState(() => ({
+        welcomeInTransition: false
+      }));
+    }, 300);
   }
 
   render() {

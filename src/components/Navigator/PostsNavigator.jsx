@@ -96,10 +96,10 @@ const Article = styled.article`
   margin: ${props => (props.isAside ? "1.5rem 1.8rem" : "4rem 1.5rem 6rem")};
   position: relative;
   perspective: 1000px;
+  animation-name: ${articleShowUp};
+  animation-duration: 0.2s;
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
-    animation-name: ${articleShowUp};
-    animation-duration: 0.2s;
     a:first-child & {
       margin-top: 4rem;
     }
@@ -142,9 +142,8 @@ const Title = styled.h2`
 `;
 
 const SubTitle = styled.h3`
-  font-family: ${props => props.theme.fonts.primary};
   font-size: 1.1em;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.2;
   letter-spacing: "-.02em";
   margin: 0.5rem 0 0 0;
