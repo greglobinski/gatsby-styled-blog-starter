@@ -7,22 +7,25 @@ import Link from "gatsby-link";
 const Header = styled.header`
   align-items: center;
   background: ${props =>
-    props.rolledUp
+    props.isRolledUp
       ? props => props.theme.bgColors.white
       : props => props.theme.bgColors.second};
   display: flex;
-  flex-direction: ${props => (props.rolledUp ? "row" : "column")};
-  justify-content: ${props => (props.rolledUp ? "space-between" : "center")};
+  flex-direction: ${props => (props.isRolledUp ? "row" : "column")};
+  justify-content: ${props => (props.isRolledUp ? "space-between" : "center")};
+  min-height: ${props => (props.appInitialState ? "100vh" : "none")};
 
-  padding: ${props => (props.rolledUp ? ".1rem .5rem .0 1rem" : "2rem")};
+  padding: ${props => (props.isRolledUp ? ".1rem .5rem .0 1rem" : "2rem")};
   transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
   z-index: 100;
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
     height: ${props =>
-      !props.rolledUp ? "100%" : props.theme.sizes.welcomeScreenRolledUpHeight};
+      !props.isRolledUp
+        ? "100%"
+        : props.theme.sizes.welcomeScreenRolledUpHeight};
     left: ${props =>
-      props.navigatorIsAside && props.rolledUp
+      props.navigatorIsAside && props.isRolledUp
         ? props => props.theme.sizes.postNavigatorAsideWidth
         : "0"};
     override: auto;
@@ -32,20 +35,7 @@ const Header = styled.header`
   }
 `;
 
-const contentEntry = keyframes`
-  from {
-    opacity: 0;
-    transform: scale(.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-`;
-
 const EnterBtn = styled.button`
-  animation: ${contentEntry} 1s;
-  animation-fill-mode: forwards;
   background: none;
   border: none;
   color: white;
@@ -59,15 +49,13 @@ const EnterBtn = styled.button`
 
     border-radius: 100%;
     display: block;
-    height: ${props => (props.rolledUp ? "30" : "60")}px;
-    width: ${props => (props.rolledUp ? "30" : "60")}px;
-    padding: ${props => (props.rolledUp ? "5" : "10")}px;
+    height: ${props => (props.isRolledUp ? "30" : "60")}px;
+    width: ${props => (props.isRolledUp ? "30" : "60")}px;
+    padding: ${props => (props.isRolledUp ? "5" : "10")}px;
   }
 `;
 
 const Head = styled.h2`
-  animation: ${contentEntry} 1s;
-  animation-fill-mode: forwards;
   color: ${props => props.theme.fgColors.white};
   font-weight: 700;
   letter-spacing: -0.04em;
@@ -75,8 +63,6 @@ const Head = styled.h2`
 `;
 
 const Message = styled.p`
-  animation: ${contentEntry} 1s;
-  animation-fill-mode: forwards;
   color: ${props => props.theme.fgColors.white};
   line-height: 1.5em;
   margin: 1em 0;
@@ -94,7 +80,7 @@ const Logo = styled.span`
   & > a {
     text-decoration: none;
     color: ${props =>
-      props.rolledUp
+      props.isRolledUp
         ? props => props.theme.fgColors.darkGray
         : props => props.theme.fgColors.first};
     & > b {
@@ -121,35 +107,28 @@ class WelcomeScreen extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.screenHeader.addEventListener("transitionend", () =>
-      this.props.updateInTransition(false)
-    );
-  }
-
-  componentDidUpdate() {}
-
   render() {
     return (
       <Header
-        rolledUp={this.props.rolledUp}
+        isRolledUp={this.props.isRolledUp}
         innerRef={header => {
           this.screenHeader = header;
         }}
         navigatorIsAside={this.props.navigatorIsAside}
+        appInitialState={this.props.appInitialState}
       >
-        <Logo rolledUp={this.props.rolledUp}>
+        <Logo isRolledUp={this.props.isRolledUp}>
           <Link to="/">
             <b>U</b>ser E<b>x</b>perience Notes
           </Link>
         </Logo>
-        {!this.props.rolledUp &&
+        {!this.props.isRolledUp &&
           !this.props.inTransition && (
             <Head>
               If user experience really matters, some things should work better.
             </Head>
           )}
-        {!this.props.rolledUp &&
+        {!this.props.isRolledUp &&
           !this.props.inTransition && (
             <Message>
               f user experience really matters, some things should work better.f
@@ -158,13 +137,13 @@ class WelcomeScreen extends React.Component {
           )}
         {!this.props.inTransition && (
           <EnterBtn
-            onClick={this.props.buttonOnClick}
-            rolledUp={this.props.rolledUp}
+            onClick={this.props.btnOnClick}
+            isRolledUp={this.props.isRolledUp}
             inTransition={this.props.inTransition}
           >
             <span>
               OK
-              {/*} <Icon icon={this.props.rolledUp ? ICONS.INFO : ICONS.SIGN_IN} /> */}
+              {/*} <Icon icon={this.props.isRolledUp ? ICONS.INFO : ICONS.SIGN_IN} /> */}
             </span>
           </EnterBtn>
         )}

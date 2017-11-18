@@ -20,10 +20,14 @@ class Template extends React.Component {
     this.updatePostsData = this.updatePostsData.bind(this);
     this.navigatorLinkOnClik = this.navigatorLinkOnClik.bind(this);
     this.updateNavigatorIsAside = this.updateNavigatorIsAside.bind(this);
+    this.toggleWelcomeScreen = this.toggleWelcomeScreen.bind(this);
     this.state = {
       posts: [],
+      appInitialState: true,
       navigatorIsAside: false,
-      navigatorInTransition: false
+      navigatorInTransition: false,
+      welcomeIsRolledUp: false,
+      welcomeInTransition: false
     };
   }
 
@@ -36,7 +40,6 @@ class Template extends React.Component {
   }
 
   updateNavigatorIsAside(val) {
-    console.log("updateNavigatorIsAside");
     this.setState(() => ({
       navigatorIsAside: val,
       navigatorInTransition: true
@@ -67,6 +70,15 @@ class Template extends React.Component {
     }, isWideScreen ? 300 : 0);
   }
 
+  toggleWelcomeScreen(e) {
+    console.log("Template.toggleWelcomeScreen()");
+    this.setState(prevState => ({
+      welcomeIsRolledUp: !prevState.welcomeIsRolledUp,
+      appInitialState: prevState.appInitialState && false
+      //welcomeInTransition: true
+    }));
+  }
+
   render() {
     const { location, children } = this.props;
     const updatePostsData = this.updatePostsData;
@@ -81,20 +93,25 @@ class Template extends React.Component {
           </Helmet>
           <WelcomeScreenContainer
             navigatorIsAside={this.state.navigatorIsAside}
+            appInitialState={this.state.appInitialState}
+            isRolledUp={this.state.welcomeIsRolledUp}
+            inTransition={this.state.welcomeInTransition}
+            btnOnClick={this.toggleWelcomeScreen}
           />
           {children({
             ...this.props,
             updatePostsData,
             updateNavigatorIsAside
           })}
-          {!!this.state.posts.length && (
-            <PostsNavigatorContainer
-              posts={this.state.posts}
-              linkOnClick={this.navigatorLinkOnClik}
-              isAside={this.state.navigatorIsAside}
-              inTransition={this.state.navigatorInTransition}
-            />
-          )}
+          {!!this.state.posts.length &&
+            !this.state.appInitialState && (
+              <PostsNavigatorContainer
+                posts={this.state.posts}
+                linkOnClick={this.navigatorLinkOnClik}
+                isAside={this.state.navigatorIsAside}
+                inTransition={this.state.navigatorInTransition}
+              />
+            )}
         </Container>
       </ThemeProvider>
     );

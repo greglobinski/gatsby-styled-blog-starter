@@ -4,19 +4,11 @@ import WelcomeScreen from "./WelcomeScreen";
 class WelcomeScreenContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.toggleScreen = this.toggleScreen.bind(this);
     this.updateSreenInTransition = this.updateSreenInTransition.bind(this);
     this.state = {
       screenRolledUp: false,
       screenInTransition: false
     };
-  }
-
-  toggleScreen() {
-    this.setState(prevState => ({
-      screenRolledUp: !prevState.screenRolledUp,
-      screenInTransition: true
-    }));
   }
 
   updateSreenInTransition(val) {
@@ -26,11 +18,11 @@ class WelcomeScreenContainer extends React.Component {
   render() {
     return (
       <WelcomeScreen
-        buttonOnClick={this.toggleScreen}
-        rolledUp={this.state.screenRolledUp}
-        inTransition={this.state.screenInTransition}
-        updateInTransition={this.updateSreenInTransition}
+        isRolledUp={this.props.isRolledUp}
+        inTransition={this.props.inTransition}
+        btnOnClick={this.props.btnOnClick}
         navigatorIsAside={this.props.navigatorIsAside}
+        appInitialState={this.props.appInitialState}
       />
     );
   }
