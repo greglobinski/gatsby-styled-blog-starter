@@ -46,16 +46,18 @@ const welcomeEntry = keyframes`
 const Welcome = styled.div`
   animation: ${welcomeEntry} 1s;
   animation-fill-mode: forwards;
+  color: ${props => props.theme.fgColors.white};
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
   padding: 2em;
   transition: all 1s;
-`;
 
-const Head = styled.h2`
-  color: ${props => props.theme.fgColors.white};
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  max-width: 40rem;
+  h1,
+  h2 {
+    margin: 0;
+  }
+  h2 {
+    font-weight: 300;
+  }
 `;
 
 const Message = styled.p`
@@ -177,12 +179,13 @@ class WelcomeScreen extends React.Component {
 
         {!this.props.isRolledUp && (
           <Welcome>
-            <Head>
-              If user experience really matters, some things should work better.
-            </Head>
+            <h1>Hi there</h1>
+            <h2>welcome to User&nbsp;Experience&nbsp;Notes</h2>
             <Message>
-              f user experience really matters, some things should work better.f
-              user experience really matters, some things should work better.f
+              Before you go further, there is something you have to know. This
+              is a <b>personal blog</b>. The content strongly reflects my
+              personal experiences as a user of described products
+              (website/tools)
             </Message>
             <CLoseBtn onClick={this.props.btnOnClick} aria-label="Roll up">
               <span>

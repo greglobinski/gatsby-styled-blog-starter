@@ -24,10 +24,10 @@ class Template extends React.Component {
     this.toggleWelcomeScreen = this.toggleWelcomeScreen.bind(this);
     this.state = {
       posts: [],
-      appInitialState: true,
+      appInitialState: false,
       navigatorIsAside: false,
       navigatorInTransition: false,
-      welcomeIsRolledUp: false,
+      welcomeIsRolledUp: true,
       welcomeInTransition: false,
       windowHeight: 0
     };
