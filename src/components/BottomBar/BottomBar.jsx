@@ -4,32 +4,44 @@ import Link from "gatsby-link";
 import Icon from "../Objects/Icon.jsx";
 import { ICONS } from "../../constants";
 
+const wrapperShowUp = keyframes`
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: -100%;
+  }
+  100% {
+    left: 0;
+  }
+`;
+
 const Wrapper = styled.footer`
+  animation-name: ${wrapperShowUp};
+  animation-duration: 1s;
   background: ${props => props.theme.bgColors.first};
   bottom: 0;
   height: ${props => props.theme.sizes.bottomBarHeight}px;
   left: 0;
   position: fixed;
-  width: 60%;
 
   a {
-    color: ${props => props.theme.fgColors.firstSuperLight};
-    display: block;
-    height: 100%;
-    text-align: center;
+    color: ${props => props.theme.fgColors.white};
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     text-decoration: none;
-    width: 100%;
-    font-size: 1.2em;
-    font-weight: 300;
-    padding-top: 0.6em;
 
-    svg {
-      display: inline;
-      width: 1.2em;
-      height: 1.2em;
-      vertical-align: baseline;
-      margin: 0 0.5em -0.3em 0;
-      fill: ${props => props.theme.bgColors.firstDark};
+    b {
+      font-size: 1.2em;
+      font-weight: 300;
+      padding: 0 0.6em;
+      margin: 0;
+      float: left;
+      line-height: 0;
+      margin-top: -0.2em;
+      background: red;
     }
   }
 
@@ -39,11 +51,21 @@ const Wrapper = styled.footer`
 `;
 
 const IconWrapper = styled.span`
-  background: red;
-  display: inline-block;
-  width: ${props => props.theme.sizes.bottomBarHeight}px;
+  background: ${props => props.theme.bgColors.firstDark};
+  display: block;
   height: ${props => props.theme.sizes.bottomBarHeight}px;
-  padding: 10px;
+  width: ${props => props.theme.sizes.bottomBarHeight}px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+
+  svg {
+    width: 1.2em;
+    height: 1.2em;
+    fill: ${props => props.theme.bgColors.white};
+  }
 `;
 
 class BottomBar extends React.Component {
@@ -51,8 +73,10 @@ class BottomBar extends React.Component {
     return (
       <Wrapper>
         <Link to="/">
-          <Icon icon={ICONS.ARROW_LEFT} />
-          Back to post list
+          <IconWrapper>
+            <Icon icon={ICONS.HOME} />
+          </IconWrapper>
+          <b>Home</b>
         </Link>
       </Wrapper>
     );

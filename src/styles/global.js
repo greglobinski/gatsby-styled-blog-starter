@@ -19,6 +19,7 @@ injectGlobal`
     "Helvetica Neue",
     "sans-seriff";
   }
+  
   *::-webkit-scrollbar {
     width: 6px;
   }

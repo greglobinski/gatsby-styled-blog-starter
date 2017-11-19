@@ -5,17 +5,17 @@ import Img from "gatsby-image";
 import styled, { keyframes } from "styled-components";
 
 const wrapperShowUp = keyframes`
-from {
-  width: 0;
-}
-to {
-  width: 100%;
-}
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 `;
 
 const Wrapper = styled.nav`
   animation-name: ${wrapperShowUp};
-  animation-duration: 0.2s;
+  animation-duration: 0.5s;
   display: ${props =>
     props.isAside ? (props.inTransition ? "block" : "none") : "block"};
   bottom: 0;
@@ -49,7 +49,22 @@ const Wrapper = styled.nav`
   }
 `;
 
+const headerShowUp = keyframes`
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
 const Header = styled.header`
+  animation-name: ${headerShowUp};
+  animation-duration: 0.7s;
+  display: ${props => (props.isAside ? "block" : "none")};
   position: absolute;
   top: 0;
   left: 0;
@@ -241,7 +256,7 @@ class PostsNavigator extends React.Component {
         isHidden={this.props.isHidden}
         welcomeIsRolledUp={this.props.welcomeIsRolledUp}
       >
-        <Header>List of Posts: </Header>
+        <Header isAside={this.props.isAside}>List of Posts: </Header>
         <List isAside={this.props.isAside}>
           {this.props.posts &&
             this.props.posts.map(post => {
