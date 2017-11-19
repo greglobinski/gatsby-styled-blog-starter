@@ -37,12 +37,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography.js`
-      }
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
@@ -79,3 +73,10 @@ module.exports = {
 };
 
 // what-input
+
+// {
+//       resolve: `gatsby-plugin-typography`,
+//       options: {
+//         pathToConfigModule: `src/utils/typography.js`
+//       }
+//     },
