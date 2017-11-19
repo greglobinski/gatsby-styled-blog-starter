@@ -13,7 +13,7 @@ to {
 }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.nav`
   animation-name: ${wrapperShowUp};
   animation-duration: 0.2s;
   display: ${props =>
@@ -33,7 +33,8 @@ const Wrapper = styled.div`
     props.isAside ? props.theme.sizes.postNavigatorAsideWidth : "100%"};
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.M}) {
-    padding-top: ${props => props.theme.sizes.topBarHeight + 18}px;
+    padding-top: ${props =>
+      props.isAside ? 32 : props => props.theme.sizes.topBarHeight + 18}px;
   }
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
     display: block;
@@ -46,6 +47,19 @@ const Wrapper = styled.div`
   &::-webkit-scrollbar-thumb {
     background-color: ${props => props.theme.bgColors.firstDark};
   }
+`;
+
+const Header = styled.header`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-weight: 300;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  padding-top: 0.8em;
+  font-size: 1.2em;
 `;
 
 const List = styled.div`
@@ -101,6 +115,7 @@ const Article = styled.article`
   animation-duration: 0.2s;
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
+    margin: ${props => (props.isAside ? "1.5rem 1.8rem" : "3rem 1.5rem 4rem")};
     a:first-child & {
     }
     a:last-child & {
@@ -201,7 +216,7 @@ const Picture = styled.div`
         !props.isAside
           ? `
       transform: rotateY(15deg) rotateX(-15deg) translateY(-20%);
-      box-shadow: 0 10px 50px -10px rgba(0,0,0,5);
+      box-shadow: 0 20px 10px -10px rgba(0,0,0,.2);
       height: 150%;`
           : ``};
     }
@@ -226,6 +241,7 @@ class PostsNavigator extends React.Component {
         isHidden={this.props.isHidden}
         welcomeIsRolledUp={this.props.welcomeIsRolledUp}
       >
+        <Header>List of Posts: </Header>
         <List isAside={this.props.isAside}>
           {this.props.posts &&
             this.props.posts.map(post => {

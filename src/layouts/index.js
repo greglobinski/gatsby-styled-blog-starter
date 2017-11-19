@@ -5,6 +5,7 @@ import Helmet from "react-helmet";
 import PostsNavigatorContainer from "../components/Navigator/PostsNavigatorContainer";
 import WelcomeScreenContainer from "../components/Welcome/WelcomeScreenContainer";
 import TopBarContainer from "../components/TopBar/TopBarContainer";
+import BottomBarContainer from "../components/BottomBar/BottomBarContainer";
 
 import "normalize.css";
 import globals from "../styles/global";
@@ -26,7 +27,7 @@ class Template extends React.Component {
     this.state = {
       posts: [],
       appInitialState: false,
-      navigatorIsAside: false,
+      navigatorIsAside: true,
       navigatorInTransition: false,
       welcomeIsRolledUp: true,
       welcomeInTransition: false,
@@ -129,6 +130,7 @@ class Template extends React.Component {
                 isHidden={this.state.navigatorIsHidden}
               />
             )}
+          {this.state.navigatorIsAside && <BottomBarContainer />}
         </Container>
       </ThemeProvider>
     );

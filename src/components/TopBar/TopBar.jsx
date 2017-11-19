@@ -23,6 +23,7 @@ const Wrapper = styled.header`
   position: absolute;
   right: 0;
   top: 0;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   z-index: 100;
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.M}) {

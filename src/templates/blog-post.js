@@ -7,9 +7,9 @@ const Wrapper = styled.main`
   background: ${props => props.theme.bgColors.white};
   bottom: 0;
   left: 0;
-  margin-top: ${props => props.theme.sizes.welcomeScreenRolledUpHeight};
+  margin-top: ${props => props.theme.sizes.topBarHeight}px;
   overflow: auto;
-  padding: 1.5rem 1.5rem 2.5rem;
+  padding: 1.5rem 1.5rem 5.5rem;
   position: absolute;
   right: 0;
   top: 0;
@@ -164,7 +164,7 @@ class BlogPostTemplate extends React.Component {
             </Meta>
           </Header>
           <Content dangerouslySetInnerHTML={{ __html: post.html }} />
-          <Footer />
+          <Footer>This is footer</Footer>
         </Article>
       </Wrapper>
     );

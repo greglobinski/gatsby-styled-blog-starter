@@ -34,7 +34,8 @@ const theme = {
     postNavigatorAsideWidth: "17rem",
     postArticleMaxWidth: "50rem",
     postNavigatorMaxWidth: "56rem",
-    topBarHeight: 44
+    topBarHeight: 44,
+    bottomBarHeight: 44
   }
 };
 
