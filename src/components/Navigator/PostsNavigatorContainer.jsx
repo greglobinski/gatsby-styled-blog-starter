@@ -13,6 +13,7 @@ class PostsNavigatorContainer extends React.Component {
         linkOnClick={this.props.linkOnClick}
         isAside={this.props.isAside}
         inTransition={this.props.inTransition}
+        isHidden={this.props.isHidden}
       />
     );
   }

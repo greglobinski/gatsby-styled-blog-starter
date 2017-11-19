@@ -55,11 +55,11 @@ class Template extends React.Component {
         navigatorIsAside: true,
         navigatorInTransition: true
       }));
-      this.endNavigatorTransition();
+      this.endNavigatorTransition(true);
     }
   }
 
-  endNavigatorTransition() {
+  endNavigatorTransition(hidden) {
     let isWideScreen =
       typeof window !== "undefined"
         ? document.documentElement.clientWidth > 776
@@ -69,7 +69,7 @@ class Template extends React.Component {
       this.setState(() => ({
         navigatorInTransition: false
       }));
-    }, isWideScreen ? 300 : 10);
+    }, 500);
   }
 
   toggleWelcomeScreen(e) {
@@ -119,6 +119,7 @@ class Template extends React.Component {
                 linkOnClick={this.navigatorLinkOnClik}
                 isAside={this.state.navigatorIsAside}
                 inTransition={this.state.navigatorInTransition}
+                isHidden={this.state.navigatorIsHidden}
               />
             )}
         </Container>

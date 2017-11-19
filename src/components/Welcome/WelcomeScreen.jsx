@@ -13,6 +13,10 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   min-height: ${props => (props.appInitialState ? "100vh" : "0")};
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1), background 0s;
   z-index: 100;
 

@@ -4,21 +4,22 @@ import get from "lodash/get";
 import styled from "styled-components";
 
 const Wrapper = styled.main`
-  padding: 1.5rem 1.5rem 2.5rem;
   background: ${props => props.theme.bgColors.white};
+  bottom: 0;
+  left: 0;
+  margin-top: ${props => props.theme.sizes.welcomeScreenRolledUpHeight};
+  overflow: auto;
+  padding: 1.5rem 1.5rem 2.5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.M}) {
     padding: 2rem 3.5rem 2.5rem;
   }
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
-    bottom: 0;
     left: ${props => props.theme.sizes.postNavigatorAsideWidth};
-    margin-top: ${props => props.theme.sizes.welcomeScreenRolledUpHeight};
-    overflow: auto;
     padding: 2.5rem 3.5rem 3.5rem;
-    position: absolute;
-    right: 0;
-    top: 0;
   }
 `;
 

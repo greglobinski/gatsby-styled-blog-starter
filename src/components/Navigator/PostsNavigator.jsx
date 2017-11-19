@@ -4,26 +4,37 @@ import get from "lodash/get";
 import Img from "gatsby-image";
 import styled, { keyframes } from "styled-components";
 
-const Wrapper = styled.div`
-  background: ${props => props.theme.bgColors.first};
-  overflow: auto;
-  position: relative;
-  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+const wrapperShowUp = keyframes`
+from {
+  width: 0;
+}
+to {
   width: 100%;
+}
+`;
+
+const Wrapper = styled.div`
+  animation-name: ${wrapperShowUp};
+  animation-duration: 0.2s;
+  display: ${props =>
+    props.isAside ? (props.inTransition ? "block" : "none") : "block"};
+  bottom: 0;
+  background: ${props => props.theme.bgColors.first};
+  left: ${props =>
+    props.isAside
+      ? props => `-${props.theme.sizes.postNavigatorAsideWidth}`
+      : "0"};
+  padding-top: ${props => props.theme.sizes.welcomeScreenRolledUpHeight};
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  width: ${props =>
+    props.isAside ? props.theme.sizes.postNavigatorAsideWidth : "100%"};
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
-    bottom: 0;
+    display: block;
     left: 0;
-    padding-top: ${props =>
-      !props.isAside
-        ? props => props.theme.sizes.welcomeScreenRolledUpHeight
-        : "0"};
-    position: absolute;
-    top: 0;
-    width: ${props =>
-      props.isAside
-        ? props => props.theme.sizes.postNavigatorAsideWidth
-        : "100%"};
   }
 `;
 
@@ -223,6 +234,8 @@ class PostsNavigator extends React.Component {
     return (
       <Wrapper
         isAside={this.props.isAside}
+        inTransition={this.props.inTransition}
+        isHidden={this.props.isHidden}
         welcomeIsRolledUp={this.props.welcomeIsRolledUp}
       >
         <List isAside={this.props.isAside}>

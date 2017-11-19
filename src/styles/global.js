@@ -4,6 +4,7 @@ injectGlobal`
 
   * {
     box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
   }
   body {
     font-family: "-apple-system",
