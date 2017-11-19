@@ -30,8 +30,22 @@ module.exports = class HTML extends React.Component {
           {css}
         </head>
         <body {...this.props.bodyAttributes}>
+          <div
+            style={{
+              position: "absolute",
+              top: "0",
+              left: "0",
+              right: "0",
+              bottom: "50%",
+              background: "red",
+              zIndex: "1000"
+            }}
+          >
+            Hi there
+          </div>
           {this.props.preBodyComponents}
           <div
+            style={{ display: "none" }}
             key={`body`}
             id="___gatsby"
             dangerouslySetInnerHTML={{ __html: this.props.body }}
