@@ -6,7 +6,6 @@ injectGlobal`
     box-sizing: border-box;
   }
   body {
-    background: #7F5D80;
     font-family: "-apple-system",
     "BlinkMacSystemFont",
     "Segoe UI",

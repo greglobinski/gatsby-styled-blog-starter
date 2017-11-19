@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   background: ${props => props.theme.bgColors.first};
   overflow: auto;
   position: relative;
-  transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
   width: 100%;
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
