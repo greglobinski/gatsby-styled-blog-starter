@@ -14,6 +14,7 @@ class PostsNavigatorContainer extends React.Component {
         isAside={this.props.isAside}
         inTransition={this.props.inTransition}
         isHidden={this.props.isHidden}
+        appInit={this.props.appInit}
       />
     );
   }

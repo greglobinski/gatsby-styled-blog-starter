@@ -27,7 +27,7 @@ class Template extends React.Component {
     this.toggleWelcomeScreen = this.toggleWelcomeScreen.bind(this);
     this.state = {
       posts: [],
-      appInitialState: false,
+      appInit: true,
       navigatorIsAside: false,
       navigatorInTransition: false,
       welcomeIsRolledUp: true,
@@ -35,6 +35,8 @@ class Template extends React.Component {
       windowHeight: 0
     };
   }
+
+  componentDidMount() {}
 
   componentDidUpdate() {}
 
@@ -45,9 +47,9 @@ class Template extends React.Component {
   }
 
   updateNavigatorIsAside(val) {
-    this.setState(() => ({
+    this.setState(prevState => ({
       navigatorIsAside: val,
-      navigatorInTransition: true
+      navigatorInTransition: prevState.appInit ? false : true
     }));
     this.endNavigatorTransition();
   }
@@ -56,7 +58,8 @@ class Template extends React.Component {
     if (!this.state.navigatorIsAside) {
       this.setState(() => ({
         navigatorIsAside: true,
-        navigatorInTransition: true
+        navigatorInTransition: true,
+        appInit: false
       }));
       this.endNavigatorTransition(true);
     }
@@ -129,6 +132,7 @@ class Template extends React.Component {
                 isAside={this.state.navigatorIsAside}
                 inTransition={this.state.navigatorInTransition}
                 isHidden={this.state.navigatorIsHidden}
+                appInit={this.state.appInit}
               />
             )}
           {this.state.navigatorIsAside && <BottomBarContainer />}

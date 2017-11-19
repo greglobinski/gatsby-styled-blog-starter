@@ -164,7 +164,6 @@ class WelcomeScreen extends React.Component {
           this.screenHeader = header;
         }}
         navigatorIsAside={this.props.navigatorIsAside}
-        appInitialState={this.props.appInitialState}
       >
         {this.props.isRolledUp && (
           <Header>
