@@ -33,7 +33,8 @@ const theme = {
     welcomeScreenRolledUpHeight: "50px",
     postNavigatorAsideWidth: "17rem",
     postArticleMaxWidth: "50rem",
-    postNavigatorMaxWidth: "56rem"
+    postNavigatorMaxWidth: "56rem",
+    topBarHeight: 44
   }
 };
 

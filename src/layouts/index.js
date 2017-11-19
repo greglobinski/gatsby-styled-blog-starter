@@ -4,6 +4,7 @@ import styled, { ThemeProvider } from "styled-components";
 import Helmet from "react-helmet";
 import PostsNavigatorContainer from "../components/Navigator/PostsNavigatorContainer";
 import WelcomeScreenContainer from "../components/Welcome/WelcomeScreenContainer";
+import TopBarContainer from "../components/TopBar/TopBarContainer";
 
 import "normalize.css";
 import globals from "../styles/global";
@@ -100,6 +101,11 @@ class Template extends React.Component {
           <Helmet>
             <html lang="en" />
           </Helmet>
+          <TopBarContainer
+            navigatorIsAside={this.state.navigatorIsAside}
+            btnOnClick={this.toggleWelcomeScreen}
+          />
+          {/*
           <WelcomeScreenContainer
             navigatorIsAside={this.state.navigatorIsAside}
             appInitialState={this.state.appInitialState}
@@ -107,6 +113,7 @@ class Template extends React.Component {
             inTransition={this.state.welcomeInTransition}
             btnOnClick={this.toggleWelcomeScreen}
           />
+          */}
           {children({
             ...this.props,
             updatePostsData,

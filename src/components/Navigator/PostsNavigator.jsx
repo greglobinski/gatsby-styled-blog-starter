@@ -24,7 +24,7 @@ const Wrapper = styled.div`
     props.isAside
       ? props => `-${props.theme.sizes.postNavigatorAsideWidth}`
       : "0"};
-  padding-top: ${props => props.theme.sizes.welcomeScreenRolledUpHeight};
+  padding-top: ${props => props.theme.sizes.topBarHeight}px;
   overflow: auto;
   position: absolute;
   top: 0;
@@ -32,9 +32,19 @@ const Wrapper = styled.div`
   width: ${props =>
     props.isAside ? props.theme.sizes.postNavigatorAsideWidth : "100%"};
 
+  @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.M}) {
+    padding-top: ${props => props.theme.sizes.topBarHeight + 18}px;
+  }
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
     display: block;
     left: 0;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${props => props.theme.bgColors.first};
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: ${props => props.theme.bgColors.firstDark};
   }
 `;
 
@@ -69,26 +79,6 @@ const List = styled.div`
     &:hover {
       color: inherit;
     }
-
-    &::after {
-      ${props =>
-        !props.isAside
-          ? `content: "";`
-          : ``} border-bottom: 2px solid ${props =>
-          props.theme.bgColors.firstDark};
-      bottom: ${props => (props.isAside ? "-1.7em" : "-3.1em")};
-      height: 0;
-      left: 50%;
-      margin-left: ${props => (props.isAside ? "-2rem" : "-3rem")};
-      position: absolute;
-      width: ${props => (props.isAside ? "4rem" : "6rem")};
-    }
-
-    &:last-child {
-      &::after {
-        content: none;
-      }
-    }
   }
 `;
 
@@ -104,7 +94,7 @@ const articleShowUp = keyframes`
 const Article = styled.article`
   display: ${props => (props.inTransition ? "none" : "block")};
   color: ${props => props.theme.fgColors.white};
-  margin: ${props => (props.isAside ? "1.5rem 1.8rem" : "4rem 1.5rem 6rem")};
+  margin: ${props => (props.isAside ? "1.5rem 1.8rem" : "2rem 1.5rem 3rem")};
   position: relative;
   perspective: 1000px;
   animation-name: ${articleShowUp};
@@ -112,10 +102,8 @@ const Article = styled.article`
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
     a:first-child & {
-      margin-top: 4rem;
     }
     a:last-child & {
-      margin-bottom: 5rem;
     }
   }
 `;
@@ -192,7 +180,7 @@ const Picture = styled.div`
     }
   }
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.S}) {
-    box-shadow: ${props => (!props.isAside ? "0 5px 2px rgba(0,0,0,.2)" : "")};
+    box-shadow: ${props => (!props.isAside ? "0 2px 1px rgba(0,0,0,.2)" : "")};
     > .gatsby-image-outer-wrapper {
       width: 150%;
     }
