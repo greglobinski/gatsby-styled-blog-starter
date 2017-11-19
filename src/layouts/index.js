@@ -5,6 +5,7 @@ import Helmet from "react-helmet";
 import PostsNavigatorContainer from "../components/Navigator/PostsNavigatorContainer";
 import WelcomeScreenContainer from "../components/Welcome/WelcomeScreenContainer";
 
+import "normalize.css";
 import globals from "../styles/global";
 import theme from "../styles/theme";
 import styles from "../styles/base";

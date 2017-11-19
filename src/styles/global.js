@@ -7,6 +7,17 @@ injectGlobal`
   }
   body {
     background: #7F5D80;
+    font-family: "-apple-system",
+    "BlinkMacSystemFont",
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
+    "sans-seriff";
   }
   *::-webkit-scrollbar {
     width: 6px;
