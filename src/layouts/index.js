@@ -28,7 +28,7 @@ class Template extends React.Component {
     this.state = {
       posts: [],
       appInitialState: false,
-      navigatorIsAside: true,
+      navigatorIsAside: false,
       navigatorInTransition: false,
       welcomeIsRolledUp: true,
       welcomeInTransition: false,

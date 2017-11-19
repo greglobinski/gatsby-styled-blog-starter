@@ -268,25 +268,26 @@ class PostsNavigator extends React.Component {
                   to={post.node.frontmatter.path}
                   onClick={this.props.linkOnClick}
                 >
-                  {!this.props.inTransition && (
-                    <Article isAside={this.props.isAside}>
-                      <Picture isAside={this.props.isAside}>
-                        <Img
-                          sizes={post.node.frontmatter.cover.children[0].sizes}
-                        />
-                      </Picture>
+                  <Article
+                    isAside={this.props.isAside}
+                    inTransition={this.props.inTransition}
+                  >
+                    <Picture isAside={this.props.isAside}>
+                      <Img
+                        sizes={post.node.frontmatter.cover.children[0].sizes}
+                      />
+                    </Picture>
 
-                      <Title isAside={this.props.isAside}>
-                        {post.node.frontmatter.title}
-                      </Title>
+                    <Title isAside={this.props.isAside}>
+                      {post.node.frontmatter.title}
+                    </Title>
 
-                      {!this.props.isAside && (
-                        <SubTitle isAside={this.props.isAside}>
-                          {post.node.frontmatter.subTitle}
-                        </SubTitle>
-                      )}
-                    </Article>
-                  )}
+                    {!this.props.isAside && (
+                      <SubTitle isAside={this.props.isAside}>
+                        {post.node.frontmatter.subTitle}
+                      </SubTitle>
+                    )}
+                  </Article>
                 </Link>
               );
             })}
