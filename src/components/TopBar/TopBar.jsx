@@ -2,7 +2,7 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import Link from "gatsby-link";
 import Icon from "../Objects/Icon.jsx";
-import { ICONS } from "../../constants";
+import { ICONS } from "../../utils/constants";
 
 const Wrapper = styled.header`
   align-items: center;
