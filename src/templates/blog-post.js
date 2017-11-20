@@ -3,6 +3,7 @@ import Helmet from "react-helmet";
 import get from "lodash/get";
 import styled from "styled-components";
 const config = require("../utils/config");
+import Seo from "../components/Other/Seo";
 
 const Wrapper = styled.main`
   background: ${props => props.theme.post.backgrounds.wrapper};
@@ -155,6 +156,7 @@ class BlogPostTemplate extends React.Component {
     return (
       <Wrapper>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
+        <Seo postPath={post.frontmatter.path} postNode={post} postSEO />
         <Article>
           <Header>
             <Title>{post.frontmatter.title}</Title>
@@ -188,6 +190,13 @@ export const pageQuery = graphql`
         title
         subTitle
         date(formatString: "MMMM DD, YYYY")
+        cover {
+          childImageSharp {
+            resize(width: 300) {
+              src
+            }
+          }
+        }
       }
     }
   }

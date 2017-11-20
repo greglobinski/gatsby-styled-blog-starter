@@ -13,7 +13,7 @@ export default class Seo extends Component {
     if (postSEO) {
       const postMeta = postNode.frontmatter;
       title = postMeta.title;
-      description = postNode.excerpt;
+      description = postNode.subTitle;
       image = postMeta.cover.childImageSharp.resize.src;
       postURL = config.siteUrl + realPrefix + postPath;
     } else {
@@ -29,7 +29,7 @@ export default class Seo extends Component {
         "@type": "WebSite",
         url: blogURL,
         name: title,
-        alternateName: config.siteTitleAlt ? config.siteTitleAlt : ""
+        alternateName: config.siteLongTitle ? config.siteLongTitle : ""
       }
     ];
     if (postSEO) {

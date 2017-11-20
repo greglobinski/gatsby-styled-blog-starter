@@ -76,7 +76,7 @@ class Template extends React.Component {
       this.setState(() => ({
         navigatorInTransition: false
       }));
-    }, 500);
+    }, 200);
   }
 
   toggleWelcomeScreen(e) {

@@ -40,7 +40,7 @@ const Wrapper = styled.header`
 const Logo = styled.span`
   display: block;
   font-size: 1em;
-  font-weight: 300;
+  font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
   margin-left: 1rem;
@@ -59,12 +59,13 @@ const OpenBtn = styled.button`
   border: none;
   color: white;
   cursor: pointer;
-  fill: currentColor;
   padding: 10px;
   transition: all 1s;
 
   > span {
     background: ${props => props.theme.topBar.backgrounds.icon};
+    color: ${props => props.theme.topBar.colors.link};
+    fill: currentColor;
     border-radius: 100%;
     display: block;
     height: 24px;
