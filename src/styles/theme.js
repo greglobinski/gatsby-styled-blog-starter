@@ -1,4 +1,19 @@
+const colors = {
+  first: "#7F5D80",
+  firstLight: "#AF95B0",
+  firstSuperLight: "#F4F0F4",
+  firstDark: "#563E57",
+  bright: "#ffffff",
+  light: "#f3f3f3",
+  middle: "#666666",
+  dark: "#333333",
+  superDark: "#111111"
+};
+
 const theme = {
+  colors: {
+    first: colors.first
+  },
   fgColors: {
     first: "#7F5D80",
     firstSuperLight: "#F4F0F4",
@@ -6,11 +21,42 @@ const theme = {
     third: "#F55E50",
     gray: "#777",
     darkGray: "#444",
-    white: "#fff",
-    headBold: "#666",
-    headThin: "#111",
-    text: "#333",
-    lightText: "#666"
+    white: "#fff"
+  },
+  navigator: {
+    title: colors.firstSuperLight
+  },
+  post: {
+    colors: {
+      text: colors.dark,
+      meta: colors.middle,
+      bold: colors.middle,
+      title: colors.middle,
+      subTitle: colors.superDark,
+      link: colors.first,
+      linkHover: colors.first,
+      blockquoteFrame: colors.light
+    },
+    backgrounds: {
+      wrapper: colors.bright,
+      meta: colors.light
+    },
+    sizes: {
+      maxWidth: "50rem"
+    }
+  },
+  bottomBar: {
+    colors: {
+      link: colors.bright,
+      icon: colors.firstSuperLight
+    },
+    backgrounds: {
+      wrapper: colors.first,
+      icon: colors.firstDark
+    },
+    sizes: {
+      height: 44 //pixels
+    }
   },
   bgColors: {
     first: "#7F5D80",
@@ -40,3 +86,9 @@ const theme = {
 };
 
 export default theme;
+
+// headBold: "#666",
+//     headThin: "#111",
+//     text: "#333",
+//     lightText: "#666",
+//     boldText: "#666",

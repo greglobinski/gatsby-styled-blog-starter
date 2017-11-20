@@ -136,7 +136,7 @@ const Article = styled.article`
 `;
 
 const Title = styled.h2`
-  color: ${props => props.theme.fgColors.firstSuperLight};
+  color: ${props => props.theme.navigator.title};
   font-weight: ${props => (props.isAside ? "400" : "700")};
   font-size: ${props => (props.isAside ? ".85em" : "1.3em")};
   letter-spacing: ${props => (props.isAside ? "0" : "-.04em")};

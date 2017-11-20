@@ -11,7 +11,7 @@ const wrapperShowUp = keyframes`
   50% {
     left: -100%;
   }
-  100% {
+  100% { 
     left: 0;
   }
 `;
@@ -19,14 +19,14 @@ const wrapperShowUp = keyframes`
 const Wrapper = styled.footer`
   animation-name: ${wrapperShowUp};
   animation-duration: 1s;
-  background: ${props => props.theme.bgColors.first};
+  background: ${props => props.theme.bottomBar.backgrounds.wrapper};
   bottom: 0;
-  height: ${props => props.theme.sizes.bottomBarHeight}px;
+  height: ${props => props.theme.bottomBar.sizes.height}px;
   left: 0;
   position: fixed;
 
   a {
-    color: ${props => props.theme.fgColors.white};
+    color: ${props => props.theme.bottomBar.colors.link};
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -51,7 +51,7 @@ const Wrapper = styled.footer`
 `;
 
 const IconWrapper = styled.span`
-  background: ${props => props.theme.bgColors.firstDark};
+  background: ${props => props.theme.bottomBar.backgrounds.icon};
   display: block;
   height: ${props => props.theme.sizes.bottomBarHeight}px;
   width: ${props => props.theme.sizes.bottomBarHeight}px;
@@ -64,7 +64,7 @@ const IconWrapper = styled.span`
   svg {
     width: 1.2em;
     height: 1.2em;
-    fill: ${props => props.theme.bgColors.white};
+    fill: ${props => props.theme.bottomBar.colors.icon};
   }
 `;
 

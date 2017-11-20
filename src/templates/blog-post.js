@@ -4,7 +4,7 @@ import get from "lodash/get";
 import styled from "styled-components";
 
 const Wrapper = styled.main`
-  background: ${props => props.theme.bgColors.white};
+  background: ${props => props.theme.post.backgrounds.wrapper};
   bottom: 0;
   left: 0;
   margin-top: ${props => props.theme.sizes.topBarHeight}px;
@@ -24,14 +24,14 @@ const Wrapper = styled.main`
 `;
 
 const Article = styled.article`
-  max-width: ${props => props.theme.sizes.postArticleMaxWidth};
+  max-width: ${props => props.theme.post.sizes.maxWidth};
   margin: 0 auto;
 `;
 
 const Header = styled.header``;
 
 const Title = styled.h1`
-  color: ${props => props.theme.fgColors.headBold};
+  color: ${props => props.theme.post.colors.title};
   font-size: 1.8em;
   font-weight: 700;
   line-height: 1.1;
@@ -49,7 +49,7 @@ const Title = styled.h1`
 `;
 
 const SubTitle = styled.h2`
-  color: ${props => props.theme.fgColors.head};
+  color: ${props => props.theme.post.colors.subTitle};
   font-size: 1.2em;
   font-weight: 300;
   line-height: 1.15;
@@ -73,14 +73,14 @@ const Meta = styled.div`
 `;
 
 const PostDate = styled.span`
-  background: ${props => props.theme.bgColors.grayLight};
-  border-left: 1px solid ${props => props.theme.fgColors.first};
-  color: ${props => props.theme.fgColors.lightText};
+  background: ${props => props.theme.post.backgrounds.meta};
+  border-left: 1px solid ${props => props.theme.colors.first};
+  color: ${props => props.theme.post.colors.meta};
   padding: 0.3em 0.7em 0.4em;
 `;
 
 const Content = styled.div`
-  color: ${props => props.theme.fgColors.text};
+  color: ${props => props.theme.post.colors.text};
   line-height: 1.5;
 
   .gatsby-resp-image-link {
@@ -89,7 +89,7 @@ const Content = styled.div`
 
   h2,
   h3 {
-    color: ${props => props.theme.fgColors.headThin};
+    color: ${props => props.theme.post.colors.subTitle};
     font-size: 1.8em;
     font-weight: 300;
     line-height: 1.15;
@@ -102,7 +102,7 @@ const Content = styled.div`
 
     strong {
       letter-spacing: -0.01em;
-      color: ${props => props.theme.fgColors.lightText};
+      color: ${props => props.theme.post.colors.bold};
     }
 
     @media screen and (min-width: ${props =>
@@ -112,7 +112,7 @@ const Content = styled.div`
   }
 
   blockquote {
-    border: 5px solid #eee;
+    border: 5px solid ${props => props.theme.post.colors.blockquoteFrame};
     font-style: italic;
     margin: 2.5em 0;
     padding: 1em 2em;
@@ -124,7 +124,7 @@ const Content = styled.div`
 
     &::after,
     &::before {
-      background: white;
+      background: ${props => props.theme.post.backgrounds.wrapper};
       content: "";
       height: 5px;
       left: 50%;
