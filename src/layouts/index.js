@@ -132,7 +132,6 @@ class Template extends React.Component {
                 isAside={this.state.navigatorIsAside}
                 inTransition={this.state.navigatorInTransition}
                 isHidden={this.state.navigatorIsHidden}
-                appInit={this.state.appInit}
               />
             )}
           {this.state.navigatorIsAside && <BottomBarContainer />}

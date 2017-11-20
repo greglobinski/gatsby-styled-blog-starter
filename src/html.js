@@ -31,6 +31,7 @@ module.exports = class HTML extends React.Component {
         </head>
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
+
           <div
             key={`body`}
             id="___gatsby"

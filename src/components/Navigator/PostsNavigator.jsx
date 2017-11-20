@@ -14,9 +14,6 @@ const wrapperShowUp = keyframes`
 `;
 
 const Wrapper = styled.nav`
-  animation-name: ${wrapperShowUp};
-  animation-duration: ${props => (props.appInit ? "0" : "0.5s")};
-
   display: ${props =>
     props.isAside ? (props.inTransition ? "block" : "none") : "block"};
   bottom: 0;
@@ -29,7 +26,6 @@ const Wrapper = styled.nav`
   overflow: auto;
   position: absolute;
   top: 0;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
   width: ${props =>
     props.isAside ? props.theme.sizes.postNavigatorAsideWidth : "100%"};
 
@@ -256,7 +252,6 @@ class PostsNavigator extends React.Component {
         inTransition={this.props.inTransition}
         isHidden={this.props.isHidden}
         welcomeIsRolledUp={this.props.welcomeIsRolledUp}
-        appInit={this.props.appInit}
       >
         <Header isAside={this.props.isAside}>List of Posts: </Header>
         <List isAside={this.props.isAside}>
