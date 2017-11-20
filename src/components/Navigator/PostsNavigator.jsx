@@ -17,21 +17,21 @@ const Wrapper = styled.nav`
   display: ${props =>
     props.isAside ? (props.inTransition ? "block" : "none") : "block"};
   bottom: 0;
-  background: ${props => props.theme.bgColors.first};
+  background: ${props => props.theme.navigator.backgrounds.wrapper};
   left: ${props =>
     props.isAside
-      ? props => `-${props.theme.sizes.postNavigatorAsideWidth}`
+      ? props => `-${props.theme.navigator.sizes.asideWidth}`
       : "0"};
-  padding-top: ${props => props.theme.sizes.topBarHeight}px;
+  padding-top: ${props => props.theme.topBar.sizes.height}px;
   overflow: auto;
   position: absolute;
   top: 0;
   width: ${props =>
-    props.isAside ? props.theme.sizes.postNavigatorAsideWidth : "100%"};
+    props.isAside ? props.theme.navigator.sizes.asideWidth : "100%"};
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.M}) {
     padding-top: ${props =>
-      props.isAside ? 32 : props => props.theme.sizes.topBarHeight + 18}px;
+      props.isAside ? 32 : props => props.theme.topBar.sizes.height + 18}px;
   }
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
     display: block;
@@ -39,10 +39,10 @@ const Wrapper = styled.nav`
   }
 
   &::-webkit-scrollbar-track {
-    background: ${props => props.theme.bgColors.first};
+    background: ${props => props.theme.navigator.colors.scrollTrack};
   }
   &::-webkit-scrollbar-thumb {
-    background-color: ${props => props.theme.bgColors.firstDark};
+    background-color: ${props => props.theme.navigator.colors.scrollThumb};
   }
 `;
 
@@ -76,7 +76,7 @@ const Header = styled.header`
 
 const List = styled.div`
   list-style: none;
-  max-width: ${props => props.theme.sizes.postNavigatorMaxWidth};
+  max-width: ${props => props.theme.navigator.sizes.maxWidth};
   margin: 0;
   margin-left: auto;
   margin-right: auto;
@@ -119,7 +119,6 @@ const articleShowUp = keyframes`
 
 const Article = styled.article`
   display: ${props => (props.inTransition ? "none" : "block")};
-  color: ${props => props.theme.fgColors.white};
   margin: ${props => (props.isAside ? "1.5rem 1.8rem" : "2rem 1.5rem 3rem")};
   position: relative;
   perspective: 1000px;
@@ -136,7 +135,7 @@ const Article = styled.article`
 `;
 
 const Title = styled.h2`
-  color: ${props => props.theme.navigator.title};
+  color: ${props => props.theme.navigator.colors.title};
   font-weight: ${props => (props.isAside ? "400" : "700")};
   font-size: ${props => (props.isAside ? ".85em" : "1.3em")};
   letter-spacing: ${props => (props.isAside ? "0" : "-.04em")};
@@ -164,11 +163,12 @@ const Title = styled.h2`
   }
 
   a:hover & {
-    color: ${props => props.theme.fgColors.white};
+    color: ${props => props.theme.navigator.colors.linkHover};
   }
 `;
 
 const SubTitle = styled.h3`
+  color: ${props => props.theme.navigator.colors.subTitle};
   font-size: 1.1em;
   font-weight: 300;
   line-height: 1.2;

@@ -53,8 +53,8 @@ const Wrapper = styled.footer`
 const IconWrapper = styled.span`
   background: ${props => props.theme.bottomBar.backgrounds.icon};
   display: block;
-  height: ${props => props.theme.sizes.bottomBarHeight}px;
-  width: ${props => props.theme.sizes.bottomBarHeight}px;
+  height: ${props => props.theme.bottomBar.sizes.height}px;
+  width: ${props => props.theme.bottomBar.sizes.height}px;
   display: flex;
   flex-direction: row;
   justify-content: center;

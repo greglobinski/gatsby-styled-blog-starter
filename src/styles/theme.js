@@ -11,25 +11,27 @@ const colors = {
 };
 
 const theme = {
-  colors: {
-    first: colors.first
-  },
-  fgColors: {
-    first: "#7F5D80",
-    firstSuperLight: "#F4F0F4",
-    second: "#F47405",
-    third: "#F55E50",
-    gray: "#777",
-    darkGray: "#444",
-    white: "#fff"
-  },
   navigator: {
-    title: colors.firstSuperLight
+    colors: {
+      title: colors.firstSuperLight,
+      subTitle: colors.bright,
+      scrollTrack: colors.first,
+      scrollThumb: colors.firstDark,
+      linkHover: colors.bright
+    },
+    sizes: {
+      asideWidth: "17rem",
+      maxWidth: "56rem"
+    },
+    backgrounds: {
+      wrapper: colors.first
+    }
   },
   post: {
     colors: {
       text: colors.dark,
       meta: colors.middle,
+      metaBorder: colors.first,
       bold: colors.middle,
       title: colors.middle,
       subTitle: colors.superDark,
@@ -58,15 +60,19 @@ const theme = {
       height: 44 //pixels
     }
   },
-  bgColors: {
-    first: "#7F5D80",
-    firstDark: "#563E57",
-    firstLight: "#AF95B0",
-    second: "#97BE10", //"#9FC910",
-    white: "#fff",
-    grayLight: "#eee",
-    dark: "#999",
-    black: "#333"
+  topBar: {
+    colors: {
+      link: colors.bright,
+      linkPost: colors.first
+    },
+    backgrounds: {
+      wrapper: colors.firstLight,
+      wrapperPost: colors.bright,
+      icon: colors.first
+    },
+    sizes: {
+      height: 44 //pixels
+    }
   },
   mediaQueryTresholds: {
     XL: "65rem",
@@ -74,21 +80,7 @@ const theme = {
     M: "37rem",
     S: "28rem",
     XS: "21rem"
-  },
-  sizes: {
-    welcomeScreenRolledUpHeight: "50px",
-    postNavigatorAsideWidth: "17rem",
-    postArticleMaxWidth: "50rem",
-    postNavigatorMaxWidth: "56rem",
-    topBarHeight: 44,
-    bottomBarHeight: 44
   }
 };
 
 export default theme;
-
-// headBold: "#666",
-//     headThin: "#111",
-//     text: "#333",
-//     lightText: "#666",
-//     boldText: "#666",

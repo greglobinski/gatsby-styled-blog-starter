@@ -8,8 +8,8 @@ const Wrapper = styled.header`
   align-items: center;
   background: ${props =>
     props.navigatorIsAside
-      ? props => props.theme.bgColors.white
-      : props => props.theme.bgColors.firstLight};
+      ? props => props.theme.topBar.backgrounds.wrapperPost
+      : props => props.theme.topBar.backgrounds.wrapper};
   box-shadow: ${props =>
     props.navigatorIsAside
       ? "0 1px 0px rgba(2, 2, 0, 0.05)"
@@ -17,7 +17,7 @@ const Wrapper = styled.header`
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
-  height: ${props => props.theme.sizes.topBarHeight}px;
+  height: ${props => props.theme.topBar.sizes.height}px;
   justify-content: space-between;
   left: 0;
   position: absolute;
@@ -27,12 +27,12 @@ const Wrapper = styled.header`
   z-index: 100;
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.M}) {
-    height: ${props => props.theme.sizes.topBarHeight + 12}px;
+    height: ${props => props.theme.topBar.sizes.height + 12}px;
   }
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
     left: ${props =>
       props.navigatorIsAside
-        ? props => props.theme.sizes.postNavigatorAsideWidth
+        ? props => props.theme.navigator.sizes.asideWidth
         : "0"};
   }
 `;
@@ -49,25 +49,8 @@ const Logo = styled.span`
     text-decoration: none;
     color: ${props =>
       props.navigatorIsAside
-        ? props => props.theme.fgColors.first
-        : props => props.theme.fgColors.white};
-
-    & > b {
-      background: ${props => props.theme.fgColors.second};
-      color: ${props => props.theme.fgColors.white};
-      display: inline-block;
-      border-radius: 10%;
-      width: 1em;
-      height: 1em;
-      transform: rotate(10deg);
-      text-align: center;
-      font-weight: 700;
-      z-index: -1;
-    }
-
-    > b:first-child {
-      transform: rotate(-15deg);
-    }
+        ? props => props.theme.topBar.colors.linkPost
+        : props => props.theme.topBar.colors.link};
   }
 `;
 
@@ -81,7 +64,7 @@ const OpenBtn = styled.button`
   transition: all 1s;
 
   > span {
-    background: ${props => props.theme.fgColors.first};
+    background: ${props => props.theme.topBar.backgrounds.icon};
     border-radius: 100%;
     display: block;
     height: 24px;

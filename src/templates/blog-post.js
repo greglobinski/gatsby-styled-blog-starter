@@ -7,7 +7,7 @@ const Wrapper = styled.main`
   background: ${props => props.theme.post.backgrounds.wrapper};
   bottom: 0;
   left: 0;
-  margin-top: ${props => props.theme.sizes.topBarHeight}px;
+  margin-top: ${props => props.theme.topBar.sizes.height}px;
   overflow: auto;
   padding: 1.5rem 1.5rem 5.5rem;
   position: absolute;
@@ -18,7 +18,7 @@ const Wrapper = styled.main`
     padding: 2rem 3.5rem 2.5rem;
   }
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
-    left: ${props => props.theme.sizes.postNavigatorAsideWidth};
+    left: ${props => props.theme.navigator.sizes.asideWidth};
     padding: 2.5rem 3.5rem 3.5rem;
   }
 `;
@@ -74,7 +74,7 @@ const Meta = styled.div`
 
 const PostDate = styled.span`
   background: ${props => props.theme.post.backgrounds.meta};
-  border-left: 1px solid ${props => props.theme.colors.first};
+  border-left: 1px solid ${props => props.theme.post.colors.metaBorder};
   color: ${props => props.theme.post.colors.meta};
   padding: 0.3em 0.7em 0.4em;
 `;
@@ -145,7 +145,6 @@ const Footer = styled.footer``;
 class BlogPostTemplate extends React.Component {
   componentWillMount() {
     const posts = get(this, "props.data.allMarkdownRemark.edges");
-    //this.props.updateLayoutFunction(posts)
   }
 
   render() {
