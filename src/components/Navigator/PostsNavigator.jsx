@@ -50,7 +50,7 @@ const headerShowUp = keyframes`
   0% {
     opacity: 0;
   }
-  70% {
+  50% {
     opacity: 0;
   }
   100% {
@@ -124,7 +124,7 @@ const Article = styled.article`
   position: relative;
   perspective: 1000px;
   animation-name: ${articleShowUp};
-  animation-duration: 0.2s;
+  animation-duration: 0.5s;
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
     margin: ${props => (props.isAside ? "1.5rem 1.8rem" : "3rem 1.5rem 4rem")};
@@ -144,6 +144,7 @@ const Title = styled.h2`
   margin: 0;
   opacity: ${props => (props.inTransition ? "0" : "1")};
   padding-left: 35%;
+  transition: all 0.5s;
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.S}) {
     padding-left: ${props => (!props.isAside ? "33%" : "")};
