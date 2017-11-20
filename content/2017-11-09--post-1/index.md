@@ -1,7 +1,7 @@
 ---
 title: Show me the result, do not force me to look for it
 subTitle: How pCloud let me exclude 
-date: "2015-05-01T22:12:03.284Z"
+date: "2015-05-02"
 path: "/post-1/"
 cover: 1.png
 ---

@@ -40,7 +40,7 @@ export const pageQuery = graphql`
               children {
                 ... on ImageSharp {
                   sizes(maxWidth: 300, rotate: 0) {
-                    ...GatsbyImageSharpSizes
+                    ...GatsbyImageSharpSizes_withWebp
                   }
                 }
               }

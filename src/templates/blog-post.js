@@ -2,6 +2,7 @@ import React from "react";
 import Helmet from "react-helmet";
 import get from "lodash/get";
 import styled from "styled-components";
+const config = require("../utils/config");
 
 const Wrapper = styled.main`
   background: ${props => props.theme.post.backgrounds.wrapper};

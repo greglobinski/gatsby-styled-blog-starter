@@ -1,3 +1,5 @@
+const config = require("./src/utils/config");
+
 module.exports = {
   siteMetadata: {
     title: "User Experience Notes 2",
@@ -7,7 +9,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/data`,
+        path: `${__dirname}/content`,
         name: "posts"
       }
     },
@@ -47,20 +49,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "User Experience Notes",
-        short_name: "UXnotes",
-        start_url: "/",
-        background_color: "#f7f0eb",
-        theme_color: "#a2466c",
-        display: "standalone",
+        name: config.siteTitle,
+        short_name: config.siteShortTitle,
+        start_url: config.manifestStartUrl,
+        background_color: config.manifestBackgroundColor,
+        theme_color: config.manifestThemeColor,
+        display: config.manifestDisplay,
         icons: [
           {
-            src: "/logos/logo-192x192.png",
+            src: "/icons/icon-192x192.png",
             sizes: "192x192",
             type: "image/png"
           },
           {
-            src: "/logos/logo-512x512.png",
+            src: "/icons/icon-512x512.png",
             sizes: "512x512",
             type: "image/png"
           }

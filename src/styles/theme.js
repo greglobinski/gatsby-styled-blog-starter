@@ -1,14 +1,4 @@
-const colors = {
-  first: "#7F5D80",
-  firstLight: "#AF95B0",
-  firstSuperLight: "#F4F0F4",
-  firstDark: "#563E57",
-  bright: "#ffffff",
-  light: "#f3f3f3",
-  middle: "#666666",
-  dark: "#333333",
-  superDark: "#111111"
-};
+const colors = require("./colors");
 
 const theme = {
   navigator: {
@@ -75,11 +65,11 @@ const theme = {
     }
   },
   mediaQueryTresholds: {
-    XL: "65rem",
-    L: "48.5rem",
-    M: "37rem",
-    S: "28rem",
-    XS: "21rem"
+    XL: "65em",
+    L: "48.5em",
+    M: "37em",
+    S: "28em",
+    XS: "21em"
   }
 };
 

@@ -1,7 +1,7 @@
 ---
 title: Who wants all these features? Anybody?
 subTitle: How pCloud let me exclude node_modules from syncing
-date: "2015-05-28T22:40:32.169Z"
+date: "2015-05-25"
 path: "/post-3/"
 cover: youtube.png
 ---
