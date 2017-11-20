@@ -1,6 +1,7 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "description": "Gatsby hello world starter",
+  "name": "user-experience-notes-site",
+  "description": "User Experience Notes website",
+  "author": "Greg Lobinski <greglobinski@gmail.com>",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",

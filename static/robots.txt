@@ -1,4 +1,1 @@
-User-agent: *
-Disallow: */imprint/
 
-sitemap: https://embalmer-glues-43220.netlify.com/sitemap.xml

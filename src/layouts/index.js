@@ -7,6 +7,7 @@ import PostsNavigatorContainer from "../components/Navigator/PostsNavigatorConta
 import WelcomeScreenContainer from "../components/Welcome/WelcomeScreenContainer";
 import TopBarContainer from "../components/TopBar/TopBarContainer";
 import BottomBarContainer from "../components/BottomBar/BottomBarContainer";
+import Seo from "../components/Other/Seo";
 
 import "normalize.css";
 import globals from "../styles/global";
@@ -106,6 +107,7 @@ class Template extends React.Component {
           <Helmet>
             <html lang="en" />
           </Helmet>
+          <Seo />
           <TopBarContainer
             navigatorIsAside={this.state.navigatorIsAside}
             btnOnClick={this.toggleWelcomeScreen}

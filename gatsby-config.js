@@ -50,7 +50,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: config.siteTitle,
-        short_name: config.siteShortTitle,
+        short_name: config.manifestShortName,
         start_url: config.manifestStartUrl,
         background_color: config.manifestBackgroundColor,
         theme_color: config.manifestThemeColor,

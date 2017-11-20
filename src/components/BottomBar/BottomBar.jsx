@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import Link from "gatsby-link";
-import Icon from "../Objects/Icon.jsx";
+import Icon from "../Other/Icon.jsx";
 import { ICONS } from "../../utils/constants";
 
 const wrapperShowUp = keyframes`
