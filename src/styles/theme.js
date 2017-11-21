@@ -30,7 +30,8 @@ const theme = {
       metaBorder: colors.first,
       subTitle: colors.superDark,
       text: colors.dark,
-      title: colors.middle
+      title: colors.middle,
+      copyright: colors.middle
     },
     backgrounds: {
       wrapper: colors.bright,

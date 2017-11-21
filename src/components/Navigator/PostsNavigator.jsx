@@ -49,7 +49,7 @@ const Wrapper = styled.nav`
 
   a {
     display: block;
-    padding: ${props => (props.isAside ? "1em 1.5em" : "2em 1.5em")};
+    padding: ${props => (props.isAside ? "1em 1em" : "2em 1.5em")};
     color: inherit;
     text-decoration: none;
     &:hover {
@@ -75,11 +75,10 @@ const Header = styled.header`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   font-weight: 300;
   color: ${props => props.theme.navigator.colors.header};
   text-transform: uppercase;
-  margin: 1.4em 0 0 1.5em;
+  margin: 1.4em 0 0 1.3em;
   letter-spacing: 0.2em;
   font-size: 0.9em;
 `;
@@ -127,7 +126,8 @@ const ListItem = styled.li`
   display: ${props => (props.inTransition ? "none" : "block")};
   transition: background 0.5s;
   &:first-child {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: ${props =>
+      props.isAside ? `1px solid rgba(255, 255, 255, 0.1)` : ``};
   }
 `;
 
@@ -139,9 +139,9 @@ const Article = styled.article`
 const Title = styled.h2`
   color: ${props => props.theme.navigator.colors.title};
   font-weight: ${props => (props.isAside ? "400" : "700")};
-  font-size: ${props => (props.isAside ? ".9em" : "1.3em")};
+  font-size: ${props => (props.isAside ? ".95em" : "1.3em")};
   letter-spacing: ${props => (props.isAside ? "0" : "-.04em")};
-  line-height: ${props => (props.isAside ? "1.2" : "1.1")};
+  line-height: ${props => (props.isAside ? "1.15" : "1.1")};
   margin: 0;
   opacity: ${props => (props.inTransition ? "0" : "1")};
   padding-left: 35%;

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Author from "./Author/Author";
+const config = require("../../utils/siteConfig");
 
 const Wrapper = styled.article`
   max-width: ${props => props.theme.post.sizes.maxWidth};
@@ -150,6 +151,12 @@ const Content = styled.div`
 
 const Footer = styled.footer``;
 
+const Copyright = styled.p`
+  color: ${props => props.theme.post.colors.copyright};
+  font-size: 0.8em;
+  padding: 2em 0;
+`;
+
 const Article = ({ post }) => {
   return (
     <Wrapper>
@@ -163,6 +170,7 @@ const Article = ({ post }) => {
       <Content dangerouslySetInnerHTML={{ __html: post.html }} />
       <Footer>
         <Author />
+        <Copyright>{config.copyright}</Copyright>
       </Footer>
     </Wrapper>
   );

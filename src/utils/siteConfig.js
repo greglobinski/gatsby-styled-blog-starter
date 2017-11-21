@@ -2,17 +2,14 @@ const colors = require("../styles/colors");
 
 module.exports = {
   pathPrefix: "/",
-  siteTitle: "Gatsby with Sidebar",
-  siteLongTitle: "User Experience Notes - a persblog",
-  siteUrl: "https://userexperiencenotes.com",
+  siteTitle: "Gatsby Styled Blog",
+  siteLongTitle: "Gatsby Styled Blog Starter",
+  siteUrl: "https://gsbs.greglobinski.com",
   siteLanguage: "en",
   siteLogo: "/logos/logo-1024.png",
   siteDescription: "",
-  siteFBAppID: "",
-  userTwitter: "greglobinski",
-  ogSiteName: "emma",
+  // analytics
   googleAnalyticsID: "UA-12345689-1",
-  copyright: "Copyright © 2017. All rights reserved.",
   // manifest.json
   manifestName: "User Experience Notes",
   manifestShortName: "UXnotes",
@@ -22,5 +19,7 @@ module.exports = {
   manifestDisplay: "standalone",
   // Author note
   authorName: "Greg Lobinski",
-  authorDescription: `I'm a front-end developer. You can find me <a href="https://greglobinski.com">here</a>.`
+  authorDescription: `I'm a front-end developer. You can find me <a href="https://greglobinski.com">here</a>.`,
+  // texts
+  copyright: "Copyright note"
 };
