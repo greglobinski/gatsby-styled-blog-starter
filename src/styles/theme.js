@@ -21,17 +21,18 @@ const theme = {
   },
   post: {
     colors: {
+      author: colors.middle,
       authorBorder: colors.firstLight,
       bold: colors.middle,
       blockquoteFrame: colors.light,
+      copyright: colors.middle,
       link: colors.first,
       linkHover: colors.firstLight,
       meta: colors.middle,
       metaBorder: colors.first,
-      subTitle: colors.superDark,
       text: colors.dark,
       title: colors.middle,
-      copyright: colors.middle
+      subTitle: colors.superDark
     },
     backgrounds: {
       wrapper: colors.bright,

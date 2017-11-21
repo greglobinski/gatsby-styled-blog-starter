@@ -10,8 +10,8 @@ const Wrapper = styled.section`
 `;
 
 const Text = styled.p`
-  color: ${props => props.theme.post.colors.text};
-  line-height: 1.3;
+  color: ${props => props.theme.post.colors.author};
+  line-height: 1.4;
   margin: 0;
   strong {
     color: ${props => props.theme.post.colors.bold};
@@ -24,7 +24,7 @@ const Avatar = styled.img`
   float: left;
   height: auto;
   width: 40px;
-  margin: -0.5em 1em 1em 0;
+  margin: -0.5em 1em 0 0;
 `;
 
 const Author = () => {

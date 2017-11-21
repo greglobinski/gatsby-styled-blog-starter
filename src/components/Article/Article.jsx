@@ -89,11 +89,23 @@ const Content = styled.div`
 
   h2,
   h3 {
-    color: ${props => props.theme.post.colors.subTitle};
+    color: ${props => props.theme.post.colors.title};
     font-size: 1.5em;
-    font-weight: 300;
+    font-weight: 700;
     line-height: 1.15;
     margin: 1em 0 0.7em;
+    letter-spacing: -0.01em;
+
+    @media screen and (min-width: ${props =>
+        props.theme.mediaQueryTresholds.M}) {
+      letter-spacing: -0.02em;
+      font-size: 1.7em;
+    }
+    @media screen and (min-width: ${props =>
+        props.theme.mediaQueryTresholds.XL}) {
+      letter-spacing: -0.03em;
+      font-size: 1.9em;
+    }
   }
 
   p {
@@ -154,7 +166,8 @@ const Footer = styled.footer``;
 const Copyright = styled.p`
   color: ${props => props.theme.post.colors.copyright};
   font-size: 0.8em;
-  padding: 2em 0;
+  padding: 4em 0 2em;
+  text-align: right;
 `;
 
 const Article = ({ post }) => {
