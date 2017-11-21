@@ -10,10 +10,14 @@ const Wrapper = styled.article`
     border-bottom: 1px solid ${props => props.theme.post.colors.linkHover};
     color: ${props => props.theme.post.colors.link};
     font-weight: bold;
-    text-shadow: 2px 0 ${props => props.theme.post.backgrounds.wrapper},
-      -2px 0 ${props => props.theme.post.backgrounds.wrapper};
+    text-shadow: 2px 2px ${props => props.theme.post.backgrounds.wrapper},
+      -2px 2px ${props => props.theme.post.backgrounds.wrapper},
+      -2px -2px ${props => props.theme.post.backgrounds.wrapper},
+      -2px 2px ${props => props.theme.post.backgrounds.wrapper},
+      -2px 0 ${props => props.theme.post.backgrounds.wrapper},
+      2px 0 ${props => props.theme.post.backgrounds.wrapper};
     display: inline-block;
-    line-height: 1.15;
+    line-height: 1.1;
     text-decoration: none;
     transition: 0.3s;
 
@@ -28,37 +32,36 @@ const Header = styled.header``;
 
 const Title = styled.h1`
   color: ${props => props.theme.post.colors.title};
-  font-size: 1.8em;
+  font-size: 1.9em;
   font-weight: 700;
-  line-height: 1.1;
+  letter-spacing: -0.02em;
+  line-height: 1;
   margin: 0 0 0.4em;
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.M}) {
     font-size: 2.6em;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.03em;
   }
   @media screen and (min-width: ${props =>
       props.theme.mediaQueryTresholds.XL}) {
     font-size: 3.2em;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.04em;
   }
 `;
 
 const SubTitle = styled.h2`
   color: ${props => props.theme.post.colors.subTitle};
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: 300;
   line-height: 1.15;
-  letter-spacing: -0.02em;
+  letter-spacing: 0em;
   margin: 0 0 0.4em;
 
-  @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.S}) {
-    font-size: 1.4em;
-  }
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.M}) {
-    font-size: 1.6em;
+    font-size: 1.7em;
   }
-  @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
+  @media screen and (min-width: ${props =>
+      props.theme.mediaQueryTresholds.XL}) {
     font-size: 2em;
   }
 `;
@@ -78,7 +81,6 @@ const PostDate = styled.span`
 const Content = styled.div`
   color: ${props => props.theme.post.colors.text};
   line-height: 1.5;
-  font-size: 1.1em;
 
   .gatsby-resp-image-link {
     margin: 2.5em 0;
@@ -87,15 +89,15 @@ const Content = styled.div`
   h2,
   h3 {
     color: ${props => props.theme.post.colors.subTitle};
-    font-size: 1.8em;
+    font-size: 1.5em;
     font-weight: 300;
     line-height: 1.15;
-    letter-spacing: -0.02em;
     margin: 1em 0 0.7em;
   }
 
   p {
     margin: 0 0 1em;
+    font-size: 1.05em;
 
     strong {
       letter-spacing: -0.01em;
@@ -103,7 +105,11 @@ const Content = styled.div`
     }
 
     @media screen and (min-width: ${props =>
-        props.theme.mediaQueryTresholds.M}) and (orientation: portrait) {
+        props.theme.mediaQueryTresholds.M}) {
+      font-size: 1.1em;
+    }
+    @media screen and (min-width: ${props =>
+        props.theme.mediaQueryTresholds.XL}) {
       font-size: 1.2em;
     }
   }
@@ -112,7 +118,7 @@ const Content = styled.div`
     border: 5px solid ${props => props.theme.post.colors.blockquoteFrame};
     font-style: italic;
     margin: 2.5em 0;
-    padding: 1em 2em;
+    padding: 1em 1.1em 1em 1.3em;
     position: relative;
 
     p {
@@ -133,6 +139,11 @@ const Content = styled.div`
     &::after {
       top: auto;
       bottom: -5px;
+    }
+
+    @media screen and (min-width: ${props =>
+        props.theme.mediaQueryTresholds.L}) {
+      padding: 1em 1.8em 1em 2em;
     }
   }
 `;

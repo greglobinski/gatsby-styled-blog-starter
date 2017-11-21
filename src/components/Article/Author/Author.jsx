@@ -5,7 +5,7 @@ import avatar from "./avatar.jpg";
 
 const Wrapper = styled.section`
   border-top: 2px dotted ${props => props.theme.post.colors.authorBorder};
-  margin: 2em 0 0;
+  margin: 3em 0 0;
   padding: 2em 0 0;
 `;
 

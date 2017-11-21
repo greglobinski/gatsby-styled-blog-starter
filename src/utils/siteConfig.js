@@ -2,7 +2,7 @@ const colors = require("../styles/colors");
 
 module.exports = {
   pathPrefix: "/",
-  siteTitle: "User Experience Notes",
+  siteTitle: "Gatsby with Sidebar",
   siteLongTitle: "User Experience Notes - a persblog",
   siteUrl: "https://userexperiencenotes.com",
   siteLanguage: "en",

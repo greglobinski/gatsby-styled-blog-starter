@@ -1,3 +1,4 @@
+const config = require("../../utils/siteConfig");
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import Link from "gatsby-link";
@@ -83,7 +84,7 @@ class TopBar extends React.Component {
     return (
       <Wrapper navigatorIsAside={this.props.navigatorIsAside}>
         <Logo navigatorIsAside={this.props.navigatorIsAside}>
-          <Link to="/">User Experience Notes</Link>
+          <Link to="/">{config.siteTitle}</Link>
         </Logo>
         <OpenBtn onClick={this.props.btnOnClick} aria-label="Unfold">
           <span>

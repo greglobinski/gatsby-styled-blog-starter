@@ -67,7 +67,7 @@ const theme = {
   },
   mediaQueryTresholds: {
     XL: "65em",
-    L: "48.5em",
+    L: "49em",
     M: "37em",
     S: "28em",
     XS: "21em"
