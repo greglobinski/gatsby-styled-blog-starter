@@ -19,5 +19,8 @@ module.exports = {
   manifestStartUrl: "/",
   manifestBackgroundColor: colors.first,
   manifestThemeColor: colors.firstLight,
-  manifestDisplay: "standalone"
+  manifestDisplay: "standalone",
+  // Author note
+  authorName: "Greg Lobinski",
+  authorDescription: `I'm a front-end developer. You can find me <a href="https://greglobinski.com">here</a>.`
 };

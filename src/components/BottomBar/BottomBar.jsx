@@ -6,13 +6,13 @@ import { ICONS } from "../../utils/constants";
 
 const wrapperShowUp = keyframes`
   0% {
-    left: -100%;
+    bottom: -100px;
   }
   50% {
-    left: -100%;
+    bottom: -100px;
   }
   100% { 
-    left: 0;
+    bottom: 0;
   }
 `;
 
@@ -24,6 +24,7 @@ const Wrapper = styled.footer`
   height: ${props => props.theme.bottomBar.sizes.height}px;
   left: 0;
   position: fixed;
+  width: 100%;
 
   a {
     color: ${props => props.theme.bottomBar.colors.link};
@@ -39,9 +40,7 @@ const Wrapper = styled.footer`
       padding: 0 0.6em;
       margin: 0;
       float: left;
-      line-height: 0;
-      margin-top: -0.2em;
-      background: red;
+      line-height: 0.5;
     }
   }
 
@@ -76,7 +75,7 @@ class BottomBar extends React.Component {
           <IconWrapper>
             <Icon icon={ICONS.HOME} />
           </IconWrapper>
-          <b>Home</b>
+          <b>back Home</b>
         </Link>
       </Wrapper>
     );

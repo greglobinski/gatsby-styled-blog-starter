@@ -10,8 +10,8 @@ const theme = {
       linkHover: colors.bright
     },
     sizes: {
-      asideWidth: "17rem",
-      maxWidth: "56rem"
+      asideWidth: "19em",
+      maxWidth: "56em"
     },
     backgrounds: {
       wrapper: colors.first
@@ -19,22 +19,23 @@ const theme = {
   },
   post: {
     colors: {
-      text: colors.dark,
-      meta: colors.middle,
-      metaBorder: colors.first,
+      authorBorder: colors.firstLight,
       bold: colors.middle,
-      title: colors.middle,
-      subTitle: colors.superDark,
+      blockquoteFrame: colors.light,
       link: colors.first,
       linkHover: colors.first,
-      blockquoteFrame: colors.light
+      meta: colors.middle,
+      metaBorder: colors.first,
+      subTitle: colors.superDark,
+      text: colors.dark,
+      title: colors.middle
     },
     backgrounds: {
       wrapper: colors.bright,
       meta: colors.light
     },
     sizes: {
-      maxWidth: "50rem"
+      maxWidth: "50em"
     }
   },
   bottomBar: {

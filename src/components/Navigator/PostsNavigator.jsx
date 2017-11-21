@@ -126,7 +126,7 @@ const Article = styled.article`
   animation-duration: 0.5s;
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
-    margin: ${props => (props.isAside ? "1.5rem 1.8rem" : "3rem 1.5rem 4rem")};
+    margin: ${props => (props.isAside ? "1.5rem 1.3rem" : "3rem 1.5rem 4rem")};
     a:first-child & {
     }
     a:last-child & {
@@ -137,9 +137,9 @@ const Article = styled.article`
 const Title = styled.h2`
   color: ${props => props.theme.navigator.colors.title};
   font-weight: ${props => (props.isAside ? "400" : "700")};
-  font-size: ${props => (props.isAside ? ".85em" : "1.3em")};
+  font-size: ${props => (props.isAside ? ".9em" : "1.3em")};
   letter-spacing: ${props => (props.isAside ? "0" : "-.04em")};
-  line-height: ${props => (props.isAside ? "1.3" : "1.1")};
+  line-height: ${props => (props.isAside ? "1.2" : "1.1")};
   margin: 0;
   opacity: ${props => (props.inTransition ? "0" : "1")};
   padding-left: 35%;
@@ -159,7 +159,6 @@ const Title = styled.h2`
   @media screen and (min-width: ${props =>
       props.theme.mediaQueryTresholds.XL}) {
     font-size: ${props => (!props.isAside ? "2.2em" : "")};
-    line-height: ${props => (!props.isAside ? "1" : "")};
   }
 
   a:hover & {
