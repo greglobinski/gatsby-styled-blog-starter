@@ -29,11 +29,13 @@ const Wrapper = styled.nav`
   width: ${props =>
     props.isAside ? props.theme.navigator.sizes.asideWidth : "100%"};
 
-  @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.M}) {
-    padding-top: ${props =>
-      props.isAside ? 32 : props => props.theme.topBar.sizes.height + 18}px;
+  @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
   }
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
+    padding-top: ${props =>
+      props.isAside
+        ? props => props.theme.topBar.sizes.height + 12
+        : props => props.theme.topBar.sizes.height + 18}px;
     display: block;
     left: 0;
   }
@@ -43,6 +45,16 @@ const Wrapper = styled.nav`
   }
   &::-webkit-scrollbar-thumb {
     background-color: ${props => props.theme.navigator.colors.scrollThumb};
+  }
+
+  a {
+    display: block;
+    padding: ${props => (props.isAside ? "1em 1.5em" : "2em 1.5em")};
+    color: inherit;
+    text-decoration: none;
+    &:hover {
+      color: inherit;
+    }
   }
 `;
 
@@ -59,22 +71,20 @@ const headerShowUp = keyframes`
 `;
 
 const Header = styled.header`
-  animation-name: ${headerShowUp};
-  animation-duration: 0.7s;
   display: ${props => (props.isAside ? "block" : "none")};
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   font-weight: 300;
-  text-align: center;
-  color: white;
+  color: ${props => props.theme.navigator.colors.header};
   text-transform: uppercase;
-  padding-top: 0.8em;
-  font-size: 1.2em;
+  margin: 1.4em 0 0 1.5em;
+  letter-spacing: 0.2em;
+  font-size: 0.9em;
 `;
 
-const List = styled.div`
+const List = styled.ul`
   list-style: none;
   max-width: ${props => props.theme.navigator.sizes.maxWidth};
   margin: 0;
@@ -95,43 +105,35 @@ const List = styled.div`
       props.theme.mediaQueryTresholds.XL}) {
     padding: ${props => (!props.isAside ? "0" : "")};
   }
-
-  > a {
-    color: inherit;
-    text-decoration: none;
-    display: block;
-    position: relative;
-
-    &:hover {
-      color: inherit;
-    }
-  }
 `;
 
-const articleShowUp = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+const itemShowUp = keyframes`
+from {
+  opacity: 0;
+}
+to {
+  opacity: 1;
+}
+`;
+
+const ListItem = styled.li`
+  animation-name: ${itemShowUp};
+  animation-duration: 0.5s;
+  background: ${props =>
+    props.isActive
+      ? props => props.theme.navigator.backgrounds.asideItemActive
+      : "none"};
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: ${props => (props.inTransition ? "none" : "block")};
+  transition: background 0.5s;
+  &:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 `;
 
 const Article = styled.article`
-  display: ${props => (props.inTransition ? "none" : "block")};
-  margin: ${props => (props.isAside ? "1.5rem 1.8rem" : "2rem 1.5rem 3rem")};
   position: relative;
   perspective: 1000px;
-  animation-name: ${articleShowUp};
-  animation-duration: 0.5s;
-
-  @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
-    margin: ${props => (props.isAside ? "1.5rem 1.3rem" : "3rem 1.5rem 4rem")};
-    a:first-child & {
-    }
-    a:last-child & {
-    }
-  }
 `;
 
 const Title = styled.h2`
@@ -246,6 +248,7 @@ class PostsNavigator extends React.Component {
   componentDidMount() {}
 
   render() {
+    console.log(this.props);
     return (
       <Wrapper
         isAside={this.props.isAside}
@@ -260,32 +263,36 @@ class PostsNavigator extends React.Component {
               const title =
                 get(post, "node.frontmatter.title") || post.node.path;
               return (
-                <Link
+                <ListItem
+                  isActive={post.node.frontmatter.path === this.props.location}
+                  isAside={this.props.isAside}
+                  inTransition={this.props.inTransition}
                   key={post.node.frontmatter.path}
-                  to={post.node.frontmatter.path}
-                  onClick={this.props.linkOnClick}
                 >
-                  <Article
+                  <Link
+                    to={post.node.frontmatter.path}
+                    onClick={this.props.linkOnClick}
                     isAside={this.props.isAside}
-                    inTransition={this.props.inTransition}
                   >
-                    <Picture isAside={this.props.isAside}>
-                      <Img
-                        sizes={post.node.frontmatter.cover.children[0].sizes}
-                      />
-                    </Picture>
+                    <Article>
+                      <Picture isAside={this.props.isAside}>
+                        <Img
+                          sizes={post.node.frontmatter.cover.children[0].sizes}
+                        />
+                      </Picture>
 
-                    <Title isAside={this.props.isAside}>
-                      {post.node.frontmatter.title}
-                    </Title>
+                      <Title isAside={this.props.isAside}>
+                        {post.node.frontmatter.title}
+                      </Title>
 
-                    {!this.props.isAside && (
-                      <SubTitle isAside={this.props.isAside}>
-                        {post.node.frontmatter.subTitle}
-                      </SubTitle>
-                    )}
-                  </Article>
-                </Link>
+                      {!this.props.isAside && (
+                        <SubTitle isAside={this.props.isAside}>
+                          {post.node.frontmatter.subTitle}
+                        </SubTitle>
+                      )}
+                    </Article>
+                  </Link>
+                </ListItem>
               );
             })}
         </List>

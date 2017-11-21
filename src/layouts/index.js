@@ -129,6 +129,7 @@ class Template extends React.Component {
           {!!this.state.posts.length &&
             !this.state.appInitialState && (
               <PostsNavigatorContainer
+                location={location.pathname}
                 posts={this.state.posts}
                 linkOnClick={this.navigatorLinkOnClik}
                 isAside={this.state.navigatorIsAside}

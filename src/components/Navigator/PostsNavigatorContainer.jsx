@@ -9,6 +9,7 @@ class PostsNavigatorContainer extends React.Component {
   render() {
     return (
       <PostsNavigator
+        location={this.props.location}
         posts={this.props.posts}
         linkOnClick={this.props.linkOnClick}
         isAside={this.props.isAside}

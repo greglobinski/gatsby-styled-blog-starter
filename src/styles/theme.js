@@ -5,16 +5,18 @@ const theme = {
     colors: {
       title: colors.firstSuperLight,
       subTitle: colors.bright,
-      scrollTrack: colors.first,
+      scrollTrack: colors.firstLight,
       scrollThumb: colors.firstDark,
-      linkHover: colors.bright
+      linkHover: colors.bright,
+      header: colors.firstSuperLight
     },
     sizes: {
       asideWidth: "19em",
       maxWidth: "56em"
     },
     backgrounds: {
-      wrapper: colors.first
+      wrapper: colors.first,
+      asideItemActive: colors.firstDark
     }
   },
   post: {
