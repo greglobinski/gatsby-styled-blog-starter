@@ -23,7 +23,7 @@ const theme = {
       bold: colors.middle,
       blockquoteFrame: colors.light,
       link: colors.first,
-      linkHover: colors.first,
+      linkHover: colors.firstLight,
       meta: colors.middle,
       metaBorder: colors.first,
       subTitle: colors.superDark,

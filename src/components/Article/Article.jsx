@@ -5,6 +5,23 @@ import Author from "./Author/Author";
 const Wrapper = styled.article`
   max-width: ${props => props.theme.post.sizes.maxWidth};
   margin: 0 auto;
+
+  a {
+    border-bottom: 1px solid ${props => props.theme.post.colors.linkHover};
+    color: ${props => props.theme.post.colors.link};
+    font-weight: bold;
+    text-shadow: 2px 0 ${props => props.theme.post.backgrounds.wrapper},
+      -2px 0 ${props => props.theme.post.backgrounds.wrapper};
+    display: inline-block;
+    line-height: 1.15;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      color: ${props => props.theme.post.colors.linkHover};
+      border-color: ${props => props.theme.post.colors.link};
+    }
+  }
 `;
 
 const Header = styled.header``;
@@ -61,6 +78,7 @@ const PostDate = styled.span`
 const Content = styled.div`
   color: ${props => props.theme.post.colors.text};
   line-height: 1.5;
+  font-size: 1.1em;
 
   .gatsby-resp-image-link {
     margin: 2.5em 0;
