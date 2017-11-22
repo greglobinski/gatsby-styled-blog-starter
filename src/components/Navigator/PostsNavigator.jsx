@@ -29,13 +29,13 @@ const Wrapper = styled.nav`
   width: ${props =>
     props.isAside ? props.theme.navigator.sizes.asideWidth : "100%"};
 
-  @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
-  }
-  @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
+  @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.M}) {
     padding-top: ${props =>
       props.isAside
         ? props => props.theme.topBar.sizes.height + 12
         : props => props.theme.topBar.sizes.height + 18}px;
+  }
+  @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
     display: block;
     left: 0;
   }
@@ -49,7 +49,7 @@ const Wrapper = styled.nav`
 
   a {
     display: block;
-    padding: ${props => (props.isAside ? "1em 1em" : "2em 1.5em")};
+    padding: ${props => (props.isAside ? "1em 1em 1em .8em" : "2em 1.5em")};
     color: inherit;
     text-decoration: none;
     &:hover {
@@ -122,6 +122,11 @@ const ListItem = styled.li`
     props.isActive
       ? props => props.theme.navigator.backgrounds.asideItemActive
       : "none"};
+  border-left: 0.4em solid
+    ${props =>
+      props.isActive
+        ? props => props.theme.navigator.colors.asideItemActiveBorder
+        : props.theme.navigator.backgrounds.wrapper};
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   display: ${props => (props.inTransition ? "none" : "block")};
   transition: background 0.5s;
@@ -131,7 +136,7 @@ const ListItem = styled.li`
   }
 `;
 
-const Article = styled.article`
+const Post = styled.div`
   position: relative;
   perspective: 1000px;
 `;
@@ -179,12 +184,19 @@ const SubTitle = styled.h3`
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.S}) {
     padding-left: 33%;
+    font-size: 1.2em;
   }
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.M}) {
     padding-left: 31%;
+    font-size: 1.3em;
   }
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
     padding-left: 29%;
+    font-size: 1.4em;
+  }
+  @media screen and (min-width: ${props =>
+      props.theme.mediaQueryTresholds.XL}) {
+    font-size: 1.5em;
   }
 `;
 
@@ -195,7 +207,7 @@ const Picture = styled.div`
   left: 3px;
   overflow: hidden;
   position: absolute;
-  top: 5px;
+  top: ${props => (props.isAside ? "0" : "5px")};
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   > .gatsby-image-outer-wrapper {
@@ -274,7 +286,7 @@ class PostsNavigator extends React.Component {
                     onClick={this.props.linkOnClick}
                     isAside={this.props.isAside}
                   >
-                    <Article>
+                    <Post>
                       <Picture isAside={this.props.isAside}>
                         <Img
                           sizes={post.node.frontmatter.cover.children[0].sizes}
@@ -290,7 +302,7 @@ class PostsNavigator extends React.Component {
                           {post.node.frontmatter.subTitle}
                         </SubTitle>
                       )}
-                    </Article>
+                    </Post>
                   </Link>
                 </ListItem>
               );

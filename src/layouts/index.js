@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from "styled-components";
 //import whatInput from "what-input";
 import Helmet from "react-helmet";
 import PostsNavigatorContainer from "../components/Navigator/PostsNavigatorContainer";
-import WelcomeScreenContainer from "../components/Welcome/WelcomeScreenContainer";
+import InfoContainer from "../components/Info/InfoContainer";
 import TopBarContainer from "../components/TopBar/TopBarContainer";
 import BottomBarContainer from "../components/BottomBar/BottomBarContainer";
 import Seo from "../components/Other/Seo";
@@ -25,15 +25,14 @@ class Template extends React.Component {
     this.updatePostsData = this.updatePostsData.bind(this);
     this.navigatorLinkOnClik = this.navigatorLinkOnClik.bind(this);
     this.updateNavigatorIsAside = this.updateNavigatorIsAside.bind(this);
-    this.toggleWelcomeScreen = this.toggleWelcomeScreen.bind(this);
+    this.toggleInfo = this.toggleInfo.bind(this);
     this.state = {
       posts: [],
       appInit: true,
       navigatorIsAside: false,
       navigatorInTransition: false,
-      welcomeIsRolledUp: true,
-      welcomeInTransition: false,
-      windowHeight: 0
+      infoIsRolledDown: false,
+      infoInTransition: false
     };
   }
 
@@ -79,18 +78,15 @@ class Template extends React.Component {
     }, 200);
   }
 
-  toggleWelcomeScreen(e) {
-    console.log("Template.toggleWelcomeScreen()");
+  toggleInfo(e) {
     this.setState(prevState => ({
-      welcomeIsRolledUp: !prevState.welcomeIsRolledUp,
-      appInitialState: prevState.appInitialState && false,
-      windowHeight: document.body.offsetHeight,
-      welcomeInTransition: true
+      infoIsRolledDown: !prevState.infoIsRolledDown,
+      infoInTransition: true
     }));
 
     setTimeout(() => {
       this.setState(() => ({
-        welcomeInTransition: false
+        infoInTransition: false
       }));
     }, 300);
   }
@@ -110,17 +106,14 @@ class Template extends React.Component {
           <Seo />
           <TopBarContainer
             navigatorIsAside={this.state.navigatorIsAside}
-            btnOnClick={this.toggleWelcomeScreen}
+            btnOnClick={this.toggleInfo}
           />
-          {/*
-          <WelcomeScreenContainer
+          <InfoContainer
             navigatorIsAside={this.state.navigatorIsAside}
-            appInitialState={this.state.appInitialState}
-            isRolledUp={this.state.welcomeIsRolledUp}
-            inTransition={this.state.welcomeInTransition}
-            btnOnClick={this.toggleWelcomeScreen}
+            isRolledDown={this.state.infoIsRolledDown}
+            inTransition={this.state.infoInTransition}
+            btnOnClick={this.toggleInfo}
           />
-          */}
           {children({
             ...this.props,
             updatePostsData,

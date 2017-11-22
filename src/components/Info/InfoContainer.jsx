@@ -1,31 +1,30 @@
 import React from "react";
-import WelcomeScreen from "./WelcomeScreen";
+import Info from "./Info";
 
-class WelcomeScreenContainer extends React.Component {
+class InfoContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.updateSreenInTransition = this.updateSreenInTransition.bind(this);
+    this.updateInfoInTransition = this.updateInfoInTransition.bind(this);
     this.state = {
       screenRolledUp: false,
       screenInTransition: false
     };
   }
 
-  updateSreenInTransition(val) {
+  updateInfoInTransition(val) {
     this.setState(() => ({ screenInTransition: val }));
   }
 
   render() {
     return (
-      <WelcomeScreen
-        isRolledUp={this.props.isRolledUp}
+      <Info
+        isRolledDown={this.props.isRolledDown}
         inTransition={this.props.inTransition}
         btnOnClick={this.props.btnOnClick}
         navigatorIsAside={this.props.navigatorIsAside}
-        appInitialState={this.props.appInitialState}
       />
     );
   }
 }
 
-export default WelcomeScreenContainer;
+export default InfoContainer;

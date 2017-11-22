@@ -7,10 +7,7 @@ cover: photo-1507124484497-b7f446e65519-cover.jpg
 
 ![unsplash.com](./photo-1507124484497-b7f446e65519.jpg) 
 
-The Big Oxmox advised her not to do so, because there were thousands of
-bad Commas, wild Question Marks and devious Semikoli, but the Little
-Blind Text didn’t listen. She packed her seven versalia, put her initial
-into the belt and made herself on the way.
+[The Big Oxmox](http://google.com) advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.
 
 Fusce a metus eu diam varius congue nec nec sapien.  Nunc convallis accumsan justo. **Pellentesque** habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec malesuada vehicula lectus, viverra sodales ipsum gravida nec.
 

@@ -8,7 +8,8 @@ const theme = {
       scrollTrack: colors.firstLight,
       scrollThumb: colors.firstDark,
       linkHover: colors.bright,
-      header: colors.firstSuperLight
+      header: colors.firstSuperLight,
+      asideItemActiveBorder: colors.accent
     },
     sizes: {
       asideWidth: "19em",
@@ -63,10 +64,21 @@ const theme = {
     backgrounds: {
       wrapper: colors.firstLight,
       wrapperPost: colors.bright,
-      icon: colors.first
+      icon: colors.accent
     },
     sizes: {
       height: 44 //pixels
+    }
+  },
+  info: {
+    colors: {
+      text: colors.first
+    },
+    backgrounds: {
+      wrapper: colors.second
+    },
+    sizes: {
+      maxWidth: "40em"
     }
   },
   mediaQueryTresholds: {
