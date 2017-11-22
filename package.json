@@ -33,5 +33,6 @@
     "normalize.css": "^7.0.0",
     "styled-components": "2.2.0",
     "what-input": "^5.0.3"
-  }
+  },
+  "devDependencies": {}
 }

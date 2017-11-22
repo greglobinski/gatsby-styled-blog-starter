@@ -260,7 +260,6 @@ class PostsNavigator extends React.Component {
   componentDidMount() {}
 
   render() {
-    console.log(this.props);
     return (
       <Wrapper
         isAside={this.props.isAside}
@@ -284,7 +283,6 @@ class PostsNavigator extends React.Component {
                   <Link
                     to={post.node.frontmatter.path}
                     onClick={this.props.linkOnClick}
-                    isAside={this.props.isAside}
                   >
                     <Post>
                       <Picture isAside={this.props.isAside}>

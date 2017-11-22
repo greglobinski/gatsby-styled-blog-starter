@@ -5,7 +5,7 @@ const theme = {
     colors: {
       title: colors.firstSuperLight,
       subTitle: colors.bright,
-      scrollTrack: colors.firstLight,
+      scrollTrack: colors.first,
       scrollThumb: colors.firstDark,
       linkHover: colors.bright,
       header: colors.firstSuperLight,
@@ -72,10 +72,14 @@ const theme = {
   },
   info: {
     colors: {
-      text: colors.first
+      text: colors.firstDark,
+      link: colors.firstDark,
+      linkHover: colors.first,
+      btn: colors.bright
     },
     backgrounds: {
-      wrapper: colors.second
+      wrapper: colors.firstLight,
+      btn: colors.accent
     },
     sizes: {
       maxWidth: "40em"

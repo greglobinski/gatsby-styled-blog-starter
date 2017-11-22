@@ -1,6 +1,6 @@
 module.exports = {
   first: "#7F5D80",
-  firstLight: "#AF95B0",
+  firstLight: "#CFC0CF", //"#AF95B0",
   firstSuperLight: "#F4F0F4",
   firstDark: "#563E57",
   second: "#F8C152",

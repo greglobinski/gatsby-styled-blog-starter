@@ -70,7 +70,6 @@ class Template extends React.Component {
       typeof window !== "undefined"
         ? document.documentElement.clientWidth > 776
         : false;
-    console.log(isWideScreen);
     setTimeout(() => {
       this.setState(() => ({
         navigatorInTransition: false
@@ -114,6 +113,7 @@ class Template extends React.Component {
             inTransition={this.state.infoInTransition}
             btnOnClick={this.toggleInfo}
           />
+
           {children({
             ...this.props,
             updatePostsData,

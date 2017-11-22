@@ -4,7 +4,36 @@ import Link from "gatsby-link";
 import Icon from "../Other/Icon";
 import { ICONS } from "../../utils/constants";
 import config from "../../utils/siteConfig";
-import logo from "../../../static/logos/logo-lines.svg";
+import logo from "../../images/logo-lines.svg";
+
+//top: ${props => (props.isRolledDown ? "0" : "-100%")};
+
+const wrapperShowUp = keyframes`
+0% {
+  top: -50%;
+}
+25% {
+  top: -50%;
+}
+26% {
+  top: -25%;
+}
+50% {
+  top: -25%;
+}
+51% {
+  top: -12%;
+}
+75% {
+  top: -12%;
+}
+76% {
+  top: 0;
+}
+100% {
+  top: 0;
+}
+`;
 
 const Wrapper = styled.div`
   background: ${props => props.theme.info.backgrounds.wrapper};
@@ -13,8 +42,8 @@ const Wrapper = styled.div`
   min-height: ${props => (props.appInitialState ? "100vh" : "0")};
   position: absolute;
   right: 0;
-  top: ${props => (props.isRolledDown ? "0" : "-99.5%")};
-  transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1), background 0s;
+  top: ${props => (props.isRolledDown ? "0" : "-100%")};
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1), background 0s;
   z-index: 100;
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
@@ -24,44 +53,74 @@ const Wrapper = styled.div`
 `;
 
 const Content = styled.div`
+  color: ${props => props.theme.info.colors.text};
   display: flex;
   flex-direction: column;
+  font-size: 1.05em;
   height: 100%;
   justify-content: center;
+  line-height: 1.5;
   max-width: ${props => props.theme.info.sizes.maxWidth};
   margin-left: auto;
   margin-right: auto;
+  padding: 2em;
+
+  @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
+    p {
+      font-size: 1.1em;
+    }
+  }
+
+  a {
+    border-bottom: 1px solid ${props => props.theme.info.colors.linkHover};
+    color: ${props => props.theme.info.colors.link};
+    font-weight: bold;
+    text-shadow: 2px 2px ${props => props.theme.info.backgrounds.wrapper},
+      -2px 2px ${props => props.theme.info.backgrounds.wrapper},
+      -2px -2px ${props => props.theme.info.backgrounds.wrapper},
+      -2px 2px ${props => props.theme.info.backgrounds.wrapper},
+      -2px 0 ${props => props.theme.info.backgrounds.wrapper},
+      2px 0 ${props => props.theme.info.backgrounds.wrapper};
+    display: inline-block;
+    line-height: 1.1;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      color: ${props => props.theme.info.colors.linkHover};
+      border-color: ${props => props.theme.info.colors.link};
+    }
+  }
 `;
 
 const Logo = styled.img`
   max-width: 200px;
-
-  svg {
-    fill: red;
-    background-color: blue;
-  }
+  margin-bottom: 1em;
 `;
 
-const OpenBtn = styled.button`
+const CloseBtn = styled.button`
   background: none;
   border: none;
   color: white;
   cursor: pointer;
-  padding: 10px;
-  transition: all 1s;
-  position: absolute;
-  top: 0;
-  right: 0;
+  width: 64px;
+  height: 64px;
+  position: relative;
+  margin: 1em 0 0 -0.5em;
 
   > span {
-    background: ${props => props.theme.topBar.backgrounds.icon};
-    color: ${props => props.theme.topBar.colors.link};
+    background: ${props => props.theme.info.backgrounds.btn};
+    color: ${props => props.theme.info.colors.btn};
     fill: currentColor;
     border-radius: 100%;
     display: block;
-    height: 24px;
-    width: 24px;
-    padding: 3px;
+    height: 44px;
+    width: 44px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.M}) {
@@ -70,12 +129,7 @@ const OpenBtn = styled.button`
 `;
 
 class Info extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
-    console.log(logo);
     return (
       <Wrapper
         isRolledDown={this.props.isRolledDown}
@@ -85,14 +139,31 @@ class Info extends React.Component {
         }}
         navigatorIsAside={this.props.navigatorIsAside}
       >
-        <OpenBtn onClick={this.props.btnOnClick} aria-label="Unfold">
-          <span>
-            <Icon icon={ICONS.INFO} />
-          </span>
-        </OpenBtn>
         <Content>
-          <div dangerouslySetInnerHTML={{ __html: logo }} />
-          <Logo src={logo} alt="StyledBlog starter for GatsbyJS" />
+          <Logo src={logo} alt="" />
+          <p>
+            This is the {" "}
+            <a
+              href="https://github.com/greglobinski/gatsby-styled-blog-starter"
+              target="_blank"
+              rel="noopener"
+            >
+              gatsby-styled-blog-starter
+            </a>{" "}
+            demo site. <br /> More info and the code on{" "}
+            <a
+              href="https://github.com/greglobinski/gatsby-styled-blog-starter"
+              target="_blank"
+              rel="noopener"
+            >
+              Github
+            </a>.
+          </p>
+          <CloseBtn onClick={this.props.btnOnClick} aria-label="Close">
+            <span>
+              <Icon icon={ICONS.CLOSE} />
+            </span>
+          </CloseBtn>
         </Content>
       </Wrapper>
     );
@@ -100,3 +171,5 @@ class Info extends React.Component {
 }
 
 export default Info;
+
+//
