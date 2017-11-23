@@ -114,7 +114,7 @@ class Info extends React.Component {
           <Logo src={logo} alt="" />
           <p>
             This is the <em>gatsby-styled-blog-starter</em> <b>demo site</b>. To
-            download the code and get some instructions visit Github {" "}
+            download the code and get some instructions visit the Github {" "}
             <a
               href="https://github.com/greglobinski/gatsby-styled-blog-starter"
               target="_blank"
