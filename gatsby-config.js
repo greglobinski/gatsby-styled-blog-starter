@@ -38,12 +38,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: config.googleAnalyticsID
-      }
-    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-catch-links`,
     {

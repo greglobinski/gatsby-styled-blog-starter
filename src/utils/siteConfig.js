@@ -8,8 +8,6 @@ module.exports = {
   siteLanguage: "en",
   siteLogo: "/logos/logo-1024.png",
   siteDescription: "This is a starter/theme for GatsbyJS",
-  // analytics
-  googleAnalyticsID: "UA-110088221-2",
   // manifest.json
   manifestName: "StyledBlog Gatsby starter",
   manifestShortName: "StyledBlog",
