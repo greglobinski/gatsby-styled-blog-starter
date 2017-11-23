@@ -1,0 +1,1 @@
+# StyleBolog starter for Gatsby

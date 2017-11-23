@@ -113,22 +113,23 @@ class Info extends React.Component {
         <Content>
           <Logo src={logo} alt="" />
           <p>
-            This is the {" "}
+            This is the <em>gatsby-styled-blog-starter</em> <b>demo site</b>. To
+            download the code and get some instructions visit Github {" "}
             <a
               href="https://github.com/greglobinski/gatsby-styled-blog-starter"
               target="_blank"
               rel="noopener"
             >
-              gatsby-styled-blog-starter
+              repository
             </a>{" "}
-            demo site. <br /> More info and the code on{" "}
+            . To be informed about updates follow {" "}
             <a
-              href="https://github.com/greglobinski/gatsby-styled-blog-starter"
+              href="https://twitter.com/greglobinski"
               target="_blank"
               rel="noopener"
             >
-              Github
-            </a>.
+              @greglobinski
+            </a>
           </p>
           <CloseBtn onClick={this.props.btnOnClick} aria-label="Close">
             <span>
