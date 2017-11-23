@@ -16,7 +16,7 @@ gatsby new [NEW_SITE_DIRECTORY_FOR_YOUR_BLOG] git@github.com:greglobinski/gatsby
 
 ### Customization 
 
-Open ```\src\utils\siteConfig.js``` and edit data as you wish.
+Edit ```\src\utils\siteConfig.js``` 
 
 
 ```
@@ -29,7 +29,7 @@ module.exports = {
   siteLogo: "/logos/logo-1024.png",
   siteDescription: "This is a starter/theme for GatsbyJS",
   // analytics
-  googleAnalyticsID: "UA-110088221-2",
+  googleAnalyticsID: "UA-1234567-1",
   // manifest.json
   manifestName: "StyledBlog Gatsby starter",
   manifestShortName: "StyledBlog",
@@ -46,7 +46,7 @@ module.exports = {
 };
 ```
 
-Open ```\src\styles\colors.js``` file customize color pallete.
+Edit the ```\src\styles\colors.js``` file to customize the color pallete.
 
 ```
 module.exports = {
@@ -62,3 +62,4 @@ module.exports = {
   superDark: "#111111"
 };
 ```
+
