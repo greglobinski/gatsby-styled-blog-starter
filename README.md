@@ -28,8 +28,6 @@ module.exports = {
   siteLanguage: "en",
   siteLogo: "/logos/logo-1024.png",
   siteDescription: "This is a starter/theme for GatsbyJS",
-  // analytics
-  googleAnalyticsID: "UA-1234567-1",
   // manifest.json
   manifestName: "StyledBlog Gatsby starter",
   manifestShortName: "StyledBlog",
@@ -51,7 +49,7 @@ Edit the ```\src\styles\colors.js``` file to customize the color pallete.
 ```
 module.exports = {
   first: "#7F5D80",
-  firstLight: "#CFC0CF", //"#AF95B0",
+  firstLight: "#CFC0CF", 
   firstSuperLight: "#F4F0F4",
   firstDark: "#563E57",
   accent: "#FF6633",
@@ -62,4 +60,106 @@ module.exports = {
   superDark: "#111111"
 };
 ```
+
+Edit the ```\src\styles\theme.js``` file to customize colors of element.
+
+```
+const colors = require("./colors");
+
+const theme = {
+  navigator: {
+    colors: {
+      title: colors.firstSuperLight,
+      subTitle: colors.bright,
+      scrollTrack: colors.first,
+      scrollThumb: colors.firstDark,
+      linkHover: colors.bright,
+      header: colors.firstSuperLight,
+      asideItemActiveBorder: colors.accent
+    },
+    sizes: {
+      asideWidth: "19em",
+      maxWidth: "56em"
+    },
+    backgrounds: {
+      wrapper: colors.first,
+      asideItemActive: colors.firstDark
+    }
+  },
+  post: {
+    colors: {
+      author: colors.middle,
+      authorBorder: colors.firstLight,
+      bold: colors.middle,
+      blockquoteFrame: colors.light,
+      copyright: colors.middle,
+      link: colors.first,
+      linkHover: colors.firstLight,
+      meta: colors.middle,
+      metaBorder: colors.first,
+      text: colors.dark,
+      title: colors.middle,
+      subTitle: colors.superDark
+    },
+    backgrounds: {
+      wrapper: colors.bright,
+      meta: colors.light
+    },
+    sizes: {
+      maxWidth: "50em"
+    }
+  },
+  bottomBar: {
+    colors: {
+      link: colors.bright,
+      icon: colors.firstSuperLight
+    },
+    backgrounds: {
+      wrapper: colors.first,
+      icon: colors.firstDark
+    },
+    sizes: {
+      height: 44 //pixels
+    }
+  },
+  topBar: {
+    colors: {
+      link: colors.bright,
+      linkPost: colors.first
+    },
+    backgrounds: {
+      wrapper: colors.firstLight,
+      wrapperPost: colors.bright,
+      icon: colors.accent
+    },
+    sizes: {
+      height: 44 //pixels
+    }
+  },
+  info: {
+    colors: {
+      text: colors.firstDark,
+      link: colors.firstDark,
+      linkHover: colors.first,
+      btn: colors.bright
+    },
+    backgrounds: {
+      wrapper: colors.firstLight,
+      btn: colors.accent
+    },
+    sizes: {
+      maxWidth: "40em"
+    }
+  },
+  mediaQueryTresholds: {
+    XL: "65em",
+    L: "49em",
+    M: "37em",
+    S: "28em",
+    XS: "21em"
+  }
+};
+```
+
+more info soon. If you are interested in updates follow me at [@greglobinski](https://twitter.com/greglobinski).
 
