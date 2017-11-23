@@ -13,7 +13,7 @@ Before installing the starter you have to [install Gatsby](https://www.gatsbyjs.
 ```
 gatsby new [NEW_SITE_DIRECTORY_FOR_YOUR_BLOG] git@github.com:greglobinski/gatsby-styled-blog-starter.git
 ```
-
+Windows users can encounter problem described [here](https://www.gatsbyjs.org/docs/gatsby-on-windows/).
 
 
 
