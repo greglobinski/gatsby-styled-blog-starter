@@ -14,7 +14,6 @@
     "gatsby-image": "^1.0.24",
     "gatsby-link": "^1.6.27",
     "gatsby-plugin-catch-links": "^1.0.9",
-    "gatsby-plugin-google-analytics": "^1.0.12",
     "gatsby-plugin-manifest": "^1.0.8",
     "gatsby-plugin-netlify": "^1.0.8",
     "gatsby-plugin-offline": "^1.0.10",
