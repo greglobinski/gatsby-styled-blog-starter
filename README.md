@@ -8,7 +8,7 @@ This is a starter/theme for [Gatsby](https://github.com/gatsbyjs/gatsby).
 
 # Setup
 
-Before installing the starter you have to [install Gatsby](https://www.gatsbyjs.org/docs/). Then install the starter like any [other Gatsby starter](https://www.gatsbyjs.org/docs/gatsby-starters/) using ```gatsby new``` command.
+If you are completely new to Gatsby, start with one of its [official starters](https://www.gatsbyjs.org/docs/gatsby-starters/). If you have already went through with the [tutorials](https://www.gatsbyjs.org/tutorial/) great, install then the starter like any other one using ```gatsby new``` command.
 
 ```
 gatsby new [NEW_SITE_DIRECTORY_FOR_YOUR_BLOG] git@github.com:greglobinski/gatsby-styled-blog-starter.git
