@@ -64,6 +64,8 @@ module.exports = {
 Edit the ```\src\styles\theme.js``` file to customize colors of element.
 
 ```
+const colors = require("./colors");
+
 const theme = {
   navigator: {
     colors: {
