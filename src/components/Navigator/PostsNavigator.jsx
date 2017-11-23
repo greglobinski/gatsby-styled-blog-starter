@@ -38,6 +38,7 @@ const Wrapper = styled.nav`
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
     display: block;
     left: 0;
+    transition: all 0.6s ease;
   }
 
   &::-webkit-scrollbar-track {
@@ -84,6 +85,7 @@ const Header = styled.header`
 `;
 
 const List = styled.ul`
+  display: ${props => (props.inTransition ? "none" : "block")};
   list-style: none;
   max-width: ${props => props.theme.navigator.sizes.maxWidth};
   margin: 0;
@@ -128,7 +130,6 @@ const ListItem = styled.li`
         ? props => props.theme.navigator.colors.asideItemActiveBorder
         : props.theme.navigator.backgrounds.wrapper};
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  display: ${props => (props.inTransition ? "none" : "block")};
   transition: background 0.5s;
   &:first-child {
     border-top: ${props =>
@@ -211,24 +212,24 @@ const Picture = styled.div`
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
   > .gatsby-image-outer-wrapper {
-    width: 200%;
+    height: 100%;
   }
 
   @media screen and (min-width: ${props =>
       props.theme.mediaQueryTresholds.XS}) {
     > .gatsby-image-outer-wrapper {
-      width: 180%;
+      height: 100%;
     }
   }
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.S}) {
     box-shadow: ${props => (!props.isAside ? "0 2px 1px rgba(0,0,0,.2)" : "")};
     > .gatsby-image-outer-wrapper {
-      width: 150%;
+      width: 100%;
     }
   }
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.M}) {
     > .gatsby-image-outer-wrapper {
-      width: 120%;
+      width: 100%;
     }
   }
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
@@ -268,7 +269,10 @@ class PostsNavigator extends React.Component {
         welcomeIsRolledUp={this.props.welcomeIsRolledUp}
       >
         <Header isAside={this.props.isAside}>List of Posts: </Header>
-        <List isAside={this.props.isAside}>
+        <List
+          isAside={this.props.isAside}
+          inTransition={this.props.inTransition}
+        >
           {this.props.posts &&
             this.props.posts.map(post => {
               const title =

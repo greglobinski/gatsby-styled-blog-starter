@@ -4,6 +4,7 @@ import styled, { keyframes } from "styled-components";
 import Link from "gatsby-link";
 import Icon from "../Other/Icon.jsx";
 import { ICONS } from "../../utils/constants";
+import logo from "../../images/logo-top.svg";
 
 const Wrapper = styled.header`
   align-items: center;
@@ -24,7 +25,7 @@ const Wrapper = styled.header`
   position: absolute;
   right: 0;
   top: 0;
-  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.6s ease;
   z-index: 100;
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.M}) {
@@ -39,12 +40,13 @@ const Wrapper = styled.header`
 `;
 
 const Logo = styled.span`
+  width: 240px;
   display: block;
   font-size: 1em;
   font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
-  margin-left: 1rem;
+  margin: 0.2em 0 0 1em;
 
   & > a {
     text-decoration: none;
@@ -84,7 +86,9 @@ class TopBar extends React.Component {
     return (
       <Wrapper navigatorIsAside={this.props.navigatorIsAside}>
         <Logo navigatorIsAside={this.props.navigatorIsAside}>
-          <Link to="/">{config.siteTitle}</Link>
+          <Link to="/">
+            <img src={logo} alt="" />
+          </Link>
         </Logo>
         <OpenBtn onClick={this.props.btnOnClick} aria-label="Unfold">
           <span>

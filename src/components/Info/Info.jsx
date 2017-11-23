@@ -4,36 +4,7 @@ import Link from "gatsby-link";
 import Icon from "../Other/Icon";
 import { ICONS } from "../../utils/constants";
 import config from "../../utils/siteConfig";
-import logo from "../../images/logo-lines.svg";
-
-//top: ${props => (props.isRolledDown ? "0" : "-100%")};
-
-const wrapperShowUp = keyframes`
-0% {
-  top: -50%;
-}
-25% {
-  top: -50%;
-}
-26% {
-  top: -25%;
-}
-50% {
-  top: -25%;
-}
-51% {
-  top: -12%;
-}
-75% {
-  top: -12%;
-}
-76% {
-  top: 0;
-}
-100% {
-  top: 0;
-}
-`;
+import logo from "../../images/logo-info.svg";
 
 const Wrapper = styled.div`
   background: ${props => props.theme.info.backgrounds.wrapper};

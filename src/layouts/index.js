@@ -74,7 +74,7 @@ class Template extends React.Component {
       this.setState(() => ({
         navigatorInTransition: false
       }));
-    }, 200);
+    }, 800);
   }
 
   toggleInfo(e) {
