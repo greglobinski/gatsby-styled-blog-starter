@@ -3,7 +3,6 @@ module.exports = {
   firstLight: "#CFC0CF", //"#AF95B0",
   firstSuperLight: "#F4F0F4",
   firstDark: "#563E57",
-  second: "#F8C152",
   accent: "#FF6633",
   bright: "#ffffff",
   light: "#f3f3f3",

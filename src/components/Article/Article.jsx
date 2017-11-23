@@ -159,6 +159,23 @@ const Content = styled.div`
       padding: 1em 1.8em 1em 2em;
     }
   }
+
+  .gatsby-resp-image-link {
+    margin-left: -1.5em;
+    margin-right: -1.5em;
+    border: none;
+
+    @media screen and (min-width: ${props =>
+        props.theme.mediaQueryTresholds.M}) {
+      margin-left: -3.2em;
+      margin-right: -3.2em;
+    }
+    @media screen and (min-width: ${props =>
+        props.theme.mediaQueryTresholds.XL}) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 `;
 
 const Footer = styled.footer``;

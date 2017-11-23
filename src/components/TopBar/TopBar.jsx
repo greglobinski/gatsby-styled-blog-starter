@@ -47,14 +47,6 @@ const Logo = styled.span`
   line-height: 1;
   text-transform: uppercase;
   margin: 0.2em 0 0 1em;
-
-  & > a {
-    text-decoration: none;
-    color: ${props =>
-      props.navigatorIsAside
-        ? props => props.theme.topBar.colors.linkPost
-        : props => props.theme.topBar.colors.link};
-  }
 `;
 
 const OpenBtn = styled.button`

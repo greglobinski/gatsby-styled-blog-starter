@@ -204,39 +204,20 @@ const SubTitle = styled.h3`
 const Picture = styled.div`
   bottom: 0;
   width: 25%;
-  float: left;
   left: 3px;
-  overflow: hidden;
   position: absolute;
+  box-shadow: ${props => (!props.isAside ? "0 2px 1px rgba(0,0,0,.2)" : "")};
+  overflow: hidden;
   top: ${props => (props.isAside ? "0" : "5px")};
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-  > .gatsby-image-outer-wrapper {
+  .gatsby-image-outer-wrapper {
+    height: 100%;
+  }
+  .gatsby-image-wrapper {
     height: 100%;
   }
 
-  @media screen and (min-width: ${props =>
-      props.theme.mediaQueryTresholds.XS}) {
-    > .gatsby-image-outer-wrapper {
-      height: 100%;
-    }
-  }
-  @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.S}) {
-    box-shadow: ${props => (!props.isAside ? "0 2px 1px rgba(0,0,0,.2)" : "")};
-    > .gatsby-image-outer-wrapper {
-      width: 100%;
-    }
-  }
-  @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.M}) {
-    > .gatsby-image-outer-wrapper {
-      width: 100%;
-    }
-  }
-  @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
-    > .gatsby-image-outer-wrapper {
-      width: 100%;
-    }
-  }
   @media (min-width: ${props => props.theme.mediaQueryTresholds.XL}) {
     a:hover & {
       ${props =>

@@ -33,4 +33,5 @@ injectGlobal`
   [data-whatintent="mouse"] *:focus {
     outline: none;
   }
+  
 `;
