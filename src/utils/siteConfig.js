@@ -9,7 +9,7 @@ module.exports = {
   siteLogo: "/logos/logo-1024.png",
   siteDescription: "",
   // analytics
-  googleAnalyticsID: "UA-12345689-1",
+  googleAnalyticsID: "UA-110088221-2",
   // manifest.json
   manifestName: "User Experience Notes",
   manifestShortName: "UXnotes",
