@@ -2,4 +2,6 @@
 
 [DEMO website](https://gsbs.greglobinski.com/)
 
+![](static/screens/demo-screencast.gif)
+
 
