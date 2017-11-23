@@ -28,8 +28,6 @@ module.exports = {
   siteLanguage: "en",
   siteLogo: "/logos/logo-1024.png",
   siteDescription: "This is a starter/theme for GatsbyJS",
-  // analytics
-  googleAnalyticsID: "UA-1234567-1",
   // manifest.json
   manifestName: "StyledBlog Gatsby starter",
   manifestShortName: "StyledBlog",
@@ -51,7 +49,7 @@ Edit the ```\src\styles\colors.js``` file to customize the color pallete.
 ```
 module.exports = {
   first: "#7F5D80",
-  firstLight: "#CFC0CF", //"#AF95B0",
+  firstLight: "#CFC0CF", 
   firstSuperLight: "#F4F0F4",
   firstDark: "#563E57",
   accent: "#FF6633",
@@ -62,4 +60,6 @@ module.exports = {
   superDark: "#111111"
 };
 ```
+
+more info soon. If you are interested in updates follow me at [@greglobinski](https://twitter.com/greglobinski).
 
