@@ -2,17 +2,17 @@ const colors = require("../styles/colors");
 
 module.exports = {
   pathPrefix: "/",
-  siteTitle: "Gatsby Styled Blog",
-  siteLongTitle: "Gatsby Styled Blog Starter",
+  siteTitle: "Gatsby StyledBlog starter",
+  siteLongTitle: "Gatsby StyledBlog Theme/Starter",
   siteUrl: "https://gsbs.greglobinski.com",
   siteLanguage: "en",
   siteLogo: "/logos/logo-1024.png",
-  siteDescription: "",
+  siteDescription: "This is a starter/theme for GatsbyJS",
   // analytics
   googleAnalyticsID: "UA-110088221-2",
   // manifest.json
-  manifestName: "User Experience Notes",
-  manifestShortName: "UXnotes",
+  manifestName: "StyledBlog Gatsby starter",
+  manifestShortName: "StyledBlog",
   manifestStartUrl: "/",
   manifestBackgroundColor: colors.first,
   manifestThemeColor: colors.firstLight,
