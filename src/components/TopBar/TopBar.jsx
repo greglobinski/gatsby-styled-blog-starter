@@ -9,11 +9,11 @@ import logo from "../../images/logo-top.svg";
 const Wrapper = styled.header`
   align-items: center;
   background: ${props =>
-    props.navigatorIsAside
+    props.navigatorIsAside || !props.navigatorIsActive
       ? props => props.theme.topBar.backgrounds.wrapperPost
       : props => props.theme.topBar.backgrounds.wrapper};
   box-shadow: ${props =>
-    props.navigatorIsAside
+    props.navigatorIsAside || !props.navigatorIsActive
       ? "0 1px 0px rgba(2, 2, 0, 0.05)"
       : "0 1px 1px rgba(2, 2, 0, 0.2)"};
   margin-bottom: 10px;
@@ -76,7 +76,10 @@ const OpenBtn = styled.button`
 class TopBar extends React.Component {
   render() {
     return (
-      <Wrapper navigatorIsAside={this.props.navigatorIsAside}>
+      <Wrapper
+        navigatorIsAside={this.props.navigatorIsAside}
+        navigatorIsActive={this.props.navigatorIsActive}
+      >
         <Logo navigatorIsAside={this.props.navigatorIsAside}>
           <Link to="/">
             <img src={logo} alt="" />

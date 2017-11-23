@@ -34,7 +34,8 @@ const Wrapper = styled.main`
     padding: 3em 3.5em 6em;
   }
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
-    left: ${props => props.theme.navigator.sizes.asideWidth};
+    left: ${props =>
+      props.navigatorIsActive ? props.theme.navigator.sizes.asideWidth : 0};
     padding: 3.5em 3.5em 3em;
   }
 `;
@@ -49,7 +50,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, "data.site.siteMetadata.title");
 
     return (
-      <Wrapper>
+      <Wrapper navigatorIsActive={this.props.navigatorIsActive}>
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
         <Seo postPath={post.frontmatter.path} postNode={post} postSEO />
         <Article post={post} />

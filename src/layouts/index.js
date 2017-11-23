@@ -94,7 +94,7 @@ class Template extends React.Component {
     const { location, children } = this.props;
     const updatePostsData = this.updatePostsData;
     const updateNavigatorIsAside = this.updateNavigatorIsAside;
-    const updatNavigatorInTransition = this.updatNavigatorInTransition;
+    const navigatorIsActive = this.state.posts.length;
 
     return (
       <ThemeProvider theme={theme}>
@@ -105,6 +105,7 @@ class Template extends React.Component {
           <Seo />
           <TopBarContainer
             navigatorIsAside={this.state.navigatorIsAside}
+            navigatorIsActive={this.state.posts.length}
             btnOnClick={this.toggleInfo}
           />
           <InfoContainer
@@ -117,7 +118,8 @@ class Template extends React.Component {
           {children({
             ...this.props,
             updatePostsData,
-            updateNavigatorIsAside
+            updateNavigatorIsAside,
+            navigatorIsActive
           })}
           {!!this.state.posts.length &&
             !this.state.appInitialState && (

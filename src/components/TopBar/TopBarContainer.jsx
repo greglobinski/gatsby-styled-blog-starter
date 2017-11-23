@@ -7,6 +7,7 @@ class TopBarContainer extends React.Component {
       <TopBar
         btnOnClick={this.props.btnOnClick}
         navigatorIsAside={this.props.navigatorIsAside}
+        navigatorIsActive={this.props.navigatorIsActive}
       />
     );
   }
