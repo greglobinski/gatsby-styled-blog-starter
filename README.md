@@ -4,4 +4,6 @@
 
 ![](static/screens/demo-screencast.gif)
 
+This is a starter/theme for [Gatsby](https://github.com/gatsbyjs/gatsby).
+
 
