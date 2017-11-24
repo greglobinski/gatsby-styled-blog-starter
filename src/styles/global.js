@@ -17,7 +17,7 @@ injectGlobal`
     "Fira Sans",
     "Droid Sans",
     "Helvetica Neue",
-    "sans-seriff";
+    "sans-serif";
   }
   
   *::-webkit-scrollbar {
