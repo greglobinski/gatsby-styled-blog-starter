@@ -278,8 +278,8 @@ properly.
 ### Outline focus
 
 I wanted to use [what-input](https://github.com/ten1seven/what-input) package to
-suppress focus outline on buttons and links when users uses mouse. But for now
-the package breaks `gatsby build` process. So, first I will send a fix pull
+suppress focus outline on buttons and links when a user uses a mouse. But for
+now the package breaks `gatsby build` process. So, first I will send a fix pull
 request to the package repo.
 
 # Updates
