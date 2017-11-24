@@ -1,13 +1,13 @@
 {
-  "name": "user-experience-notes-site",
-  "description": "User Experience Notes website",
+  "name": "gatsby-styled-blog-starter",
+  "version": "0.1.0",
+  "description": "Styled blog starter/theme for Gatsby",
   "author": "Greg Lobinski <greglobinski@gmail.com>",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "devhost": "gatsby develop --host 192.168.0.112"
   },
   "dependencies": {
     "gatsby": "^1.9.110",
