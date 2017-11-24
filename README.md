@@ -244,7 +244,7 @@ There are also other comonents, but they are only for code organizing.
 * Fix bugs
 * Add redux (react-redux) to manage state of interface
 * Types (prop-types/?/flow)
-* Viirtualization of Navigator
+* Navigator virtualization
 * Refactor animations for mobile
 * Categories
 * SEO component
