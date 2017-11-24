@@ -1,3 +1,6 @@
+<img src="static/icons/icon-192x192.png" alt="StyledBlog Logo" width="100"/>
+
+
 # StyledBlog starter for Gatsby
 
 [DEMO website](https://gsbs.greglobinski.com/)
