@@ -2,9 +2,8 @@ const config = require("../../utils/siteConfig");
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import Link from "gatsby-link";
-import Icon from "../Other/Icon.jsx";
-import { ICONS } from "../../utils/constants";
-import logo from "../../images/logo-top.svg";
+import SVGelem from "../Other/SVGelem.jsx";
+import { ICONS, LOGOS } from "../../utils/constants";
 
 const Wrapper = styled.header`
   align-items: center;
@@ -26,7 +25,7 @@ const Wrapper = styled.header`
   right: 0;
   top: 0;
   transition: all 0.6s ease;
-  z-index: 100;
+  z-index: 1;
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.M}) {
     height: ${props => props.theme.topBar.sizes.height + 12}px;
@@ -40,13 +39,20 @@ const Wrapper = styled.header`
 `;
 
 const Logo = styled.span`
-  width: 240px;
   display: block;
   font-size: 1em;
   font-weight: 700;
   line-height: 1;
-  text-transform: uppercase;
   margin: 0.2em 0 0 1em;
+  text-transform: uppercase;
+  width: 240px;
+
+  svg path {
+    fill: ${props =>
+      props.navigatorIsAside || !props.navigatorIsActive
+        ? props => props.theme.topBar.backgrounds.wrapper
+        : props => props.theme.topBar.backgrounds.wrapperPost};
+  }
 `;
 
 const OpenBtn = styled.button`
@@ -80,14 +86,17 @@ class TopBar extends React.Component {
         navigatorIsAside={this.props.navigatorIsAside}
         navigatorIsActive={this.props.navigatorIsActive}
       >
-        <Logo navigatorIsAside={this.props.navigatorIsAside}>
+        <Logo
+          navigatorIsAside={this.props.navigatorIsAside}
+          navigatorIsActive={this.props.navigatorIsActive}
+        >
           <Link to="/">
-            <img src={logo} alt="" />
+            <SVGelem svg={LOGOS.TOP} />
           </Link>
         </Logo>
         <OpenBtn onClick={this.props.btnOnClick} aria-label="Unfold">
           <span>
-            <Icon icon={ICONS.INFO} />
+            <SVGelem svg={ICONS.INFO} />
           </span>
         </OpenBtn>
       </Wrapper>

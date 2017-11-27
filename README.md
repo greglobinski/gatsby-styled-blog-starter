@@ -8,7 +8,8 @@ This is a starter/theme for [Gatsby](https://github.com/gatsbyjs/gatsby).
 
 ## Description
 
-The goal is to make a theme for Gatsby which will look like an app.
+The goal is to make a theme for Gatsby which will look like an app. I use the
+starter for my own [blog](https://www.userexperiencenotes.com/).
 
 ### No webfonts
 

@@ -1,6 +1,6 @@
 {
-  "name": "user-experience-notes-site",
-  "description": "User Experience Notes website",
+  "name": "gatsby-styled-blog-starter",
+  "description": "Gatsby StyledBlog starter",
   "author": "Greg Lobinski <greglobinski@gmail.com>",
   "license": "MIT",
   "scripts": {
