@@ -50,8 +50,8 @@ const Logo = styled.span`
   svg path {
     fill: ${props =>
       props.navigatorIsAside || !props.navigatorIsActive
-        ? props => props.theme.topBar.backgrounds.wrapper
-        : props => props.theme.topBar.backgrounds.wrapperPost};
+        ? props => props.theme.topBar.colors.logoPost
+        : props => props.theme.topBar.colors.logo};
   }
 `;
 

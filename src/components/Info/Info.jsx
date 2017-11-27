@@ -1,10 +1,9 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import Link from "gatsby-link";
-import Icon from "../Other/Icon";
-import { ICONS } from "../../utils/constants";
+import SVGelem from "../Other/SVGelem.jsx";
+import { ICONS, LOGOS } from "../../utils/constants";
 import config from "../../utils/siteConfig";
-import logo from "../../images/logo-info.svg";
 
 const Wrapper = styled.div`
   background: ${props => props.theme.info.backgrounds.wrapper};
@@ -15,7 +14,8 @@ const Wrapper = styled.div`
   right: 0;
   top: ${props => (props.isRolledDown ? "0" : "-100%")};
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1), background 0s;
-  z-index: 100;
+  overflow: auto;
+  z-index: 2;
 
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
     left: ${props =>
@@ -64,9 +64,12 @@ const Content = styled.div`
   }
 `;
 
-const Logo = styled.img`
-  max-width: 200px;
+const Logo = styled.span`
+  display: block;
   margin-bottom: 1em;
+  width: 250px;
+  max-width: 80%;
+  fill: ${props => props.theme.info.colors.text};
 `;
 
 const CloseBtn = styled.button`
@@ -111,10 +114,12 @@ class Info extends React.Component {
         navigatorIsAside={this.props.navigatorIsAside}
       >
         <Content>
-          <Logo src={logo} alt="" />
+          <Logo>
+            <SVGelem svg={LOGOS.MAIN} />
+          </Logo>
           <p>
             This is the <em>gatsby-styled-blog-starter</em> <b>demo site</b>. To
-            download the code and get some instructions visit the Github {" "}
+            download the code and get some instructions visit the Github{" "}
             <a
               href="https://github.com/greglobinski/gatsby-styled-blog-starter"
               target="_blank"
@@ -122,7 +127,7 @@ class Info extends React.Component {
             >
               repository
             </a>{" "}
-            . To be informed about updates follow {" "}
+            . To be informed about updates follow{" "}
             <a
               href="https://twitter.com/greglobinski"
               target="_blank"
@@ -133,7 +138,7 @@ class Info extends React.Component {
           </p>
           <CloseBtn onClick={this.props.btnOnClick} aria-label="Close">
             <span>
-              <Icon icon={ICONS.CLOSE} />
+              <SVGelem svg={ICONS.CLOSE} />
             </span>
           </CloseBtn>
         </Content>
