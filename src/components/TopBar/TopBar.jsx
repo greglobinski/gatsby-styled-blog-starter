@@ -55,7 +55,7 @@ const Logo = styled.span`
   }
 `;
 
-const OpenBtn = styled.button`
+const Btn = styled.button`
   background: none;
   border: none;
   color: white;
@@ -79,29 +79,25 @@ const OpenBtn = styled.button`
   }
 `;
 
-class TopBar extends React.Component {
-  render() {
-    return (
-      <Wrapper
-        navigatorIsAside={this.props.navigatorIsAside}
-        navigatorIsActive={this.props.navigatorIsActive}
-      >
-        <Logo
-          navigatorIsAside={this.props.navigatorIsAside}
-          navigatorIsActive={this.props.navigatorIsActive}
-        >
-          <Link to="/">
-            <SVGelem svg={LOGOS.TOP} />
-          </Link>
-        </Logo>
-        <OpenBtn onClick={this.props.btnOnClick} aria-label="Unfold">
-          <span>
-            <SVGelem svg={ICONS.INFO} />
-          </span>
-        </OpenBtn>
-      </Wrapper>
-    );
-  }
-}
+const TopBar = props => (
+  <Wrapper
+    navigatorIsAside={props.navigatorIsAside}
+    navigatorIsActive={props.navigatorIsActive}
+  >
+    <Logo
+      navigatorIsAside={props.navigatorIsAside}
+      navigatorIsActive={props.navigatorIsActive}
+    >
+      <Link to="/">
+        <SVGelem svg={LOGOS.TOP} />
+      </Link>
+    </Logo>
+    <Btn onClick={props.btnOnClick} aria-label="Unfold">
+      <span>
+        <SVGelem svg={ICONS.INFO} />
+      </span>
+    </Btn>
+  </Wrapper>
+);
 
 export default TopBar;

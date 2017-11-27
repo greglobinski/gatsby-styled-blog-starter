@@ -103,11 +103,7 @@ class Template extends React.Component {
             <html lang="en" />
           </Helmet>
           <Seo />
-          <TopBarContainer
-            navigatorIsAside={this.state.navigatorIsAside}
-            navigatorIsActive={this.state.posts.length}
-            btnOnClick={this.toggleInfo}
-          />
+          <TopBarContainer />
           <InfoContainer
             navigatorIsAside={this.state.navigatorIsAside}
             isRolledDown={this.state.infoIsRolledDown}
@@ -140,3 +136,7 @@ class Template extends React.Component {
 }
 
 export default Template;
+
+// navigatorIsAside={this.state.navigatorIsAside}
+// navigatorIsActive={this.state.posts.length}
+// btnOnClick={this.toggleInfo}
