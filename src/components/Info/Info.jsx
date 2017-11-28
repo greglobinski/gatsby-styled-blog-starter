@@ -102,50 +102,43 @@ const CloseBtn = styled.button`
   }
 `;
 
-class Info extends React.Component {
-  render() {
-    return (
-      <Wrapper
-        isRolledDown={this.props.isRolledDown}
-        inTransition={this.props.inTransition}
-        innerRef={header => {
-          this.screenHeader = header;
-        }}
-        navigatorIsAside={this.props.navigatorIsAside}
-      >
-        <Content>
-          <Logo>
-            <SVGelem svg={LOGOS.MAIN} />
-          </Logo>
-          <p>
-            This is the <em>gatsby-styled-blog-starter</em> <b>demo site</b>. To
-            download the code and get some instructions visit the Github{" "}
-            <a
-              href="https://github.com/greglobinski/gatsby-styled-blog-starter"
-              target="_blank"
-              rel="noopener"
-            >
-              repository
-            </a>{" "}
-            . To be informed about updates follow{" "}
-            <a
-              href="https://twitter.com/greglobinski"
-              target="_blank"
-              rel="noopener"
-            >
-              @greglobinski
-            </a>
-          </p>
-          <CloseBtn onClick={this.props.btnOnClick} aria-label="Close">
-            <span>
-              <SVGelem svg={ICONS.CLOSE} />
-            </span>
-          </CloseBtn>
-        </Content>
-      </Wrapper>
-    );
-  }
-}
+const Info = props => (
+  <Wrapper
+    isRolledDown={props.isRolledDown}
+    inTransition={props.inTransition}
+    navigatorIsAside={props.navigatorIsAside}
+  >
+    <Content>
+      <Logo>
+        <SVGelem svg={LOGOS.MAIN} />
+      </Logo>
+      <p>
+        This is the <em>gatsby-styled-blog-starter</em> <b>demo site</b>. To
+        download the code and get some instructions visit the Github{" "}
+        <a
+          href="https://github.com/greglobinski/gatsby-styled-blog-starter"
+          target="_blank"
+          rel="noopener"
+        >
+          repository
+        </a>{" "}
+        . To be informed about updates follow{" "}
+        <a
+          href="https://twitter.com/greglobinski"
+          target="_blank"
+          rel="noopener"
+        >
+          @greglobinski
+        </a>
+      </p>
+      <CloseBtn onClick={props.btnOnClick} aria-label="Close">
+        <span>
+          <SVGelem svg={ICONS.CLOSE} />
+        </span>
+      </CloseBtn>
+    </Content>
+  </Wrapper>
+);
 
 export default Info;
 

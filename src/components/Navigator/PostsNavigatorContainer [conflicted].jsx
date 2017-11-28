@@ -1,24 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { navigatorIsAside, navigatorInTransition } from "../../state/store";
+import { navigatorIsAside } from "../../state/store";
 import PostsNavigator from "./PostsNavigator";
 
 class PostsNavigatorContainer extends React.Component {
-  constructor(props) {
-    super(props);
-    this.linkOnClick = this.linkOnClick.bind(this);
-  }
-
-  linkOnClick() {
-    if (!this.props.isAside) {
-      this.props.updateIsAside(true);
-
-      setTimeout(() => {
-        this.props.updateInTransition(false);
-      }, 800);
-    }
-  }
-
   render() {
     return (
       <div>
@@ -26,7 +11,7 @@ class PostsNavigatorContainer extends React.Component {
           <PostsNavigator
             location={this.props.location}
             posts={this.props.posts}
-            linkOnClick={this.linkOnClick}
+            linkOnClick={this.props.linkOnClick}
             isAside={this.props.isAside}
             inTransition={this.props.inTransition}
             isHidden={this.props.isHidden}
@@ -48,9 +33,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateIsAside: val => dispatch(navigatorIsAside(val)),
-    updateInTransition: val => dispatch(navigatorInTransition(val))
-  };
+    linkOnClick: () => {
+      dispatch(navigatorIsAside(true, true));
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(

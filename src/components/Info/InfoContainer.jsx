@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import { toggleInfoScreen } from "../../state/store";
 import Info from "./Info";
 
 class InfoContainer extends React.Component {
@@ -27,4 +29,16 @@ class InfoContainer extends React.Component {
   }
 }
 
-export default InfoContainer;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    navigatorIsAside: state.navigator.isAside,
+    isRolledDown: state.info.isRolledDown,
+    inTransition: state.info.inTransition
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return { btnOnClick: () => dispatch(toggleInfoScreen()) };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(InfoContainer);

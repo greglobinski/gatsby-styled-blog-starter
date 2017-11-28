@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "gatsby-link";
 import styled, { ThemeProvider } from "styled-components";
+import { connect } from "react-redux";
+import {} from "../state/store";
 //import whatInput from "what-input";
 import Helmet from "react-helmet";
 import PostsNavigatorContainer from "../components/Navigator/PostsNavigatorContainer";
@@ -27,12 +29,12 @@ class Template extends React.Component {
     this.updateNavigatorIsAside = this.updateNavigatorIsAside.bind(this);
     this.toggleInfo = this.toggleInfo.bind(this);
     this.state = {
-      posts: [],
-      appInit: true,
-      navigatorIsAside: false,
-      navigatorInTransition: false,
-      infoIsRolledDown: false,
-      infoInTransition: false
+      // posts: [],
+      // appInit: true,
+      // navigatorIsAside: false,
+      // navigatorInTransition: false,
+      // infoIsRolledDown: false,
+      // infoInTransition: false
     };
   }
 
@@ -92,9 +94,9 @@ class Template extends React.Component {
 
   render() {
     const { location, children } = this.props;
-    const updatePostsData = this.updatePostsData;
-    const updateNavigatorIsAside = this.updateNavigatorIsAside;
-    const navigatorIsActive = this.state.posts.length;
+    // const updatePostsData = this.updatePostsData;
+    // const updateNavigatorIsAside = this.updateNavigatorIsAside;
+    // const navigatorIsActive = this.state.posts.length;
 
     return (
       <ThemeProvider theme={theme}>
@@ -104,30 +106,11 @@ class Template extends React.Component {
           </Helmet>
           <Seo />
           <TopBarContainer />
-          <InfoContainer
-            navigatorIsAside={this.state.navigatorIsAside}
-            isRolledDown={this.state.infoIsRolledDown}
-            inTransition={this.state.infoInTransition}
-            btnOnClick={this.toggleInfo}
-          />
-
+          <InfoContainer />
           {children({
-            ...this.props,
-            updatePostsData,
-            updateNavigatorIsAside,
-            navigatorIsActive
+            ...this.props
           })}
-          {!!this.state.posts.length &&
-            !this.state.appInitialState && (
-              <PostsNavigatorContainer
-                location={location.pathname}
-                posts={this.state.posts}
-                linkOnClick={this.navigatorLinkOnClik}
-                isAside={this.state.navigatorIsAside}
-                inTransition={this.state.navigatorInTransition}
-                isHidden={this.state.navigatorIsHidden}
-              />
-            )}
+          <PostsNavigatorContainer location={location.pathname} />
           {this.state.navigatorIsAside && <BottomBarContainer />}
         </Container>
       </ThemeProvider>
@@ -135,8 +118,33 @@ class Template extends React.Component {
   }
 }
 
-export default Template;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    posts: state.posts,
+    navigatorIsAside: state.navigator.isAside,
+    navigatorInTransition: state.navigator.inTransition
+  };
+};
 
+const mapDispatchToProps = dispatch => {
+  return { btnOnClick: () => dispatch(toggleInfoScreen()) };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Template);
+
+// topbar
 // navigatorIsAside={this.state.navigatorIsAside}
 // navigatorIsActive={this.state.posts.length}
 // btnOnClick={this.toggleInfo}
+
+// info
+// navigatorIsAside={this.state.navigatorIsAside}
+// isRolledDown={this.state.infoIsRolledDown}
+// inTransition={this.state.infoInTransition}
+// btnOnClick={this.toggleInfo}
+
+// navigator
+// posts={this.state.posts}
+// isAside={this.state.navigatorIsAside}
+// inTransition={this.state.navigatorInTransition}
+// linkOnClick={this.navigatorLinkOnClik}

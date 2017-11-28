@@ -1,5 +1,6 @@
 const config = require("../utils/siteConfig");
 import React from "react";
+import { connect } from "react-redux";
 import Helmet from "react-helmet";
 import get from "lodash/get";
 import styled, { keyframes } from "styled-components";
@@ -58,7 +59,17 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    navigatorIsActive: state.posts.length
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(BlogPostTemplate);
 
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
