@@ -242,11 +242,11 @@ There are also other comonents, but they are only for code organizing.
 
 ### What need to be done to 'Do it right'
 
-* Fix bugs
-* ~~Add redux (react-redux) to manage state of interface~~
+* ~~Add redux (react-redux) to manage state of interface~~ (done)
 * Types (prop-types/?/flow)
 * Navigator virtualization
 * Refactor animations for mobile
+* Fix and install [what-input](https://github.com/ten1seven/what-input)
 * Categories
 * SEO component
 * Disqus Comments
@@ -258,23 +258,6 @@ There are also other comonents, but they are only for code organizing.
 * PWA push notifications (?)
 * Localstorage for user history
 * ...
-
-# Bugs
-
-### ~~No JavaScript empty home page~~
-
-~~The _Navigator_ component is a child of main layout component. The main layout
-component gets _posts_ data through callback function from
-`/src/pages/index.js`. Because of that, when JavaScript in the user's web
-browser is off and the user visits the home page he sees the TopBar only, there
-is no a list of posts. It will be fixed after I implement redux.~~
-
-### Outline focus
-
-I wanted to use [what-input](https://github.com/ten1seven/what-input) package to
-suppress focus outline on buttons and links when a user uses a mouse. But for
-now the package breaks `gatsby build` process. So, first I will send a fix pull
-request to the package repo.
 
 # Updates
 
