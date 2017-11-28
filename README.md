@@ -243,7 +243,7 @@ There are also other comonents, but they are only for code organizing.
 ### What need to be done to 'Do it right'
 
 * Fix bugs
-* Add redux (react-redux) to manage state of interface
+* ~~Add redux (react-redux) to manage state of interface~~
 * Types (prop-types/?/flow)
 * Navigator virtualization
 * Refactor animations for mobile
@@ -261,21 +261,13 @@ There are also other comonents, but they are only for code organizing.
 
 # Bugs
 
-### No JavaScript empty home page
+### ~~No JavaScript empty home page~~
 
-The _Navigator_ component is a child of main layout component. The main layout
+~~The _Navigator_ component is a child of main layout component. The main layout
 component gets _posts_ data through callback function from
 `/src/pages/index.js`. Because of that, when JavaScript in the user's web
 browser is off and the user visits the home page he sees the TopBar only, there
-is no a list of posts. It will be fixed after I implement redux. It's not
-connected, but redux implementation is on the go, there are already Containers
-components.
-
-The bug is real, but it's not as critical as I thought. Yeah, it hits no JS
-users, but from the SEO point there is no problem. Googlebog see the home page
-properly.
-
-![](static/screens/googlebot-render.png)
+is no a list of posts. It will be fixed after I implement redux.~~
 
 ### Outline focus
 
