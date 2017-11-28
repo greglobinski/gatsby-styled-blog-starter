@@ -20,20 +20,16 @@ class PostsNavigatorContainer extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        {!!this.props.posts.length && (
-          <PostsNavigator
-            location={this.props.location}
-            posts={this.props.posts}
-            linkOnClick={this.linkOnClick}
-            isAside={this.props.isAside}
-            inTransition={this.props.inTransition}
-            isHidden={this.props.isHidden}
-          />
-        )}
-      </div>
-    );
+    return !!this.props.posts.length ? (
+      <PostsNavigator
+        location={this.props.location}
+        posts={this.props.posts}
+        linkOnClick={this.linkOnClick}
+        isAside={this.props.isAside}
+        inTransition={this.props.inTransition}
+        isHidden={this.props.isHidden}
+      />
+    ) : null;
   }
 }
 
