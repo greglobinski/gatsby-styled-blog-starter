@@ -1,6 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
-import { navigatorIsAside, navigatorInTransition } from "../../state/store";
+import {
+  setNavigatorIsAside,
+  setNavigatorInTransition
+} from "../../state/store";
 import PostsNavigator from "./PostsNavigator";
 
 class PostsNavigatorContainer extends React.Component {
@@ -11,10 +14,11 @@ class PostsNavigatorContainer extends React.Component {
 
   linkOnClick() {
     if (!this.props.isAside) {
-      this.props.updateIsAside(true);
+      this.props.setIsAside(true);
+      this.props.setInTransition(true);
 
       setTimeout(() => {
-        this.props.updateInTransition(false);
+        this.props.setInTransition(false);
       }, 800);
     }
   }
@@ -44,8 +48,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateIsAside: val => dispatch(navigatorIsAside(val)),
-    updateInTransition: val => dispatch(navigatorInTransition(val))
+    setIsAside: val => dispatch(setNavigatorIsAside(val)),
+    setInTransition: val => dispatch(setNavigatorInTransition(val))
   };
 };
 

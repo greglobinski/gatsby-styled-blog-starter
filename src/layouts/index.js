@@ -41,7 +41,7 @@ class Template extends React.Component {
           {children({
             ...this.props
           })}
-          <PostsNavigatorContainer location={location.pathname} />
+          <PostsNavigatorContainer />
           <BottomBarContainer />
         </Container>
       </ThemeProvider>

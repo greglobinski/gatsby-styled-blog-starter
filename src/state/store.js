@@ -7,8 +7,8 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 const TOGGLE_INFO_SCREEN = "TOGGLE_INFO";
 const UPDATE_POSTS_DATA = "UPDATE_POSTS_DATA";
-const NAVIGATOR_IS_ASIDE = "NAVIGATOR_IS_ASIDE";
-const NAVIGATOR_IN_TRANSITION = "NAVIGATOR_IN_TRANSITION";
+const SET_NAVIGATOR_IS_ASIDE = "SET_NAVIGATOR_IS_ASIDE";
+const SET_NAVIGATOR_IN_TRANSITION = "SET_NAVIGATOR_IN_TRANSITION";
 
 /*
  * action creators
@@ -21,12 +21,12 @@ export function updatePostsData(data) {
   return { type: UPDATE_POSTS_DATA, data };
 }
 
-export function navigatorIsAside(val) {
-  return { type: NAVIGATOR_IS_ASIDE, val };
+export function setNavigatorIsAside(val) {
+  return { type: SET_NAVIGATOR_IS_ASIDE, val };
 }
 
-export function navigatorInTransition(val) {
-  return { type: NAVIGATOR_IN_TRANSITION, val };
+export function setNavigatorInTransition(val) {
+  return { type: SET_NAVIGATOR_IN_TRANSITION, val };
 }
 
 /*
@@ -35,14 +35,14 @@ export function navigatorInTransition(val) {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case NAVIGATOR_IS_ASIDE:
+    case SET_NAVIGATOR_IS_ASIDE:
       return Object.assign({}, state, {
         navigator: {
           isAside: action.val,
-          inTransition: true
+          inTransition: state.navigator.inTransition
         }
       });
-    case NAVIGATOR_IN_TRANSITION:
+    case SET_NAVIGATOR_IN_TRANSITION:
       return Object.assign({}, state, {
         navigator: {
           isAside: state.navigator.isAside,
@@ -79,7 +79,7 @@ const initialState = {
 const createStore = () =>
   reduxCreateStore(
     reducer,
-    initialState,
-    composeWithDevTools(applyMiddleware())
+    initialState
+    //composeWithDevTools(applyMiddleware())
   );
 export default createStore;

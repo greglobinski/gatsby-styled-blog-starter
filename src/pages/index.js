@@ -3,13 +3,14 @@ import React from "react";
 import { connect } from "react-redux";
 import {
   updatePostsData,
-  navigatorIsAside,
-  navigatorInTransition
+  setNavigatorIsAside,
+  setNavigatorInTransition
 } from "../state/store";
 import Link from "gatsby-link";
 import get from "lodash/get";
 import Helmet from "react-helmet";
 import styled from "styled-components";
+import PostsNavigatorContainer from "../components/Navigator/PostsNavigatorContainer";
 
 class BlogIndex extends React.Component {
   componentWillMount() {
@@ -20,10 +21,14 @@ class BlogIndex extends React.Component {
 
     const posts = get(this, "props.data.allMarkdownRemark.edges");
     this.props.updatePostsData(posts);
-    this.props.updateNavigatorIsAside(false);
-    setTimeout(() => {
-      this.props.navigatorInTransition(false);
-    }, isWideScreen ? 500 : 0);
+    this.props.setNavigatorIsAside(false);
+    if (typeof window !== `undefined`) {
+      this.props.setNavigatorInTransition(true);
+
+      setTimeout(() => {
+        this.props.setNavigatorInTransition(false);
+      }, isWideScreen ? 500 : 0);
+    }
   }
 
   render() {
@@ -41,8 +46,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     updatePostsData: data => dispatch(updatePostsData(data)),
-    updateNavigatorIsAside: val => dispatch(navigatorIsAside(val)),
-    navigatorInTransition: val => dispatch(navigatorInTransition(val))
+    setNavigatorIsAside: val => dispatch(setNavigatorIsAside(val)),
+    setNavigatorInTransition: val => dispatch(setNavigatorInTransition(val))
   };
 };
 
