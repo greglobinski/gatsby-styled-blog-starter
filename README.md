@@ -1,6 +1,3 @@
-<img src="static/icons/icon-192x192.png" alt="StyledBlog Logo" width="100"/>
-
-
 # StyledBlog starter for Gatsby
 
 [DEMO website](https://gsbs.greglobinski.com/)
@@ -15,8 +12,8 @@ The goal is to make a theme using Gatsby which behaves like a native app.
 
 ### No webfonts
 
-StyledBlog uses no webfonts, instead system-fonts are used. So the typography looks a litle
-different on different devices. This is the whole font setting
+StyledBlog uses no webfonts, instead system-fonts are used. So the typography
+looks a litle different on different devices. This is the whole font setting
 `/src/styles/global.js`
 
 ```
@@ -26,8 +23,8 @@ body {
 ```
 
 The inspiration not to use webfonts came from
-[reactjs.org](https://reactjs.org/). But, if you need webfonts,
-it's easy to configure, as shown in [Customization](#customization) section below.
+[reactjs.org](https://reactjs.org/). But, if you need webfonts, it's easy to
+configure, as shown in [Customization](#customization) section below.
 
 ### styled-components
 
@@ -42,7 +39,8 @@ with a styled-component theme.
 If you are completely new to Gatsby, start with one of its
 [official blog starters](https://www.gatsbyjs.org/docs/gatsby-starters/). If you
 have already went through with the
-[tutorials](https://www.gatsbyjs.org/tutorial/) install the starter using `gatsby new` command.
+[tutorials](https://www.gatsbyjs.org/tutorial/) install the starter using
+`gatsby new` command.
 
 ```
 gatsby new [NEW_SITE_DIRECTORY_FOR_YOUR_BLOG] git@github.com:greglobinski/gatsby-styled-blog-starter.git
@@ -202,8 +200,8 @@ const theme = {
 
 ### Webfonts
 
-As mentioned StyledBlog does not use webfonts. If you need them, the
-simplest way is to use Google Fonts is through
+As mentioned StyledBlog does not use webfonts. If you need them, the simplest
+way is to use Google Fonts is through
 [Typography.js](https://kyleamathews.github.io/typography.js/). But instead
 installing Typography.js directly use
 [gatsby-plugin-typography](https://www.gatsbyjs.org/tutorial/part-two/#typographyjs).
@@ -214,8 +212,7 @@ Typography comes with its own normalize styles.
 
 ### Posts
 
-Blog content is located in `/content/posts/` directory, in markdown
-files.
+Blog content is located in `/content/posts/` directory, in markdown files.
 
 # Status
 
@@ -225,9 +222,10 @@ it even better." So...
 ### What was done
 
 * I started with
-[gatsby-starter-hello-world](https://github.com/gatsbyjs/gatsby-starter-hello-world).
+  [gatsby-starter-hello-world](https://github.com/gatsbyjs/gatsby-starter-hello-world).
 
 * Installed plugins:
+
 ```
 gatsby-image, gatsby-plugin-catch-links,
 gatsby-plugin-manifest, gatsby-plugin-netlify, gatsby-plugin-offline,
@@ -239,8 +237,8 @@ gatsby-source-filesystem, gatsby-transformer-remark, gatsby-transformer-sharp
 normalize.css, styled-components
 ```
 
-* Created four React components: Navigator, TopBar, BottomBar and Info.
-There are also other components, but they are only for code organizing.
+* Created four React components: Navigator, TopBar, BottomBar and Info. There
+  are also other components, but they are only for code organizing.
 
 ### What need to be done to 'Do it right'
 
