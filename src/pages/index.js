@@ -7,7 +7,6 @@ import {
   setNavigatorInTransition
 } from "../state/store";
 import Link from "gatsby-link";
-import get from "lodash/get";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import PostsNavigatorContainer from "../components/Navigator/PostsNavigatorContainer";
@@ -19,7 +18,7 @@ class BlogIndex extends React.Component {
         ? document.documentElement.clientWidth > 776
         : false;
 
-    const posts = get(this, "props.data.allMarkdownRemark.edges");
+    const posts = this.props.data.allMarkdownRemark.edges;
     this.props.updatePostsData(posts);
     this.props.setNavigatorIsAside(false);
     if (typeof window !== `undefined`) {

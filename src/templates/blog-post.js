@@ -2,7 +2,6 @@ const config = require("../utils/siteConfig");
 import React from "react";
 import { connect } from "react-redux";
 import Helmet from "react-helmet";
-import get from "lodash/get";
 import styled, { keyframes } from "styled-components";
 import Seo from "../components/Other/Seo";
 import Author from "../components/Article/Author/Author";
@@ -42,10 +41,6 @@ const Wrapper = styled.main`
 `;
 
 class BlogPostTemplate extends React.Component {
-  componentWillMount() {
-    const posts = get(this, "props.data.allMarkdownRemark.edges");
-  }
-
   render() {
     const post = this.props.data.markdownRemark;
 
