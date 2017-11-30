@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import Link from "gatsby-link";
-import Icon from "../Other/Icon.jsx";
+import SVGelem from "../Other/SVGelem.jsx";
 import { ICONS } from "../../utils/constants";
 
 const wrapperShowUp = keyframes`
@@ -49,7 +49,7 @@ const Wrapper = styled.footer`
   }
 `;
 
-const IconWrapper = styled.span`
+const SVGWrapper = styled.span`
   background: ${props => props.theme.bottomBar.backgrounds.icon};
   display: block;
   height: ${props => props.theme.bottomBar.sizes.height}px;
@@ -72,9 +72,9 @@ class BottomBar extends React.Component {
     return (
       <Wrapper>
         <Link to="/">
-          <IconWrapper>
-            <Icon icon={ICONS.HOME} />
-          </IconWrapper>
+          <SVGWrapper>
+            <SVGelem svg={ICONS.HOME} />
+          </SVGWrapper>
           <b>back Home</b>
         </Link>
       </Wrapper>

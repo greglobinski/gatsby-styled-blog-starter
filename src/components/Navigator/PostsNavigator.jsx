@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "gatsby-link";
-import get from "lodash/get";
 import Img from "gatsby-image";
 import styled, { keyframes } from "styled-components";
 
@@ -256,8 +255,7 @@ class PostsNavigator extends React.Component {
         >
           {this.props.posts &&
             this.props.posts.map(post => {
-              const title =
-                get(post, "node.frontmatter.title") || post.node.path;
+              const title = post.node.frontmatter.title || post.node.path;
               return (
                 <ListItem
                   isActive={post.node.frontmatter.path === this.props.location}

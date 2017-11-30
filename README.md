@@ -11,7 +11,7 @@ This is a starter/theme for [Gatsby](https://github.com/gatsbyjs/gatsby).
 
 ## Description
 
-The goal is to make a theme using Gatsby which behaves like a native mobile-app.
+The goal is to make a theme using Gatsby which behaves like a native app.
 
 ### No webfonts
 
@@ -244,11 +244,11 @@ There are also other components, but they are only for code organizing.
 
 ### What need to be done to 'Do it right'
 
-* Fix bugs
-* Add redux (react-redux) to manage state of interface
+* ~~Add redux (react-redux) to manage state of interface~~ (done)
 * Types (prop-types/?/flow)
 * Navigator virtualization
 * Refactor animations for mobile
+* Fix and install [what-input](https://github.com/ten1seven/what-input)
 * Categories
 * SEO component
 * Disqus Comments
@@ -261,30 +261,9 @@ There are also other components, but they are only for code organizing.
 * Localstorage for user history
 * ...
 
-# Bugs
+# Examples of use
 
-### No JavaScript empty home page
-
-The _Navigator_ component is a child of main layout component. The main layout
-component gets _posts_ data through callback function from
-`/src/pages/index.js`. Because of that, when JavaScript in the user's web
-browser is off and the user visits the home page, only TopBar is shown, there
-is no a list of posts. It will be fixed after redux is implemented. It's not
-connected, but redux implementation is on the go, there are already Containers
-components.
-
-The bug is real, but it's not as critical as I thought. Yeah, it hits no JS
-users, but from the SEO point there is no problem. Google-bot see the home page
-properly.
-
-![](static/screens/googlebot-render.png)
-
-### Outline focus
-
-I wanted to use [what-input](https://github.com/ten1seven/what-input) package to
-suppress focus outline on buttons and links when a user uses a mouse. But for
-now the package breaks `gatsby build` process. So, first I will send a fix pull
-request to the package repo.
+* [www.userexperiencenotes.com](https://www.userexperiencenotes.com/)
 
 # Updates
 

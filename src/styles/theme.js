@@ -58,8 +58,8 @@ const theme = {
   },
   topBar: {
     colors: {
-      link: colors.bright,
-      linkPost: colors.first
+      logo: colors.bright,
+      logoPost: colors.first
     },
     backgrounds: {
       wrapper: colors.firstLight,
