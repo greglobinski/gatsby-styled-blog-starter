@@ -259,9 +259,11 @@ normalize.css, styled-components
 * Localstorage for user history
 * ...
 
-# Examples of use
+# Blogs build with the starter
 
 * [www.userexperiencenotes.com](https://www.userexperiencenotes.com/)
+
+PR to add your blog
 
 # Updates
 
