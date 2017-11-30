@@ -1,6 +1,6 @@
 {
   "name": "gatsby-styled-blog-starter",
-  "description": "Gatsby StyledBlog starter",
+  "description": "StyledBlog starter/theme for Gatsby",
   "author": "Greg Lobinski <greglobinski@gmail.com>",
   "license": "MIT",
   "version": "0.0.2",
@@ -11,8 +11,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve",
-    "devhost": "gatsby develop --host 192.168.0.112"
+    "serve": "gatsby serve"
   },
   "dependencies": {
     "gatsby": "^1.9.110",

@@ -58,5 +58,10 @@ typings/
 .env
 
 .cache/
+.DS_Store
 public
 yarn-error.log
+
+# editors
+.idea/
+.vscode

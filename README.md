@@ -1,3 +1,6 @@
+<img src="static/icons/icon-192x192.png" alt="StyledBlog Logo" width="100"/>
+
+
 # StyledBlog starter for Gatsby
 
 [DEMO website](https://gsbs.greglobinski.com/)
@@ -8,13 +11,11 @@ This is a starter/theme for [Gatsby](https://github.com/gatsbyjs/gatsby).
 
 ## Description
 
-The goal is to make a theme for Gatsby which will look like an app. I use the
-starter for my own [blog](https://www.userexperiencenotes.com/).
+The goal is to make a theme using Gatsby which behaves like a native app.
 
 ### No webfonts
 
-I did it first time for many years. I created a website front-end with using no
-webfonts. The StyledBlog uses only system fonts. So the typography looks a litle
+StyledBlog uses no webfonts, instead system-fonts are used. So the typography looks a litle
 different on different devices. This is the whole font setting
 `/src/styles/global.js`
 
@@ -24,9 +25,9 @@ body {
   }
 ```
 
-That's all. And it looks great. The inspiration came from
-[reactjs.org](https://reactjs.org/). But, if you need them, I mean webfonts,
-it's easy to add, take a look at the Customization section below.
+The inspiration not to use webfonts came from
+[reactjs.org](https://reactjs.org/). But, if you need webfonts,
+it's easy to configure, as shown in [Customization](#customization) section below.
 
 ### styled-components
 
@@ -41,8 +42,7 @@ with a styled-component theme.
 If you are completely new to Gatsby, start with one of its
 [official blog starters](https://www.gatsbyjs.org/docs/gatsby-starters/). If you
 have already went through with the
-[tutorials](https://www.gatsbyjs.org/tutorial/) install the starter like any
-other one using `gatsby new` command.
+[tutorials](https://www.gatsbyjs.org/tutorial/) install the starter using `gatsby new` command.
 
 ```
 gatsby new [NEW_SITE_DIRECTORY_FOR_YOUR_BLOG] git@github.com:greglobinski/gatsby-styled-blog-starter.git
@@ -202,19 +202,19 @@ const theme = {
 
 ### Webfonts
 
-As I mentioned above StyledBlog does not use webfonts. If you need them, the
-simplest way is to use Google Fonts through
+As mentioned StyledBlog does not use webfonts. If you need them, the
+simplest way is to use Google Fonts is through
 [Typography.js](https://kyleamathews.github.io/typography.js/). But instead
 installing Typography.js directly use
 [gatsby-plugin-typography](https://www.gatsbyjs.org/tutorial/part-two/#typographyjs).
 
 Remember to update `body { font-family: ....}` in the `/src/styles/global.js`
-file. Remove also `import "normalize.css";` from `/src/layouts/index.js`,
+file. Also remove `import "normalize.css";` from `/src/layouts/index.js`, since
 Typography comes with its own normalize styles.
 
 ### Posts
 
-Content of the blog is located in the `/content/posts/` directory in markdown
+Blog content is located in `/content/posts/` directory, in markdown
 files.
 
 # Status
@@ -224,21 +224,23 @@ it even better." So...
 
 ### What was done
 
-I started with
+* I started with
 [gatsby-starter-hello-world](https://github.com/gatsbyjs/gatsby-starter-hello-world).
 
-Then installed some Gatsby plugins: gatsby-image, gatsby-plugin-catch-links,
+* Installed plugins:
+```
+gatsby-image, gatsby-plugin-catch-links,
 gatsby-plugin-manifest, gatsby-plugin-netlify, gatsby-plugin-offline,
 gatsby-plugin-react-helmet, gatsby-plugin-sharp,
 gatsby-plugin-styled-components, gatsby-plugin-typography,
 gatsby-remark-copy-linked-files, gatsby-remark-images, gatsby-remark-prismjs,
 gatsby-remark-responsive-ifram, gatsby-remark-smartypants,
 gatsby-source-filesystem, gatsby-transformer-remark, gatsby-transformer-sharp
+normalize.css, styled-components
+```
 
-And a couple of other packages: normalize.css, styled-components
-
-Finaly created four React components: Navigator, TopBar, BottomBar and Info.
-There are also other comonents, but they are only for code organizing.
+* Created four React components: Navigator, TopBar, BottomBar and Info.
+There are also other components, but they are only for code organizing.
 
 ### What need to be done to 'Do it right'
 
@@ -258,6 +260,10 @@ There are also other comonents, but they are only for code organizing.
 * PWA push notifications (?)
 * Localstorage for user history
 * ...
+
+# Examples of use
+
+* [www.userexperiencenotes.com](https://www.userexperiencenotes.com/)
 
 # Updates
 
