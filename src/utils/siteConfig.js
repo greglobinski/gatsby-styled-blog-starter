@@ -15,7 +15,9 @@ module.exports = {
   manifestBackgroundColor: colors.first,
   manifestThemeColor: colors.firstLight,
   manifestDisplay: "standalone",
-  // Author note
+  // analytics
+  analyticsTrackingId: "UA-110088221-2",
+  // author note
   authorName: "Mr. Gatsby",
   authorDescription: `Proin ornare ligula eu tellus tempus elementum. Aenean bibendum iaculis mi, nec blandit lacus interdum vitae. Vestibulum non nibh risus, a scelerisque purus. `,
   // texts

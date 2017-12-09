@@ -63,15 +63,12 @@ module.exports = {
       }
     },
     `gatsby-plugin-netlify`,
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: config.analyticsTrackingId
+      }
+    }
   ]
 };
-
-// what-input
-
-// {
-//       resolve: `gatsby-plugin-typography`,
-//       options: {
-//         pathToConfigModule: `src/utils/typography.js`
-//       }
-//     },
