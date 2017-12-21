@@ -1,11 +1,11 @@
-const config = require("../utils/siteConfig");
-import React from "react";
-import { connect } from "react-redux";
-import Helmet from "react-helmet";
-import styled, { keyframes } from "styled-components";
-import Seo from "../components/Other/Seo";
-import Author from "../components/Article/Author/Author";
-import Article from "../components/Article/Article";
+import React from 'react';
+import { connect } from 'react-redux';
+import Helmet from 'react-helmet';
+import styled, { keyframes } from 'styled-components';
+import Seo from '../components/Other/Seo';
+import Article from '../components/Article/Article';
+
+const config = require('../utils/siteConfig');
 
 const wrapperShowUp = keyframes`
   0% {
@@ -34,12 +34,12 @@ const Wrapper = styled.main`
     padding: 3em 3.5em 6em;
   }
   @media screen and (min-width: ${props => props.theme.mediaQueryTresholds.L}) {
-    left: ${props =>
-      props.navigatorIsActive ? props.theme.navigator.sizes.asideWidth : 0};
+    left: ${props => (props.navigatorIsActive ? props.theme.navigator.sizes.asideWidth : 0)};
     padding: 3.5em 3.5em 3em;
   }
 `;
 
+// eslint-disable-next-line react/prefer-stateless-function
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark;
@@ -54,15 +54,13 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    navigatorIsActive: state.posts.length
-  };
-};
+// eslint-disable-next-line no-unused-vars
+const mapStateToProps = (state, ownProps) => ({
+  navigatorIsActive: state.posts.length,
+});
 
-const mapDispatchToProps = dispatch => {
-  return {};
-};
+// eslint-disable-next-line no-unused-vars
+const mapDispatchToProps = dispatch => ({});
 
 export default connect(mapStateToProps, mapDispatchToProps)(BlogPostTemplate);
 

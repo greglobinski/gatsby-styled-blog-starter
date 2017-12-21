@@ -1,27 +1,25 @@
-const config = require("../utils/siteConfig");
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
+import Helmet from 'react-helmet';
 import {
   updatePostsData,
   setNavigatorIsAside,
-  setNavigatorInTransition
-} from "../state/store";
-import Link from "gatsby-link";
-import Helmet from "react-helmet";
-import styled from "styled-components";
-import PostsNavigatorContainer from "../components/Navigator/PostsNavigatorContainer";
+  setNavigatorInTransition,
+} from '../state/store';
+
+const config = require('../utils/siteConfig');
 
 class BlogIndex extends React.Component {
   componentWillMount() {
-    let isWideScreen =
-      typeof window !== "undefined"
+    const isWideScreen =
+      typeof window !== 'undefined'
         ? document.documentElement.clientWidth > 776
         : false;
 
     const posts = this.props.data.allMarkdownRemark.edges;
     this.props.updatePostsData(posts);
     this.props.setNavigatorIsAside(false);
-    if (typeof window !== `undefined`) {
+    if (typeof window !== 'undefined') {
       this.props.setNavigatorInTransition(true);
 
       setTimeout(() => {
@@ -35,20 +33,17 @@ class BlogIndex extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    navigatorIsAside: state.navigator.isAside,
-    navigatorIsActive: state.posts.length
-  };
-};
+// eslint-disable-next-line no-unused-vars
+const mapStateToProps = (state, ownProps) => ({
+  navigatorIsAside: state.navigator.isAside,
+  navigatorIsActive: state.posts.length,
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    updatePostsData: data => dispatch(updatePostsData(data)),
-    setNavigatorIsAside: val => dispatch(setNavigatorIsAside(val)),
-    setNavigatorInTransition: val => dispatch(setNavigatorInTransition(val))
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  updatePostsData: data => dispatch(updatePostsData(data)),
+  setNavigatorIsAside: val => dispatch(setNavigatorIsAside(val)),
+  setNavigatorInTransition: val => dispatch(setNavigatorInTransition(val)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(BlogIndex);
 
