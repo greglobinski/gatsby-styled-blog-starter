@@ -36,29 +36,33 @@ export function setNavigatorInTransition(val) {
 const reducer = (state, action) => {
   switch (action.type) {
     case SET_NAVIGATOR_IS_ASIDE:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         navigator: {
           isAside: action.val,
-          inTransition: state.navigator.inTransition
-        }
-      });
+          inTransition: state.navigator.inTransition,
+        },
+      };
     case SET_NAVIGATOR_IN_TRANSITION:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         navigator: {
           isAside: state.navigator.isAside,
-          inTransition: action.val
-        }
-      });
+          inTransition: action.val,
+        },
+      };
     case UPDATE_POSTS_DATA:
-      return Object.assign({}, state, {
-        posts: action.data
-      });
+      return {
+        ...state,
+        posts: action.data,
+      };
     case TOGGLE_INFO_SCREEN:
-      return Object.assign({}, state, {
+      return {
+        ...state,
         info: {
-          isRolledDown: !state.info.isRolledDown
-        }
-      });
+          isRolledDown: !state.info.isRolledDown,
+        },
+      };
     default:
       return state;
   }
