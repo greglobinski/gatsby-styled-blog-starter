@@ -40,28 +40,28 @@ const reducer = (state, action) => {
         ...state,
         navigator: {
           isAside: action.val,
-          inTransition: state.navigator.inTransition,
-        },
+          inTransition: state.navigator.inTransition
+        }
       };
     case SET_NAVIGATOR_IN_TRANSITION:
       return {
         ...state,
         navigator: {
           isAside: state.navigator.isAside,
-          inTransition: action.val,
-        },
+          inTransition: action.val
+        }
       };
     case UPDATE_POSTS_DATA:
       return {
         ...state,
-        posts: action.data,
+        posts: action.data
       };
     case TOGGLE_INFO_SCREEN:
       return {
         ...state,
         info: {
-          isRolledDown: !state.info.isRolledDown,
-        },
+          isRolledDown: !state.info.isRolledDown
+        }
       };
     default:
       return state;
