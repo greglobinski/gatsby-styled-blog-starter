@@ -1,5 +1,6 @@
-import { injectGlobal } from "styled-components";
+import { injectGlobal } from 'styled-components';
 
+// eslint-disable-next-line no-unused-expressions
 injectGlobal`
 
   * {
@@ -19,7 +20,7 @@ injectGlobal`
     "Helvetica Neue",
     "sans-serif";
   }
-  
+
   *::-webkit-scrollbar {
     width: 6px;
   }
@@ -33,5 +34,5 @@ injectGlobal`
   [data-whatintent="mouse"] *:focus {
     outline: none;
   }
-  
+
 `;

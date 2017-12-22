@@ -1,4 +1,4 @@
-const colors = require("./colors");
+const colors = require('./colors');
 
 const theme = {
   navigator: {
@@ -9,16 +9,16 @@ const theme = {
       scrollThumb: colors.firstDark,
       linkHover: colors.bright,
       header: colors.firstSuperLight,
-      asideItemActiveBorder: colors.accent
+      asideItemActiveBorder: colors.accent,
     },
     sizes: {
-      asideWidth: "19em",
-      maxWidth: "56em"
+      asideWidth: '19em',
+      maxWidth: '56em',
     },
     backgrounds: {
       wrapper: colors.first,
-      asideItemActive: colors.firstDark
-    }
+      asideItemActive: colors.firstDark,
+    },
   },
   post: {
     colors: {
@@ -33,65 +33,65 @@ const theme = {
       metaBorder: colors.first,
       text: colors.dark,
       title: colors.middle,
-      subTitle: colors.superDark
+      subTitle: colors.superDark,
     },
     backgrounds: {
       wrapper: colors.bright,
-      meta: colors.light
+      meta: colors.light,
     },
     sizes: {
-      maxWidth: "50em"
-    }
+      maxWidth: '50em',
+    },
   },
   bottomBar: {
     colors: {
       link: colors.bright,
-      icon: colors.firstSuperLight
+      icon: colors.firstSuperLight,
     },
     backgrounds: {
       wrapper: colors.first,
-      icon: colors.firstDark
+      icon: colors.firstDark,
     },
     sizes: {
-      height: 44 //pixels
-    }
+      height: 44, // pixels
+    },
   },
   topBar: {
     colors: {
       logo: colors.bright,
-      logoPost: colors.first
+      logoPost: colors.first,
     },
     backgrounds: {
       wrapper: colors.firstLight,
       wrapperPost: colors.bright,
-      icon: colors.accent
+      icon: colors.accent,
     },
     sizes: {
-      height: 44 //pixels
-    }
+      height: 44, // pixels
+    },
   },
   info: {
     colors: {
       text: colors.firstDark,
       link: colors.firstDark,
       linkHover: colors.first,
-      btn: colors.bright
+      btn: colors.bright,
     },
     backgrounds: {
       wrapper: colors.firstLight,
-      btn: colors.accent
+      btn: colors.accent,
     },
     sizes: {
-      maxWidth: "40em"
-    }
+      maxWidth: '40em',
+    },
   },
   mediaQueryTresholds: {
-    XL: "65em",
-    L: "49em",
-    M: "37em",
-    S: "28em",
-    XS: "21em"
-  }
+    XL: '65em',
+    L: '49em',
+    M: '37em',
+    S: '28em',
+    XS: '21em',
+  },
 };
 
 export default theme;
