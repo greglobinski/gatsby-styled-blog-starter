@@ -43,7 +43,7 @@ have already went through with the
 `gatsby new` command.
 
 ```
-gatsby new [NEW_SITE_DIRECTORY_FOR_YOUR_BLOG] git@github.com:greglobinski/gatsby-styled-blog-starter.git
+gatsby new [NEW_SITE_DIRECTORY_FOR_YOUR_BLOG] https://github.com/greglobinski/gatsby-styled-blog-starter.git
 ```
 
 ## Customization
