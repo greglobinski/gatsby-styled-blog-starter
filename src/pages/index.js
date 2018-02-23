@@ -42,15 +42,11 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    updatePostsData: data => dispatch(updatePostsData(data)),
-    setNavigatorIsAside: val => dispatch(setNavigatorIsAside(val)),
-    setNavigatorInTransition: val => dispatch(setNavigatorInTransition(val))
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(BlogIndex);
+export default connect(mapStateToProps, {
+	updatePostsData,
+	setNavigatorIsAside,
+	setNavigatorInTransition
+})(BlogIndex);
 
 export const pageQuery = graphql`
   query IndexQuery {
