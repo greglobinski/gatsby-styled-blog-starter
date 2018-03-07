@@ -1,3 +1,5 @@
+This project is discontinued, but hey there is a successor. Take a look at [gatsby-starter-personal-blog](https://github.com/greglobinski/gatsby-starter-personal-blog)
+
 # StyledBlog starter for Gatsby
 
 [DEMO website](https://gsbs.greglobinski.com/)
